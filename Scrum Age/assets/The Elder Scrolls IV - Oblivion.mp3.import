@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/The Elder Scrolls IV - Oblivion.mp3-5387cc83eb553a3368e004bda2f1878a.mp3str"
+
+[deps]
+
+source_file="res://assets/The Elder Scrolls IV - Oblivion.mp3"
+dest_files=[ "res://.import/The Elder Scrolls IV - Oblivion.mp3-5387cc83eb553a3368e004bda2f1878a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
