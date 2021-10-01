@@ -5,7 +5,8 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="GameBoard" type="TextureRect" parent="."]
+modulate = Color( 0.356863, 0.356863, 0.356863, 1 )
 margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 0.63, 0.44 )

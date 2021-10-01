@@ -18,6 +18,7 @@ func _ready():
 
 func _on_Start_pressed():
 	visible = false
+	get_parent().get_node("GameBoard").modulate = Color(0.8, 0.8, 0.8)
 
 
 func _on_End_pressed():
