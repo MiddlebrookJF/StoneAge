@@ -18,8 +18,8 @@ func _ready():
 
 func _on_Start_pressed():
 	visible = false
-	get_parent().get_node("GameBoard").modulate = Color(0.8, 0.8, 0.8)
-
+	get_parent().get_node("Board").show()
+	#get_tree().change_scene("res://Board.tscn")
 
 func _on_End_pressed():
 	get_tree().notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
