@@ -188,5 +188,10 @@ align = 1
 stream = ExtResource( 3 )
 autoplay = true
 
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerOne" to="." method="_on_PlayerOne_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerTwo" to="." method="_on_PlayerTwo_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerThree" to="." method="_on_PlayerThree_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerFour" to="." method="_on_PlayerFour_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerFive" to="." method="_on_PlayerFive_text_changed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/End" to="." method="_on_End_pressed"]
