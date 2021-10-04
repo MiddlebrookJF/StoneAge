@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/Kingthings-Petrock/Kingthings_Petrock.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://assets/The Elder Scrolls IV - Oblivion.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/Bentham/Bentham-Regular.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 96
@@ -30,31 +31,46 @@ size = 32
 outline_size = 5
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 100
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 50
+font_data = ExtResource( 4 )
+
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 120.0
-margin_top = 80.0
-margin_right = -120.0
-margin_bottom = -80.0
+margin_left = 128.0
+margin_top = 78.0
+margin_right = -103.0
+margin_bottom = -70.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 1126.0
-margin_bottom = 608.0
+margin_right = 1135.0
+margin_bottom = 620.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Logo" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 1126.0
+margin_right = 1135.0
 margin_bottom = 108.0
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/Logo"]
-margin_left = 375.0
-margin_right = 751.0
+[node name="SCRUM AGE" type="Label" parent="VBoxContainer/Logo"]
+margin_left = 379.0
+margin_right = 755.0
 margin_bottom = 108.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -64,7 +80,7 @@ valign = 1
 
 [node name="ListOfPlayers" type="Label" parent="VBoxContainer"]
 margin_top = 112.0
-margin_right = 1126.0
+margin_right = 1135.0
 margin_bottom = 167.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -73,14 +89,14 @@ align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 171.0
-margin_right = 1126.0
+margin_right = 1135.0
 margin_bottom = 332.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="PlayerOne" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
-margin_left = 438.0
-margin_right = 688.0
+margin_left = 442.0
+margin_right = 692.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_horizontal = 4
@@ -90,9 +106,9 @@ text = "Player One"
 align = 1
 
 [node name="PlayerTwo" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
-margin_left = 438.0
+margin_left = 442.0
 margin_top = 33.0
-margin_right = 688.0
+margin_right = 692.0
 margin_bottom = 62.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_horizontal = 4
@@ -102,9 +118,9 @@ text = "Player Two"
 align = 1
 
 [node name="PlayerThree" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
-margin_left = 438.0
+margin_left = 442.0
 margin_top = 66.0
-margin_right = 688.0
+margin_right = 692.0
 margin_bottom = 95.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_horizontal = 4
@@ -114,9 +130,9 @@ text = "Player Three"
 align = 1
 
 [node name="PlayerFour" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
-margin_left = 438.0
+margin_left = 442.0
 margin_top = 99.0
-margin_right = 688.0
+margin_right = 692.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_horizontal = 4
@@ -126,9 +142,9 @@ text = "Player Four"
 align = 1
 
 [node name="PlayerFive" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
-margin_left = 438.0
+margin_left = 442.0
 margin_top = 132.0
-margin_right = 688.0
+margin_right = 692.0
 margin_bottom = 161.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_horizontal = 4
@@ -139,29 +155,29 @@ align = 1
 
 [node name="MenuOptions" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 336.0
-margin_right = 1126.0
+margin_right = 1135.0
 margin_bottom = 436.0
 rect_min_size = Vector2( 1000, 0 )
 size_flags_vertical = 3
 alignment = 1
 
 [node name="Start" type="Button" parent="VBoxContainer/MenuOptions"]
-margin_left = 284.0
-margin_right = 484.0
+margin_left = 288.0
+margin_right = 488.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 200, 100 )
 custom_fonts/font = SubResource( 4 )
 text = "Start"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MenuOptions"]
-margin_left = 488.0
-margin_right = 638.0
+margin_left = 492.0
+margin_right = 642.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 150, 0 )
 
 [node name="End" type="Button" parent="VBoxContainer/MenuOptions"]
-margin_left = 642.0
-margin_right = 842.0
+margin_left = 646.0
+margin_right = 846.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 200, 100 )
 custom_fonts/font = SubResource( 5 )
@@ -169,14 +185,14 @@ text = "End"
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 margin_top = 440.0
-margin_right = 1126.0
-margin_bottom = 529.0
+margin_right = 1135.0
+margin_bottom = 541.0
 size_flags_vertical = 3
 
 [node name="VersionNumber" type="Label" parent="VBoxContainer"]
-margin_top = 533.0
-margin_right = 1126.0
-margin_bottom = 608.0
+margin_top = 545.0
+margin_right = 1135.0
+margin_bottom = 620.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -185,8 +201,63 @@ free trial until level 60 including the Heavensward Expansion"
 align = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 586, 4 )
 stream = ExtResource( 3 )
 autoplay = true
 
+[node name="WarningPanel" type="Panel" parent="."]
+visible = false
+margin_right = 1135.0
+margin_bottom = 620.0
+
+[node name="Warning Text" type="Label" parent="WarningPanel"]
+margin_left = 83.0
+margin_top = 78.6666
+margin_right = 1061.0
+margin_bottom = 334.667
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 7 )
+text = "PLEASE ENTER A NAME FOR PLAYER ONE AND PLAYER TWO"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Warning" type="Label" parent="WarningPanel"]
+margin_left = 11.3393
+margin_right = 1134.34
+margin_bottom = 149.0
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+text = "WARNING"
+align = 1
+valign = 1
+clip_text = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="WarningPanel"]
+margin_left = 472.0
+margin_top = 407.0
+margin_right = 680.0
+margin_bottom = 489.0
+custom_fonts/font = SubResource( 9 )
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerOne" to="." method="_on_PlayerOne_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerTwo" to="." method="_on_PlayerTwo_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerThree" to="." method="_on_PlayerThree_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerFour" to="." method="_on_PlayerFour_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerFive" to="." method="_on_PlayerFive_text_changed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/End" to="." method="_on_End_pressed"]
+[connection signal="pressed" from="WarningPanel/Button" to="." method="_on_Button_pressed"]
