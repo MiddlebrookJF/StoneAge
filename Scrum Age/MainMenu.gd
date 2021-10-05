@@ -44,21 +44,27 @@ func _on_PlayerFive_text_changed(new_text):
 func _on_SpinBox_value_changed(value):
 	if value == 2:
 		$VBoxContainer/VBoxContainer/PlayerThree.set_visible(false)
+		$VBoxContainer/VBoxContainer/PlayerThree.text = ""
 		Global.playernamethree = ""
 		$VBoxContainer/VBoxContainer/PlayerFour.set_visible(false)
+		$VBoxContainer/VBoxContainer/PlayerFour.text = ""
 		Global.playernamefour = ""
 		$VBoxContainer/VBoxContainer/PlayerFive.set_visible(false)
+		$VBoxContainer/VBoxContainer/PlayerFive.text = ""
 		Global.playernamefive = ""
 	elif value == 3:
 		$VBoxContainer/VBoxContainer/PlayerThree.set_visible(true)
 		$VBoxContainer/VBoxContainer/PlayerFour.set_visible(false)
+		$VBoxContainer/VBoxContainer/PlayerFour.text = ""
 		Global.playernamefour = ""
 		$VBoxContainer/VBoxContainer/PlayerFive.set_visible(false)
+		$VBoxContainer/VBoxContainer/PlayerFive.text = ""
 		Global.playernamefive = ""
 	elif value == 4:
 		$VBoxContainer/VBoxContainer/PlayerThree.set_visible(true)
 		$VBoxContainer/VBoxContainer/PlayerFour.set_visible(true)
 		$VBoxContainer/VBoxContainer/PlayerFive.set_visible(false)
+		$VBoxContainer/VBoxContainer/PlayerFive.text = ""
 		Global.playernamefive = ""
 	elif value == 5:
 		$VBoxContainer/VBoxContainer/PlayerThree.set_visible(true)
