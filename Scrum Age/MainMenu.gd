@@ -6,7 +6,7 @@ extends MarginContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	OblivionMusic.play_menu_music()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -14,6 +14,7 @@ func _ready():
 
 func _on_Start_pressed():
 	Global.goto_scene("res://Board.tscn")
+	OblivionMusic.play_board_music()
 
 
 func _on_End_pressed():

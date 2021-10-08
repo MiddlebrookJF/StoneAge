@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/titanic_bad_recorder.mp3-029911e44213463f6be34c9cb11b5c22.mp3str"
+
+[deps]
+
+source_file="res://assets/titanic_bad_recorder.mp3"
+dest_files=[ "res://.import/titanic_bad_recorder.mp3-029911e44213463f6be34c9cb11b5c22.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

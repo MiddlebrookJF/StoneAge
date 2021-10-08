@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/Kingthings-Petrock/Kingthings_Petrock.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MainMenu.gd" type="Script" id=2]
-[ext_resource path="res://assets/The Elder Scrolls IV - Oblivion.mp3" type="AudioStream" id=3]
 [ext_resource path="res://assets/Kingthings-Petrock/Kingthings_Petrock_light.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
@@ -228,10 +227,6 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Version 0.2 The critically acclaimed MMORPG Final Fantasy XIV with a
 free trial until level 60 including the Heavensward Expansion"
 align = 1
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
-autoplay = true
 
 [connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer/SpinBox" to="." method="_on_SpinBox_value_changed"]
 [connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerOne" to="." method="_on_PlayerOne_text_changed"]
