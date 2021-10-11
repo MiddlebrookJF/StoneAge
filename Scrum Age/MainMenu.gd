@@ -40,8 +40,6 @@ func _on_PlayerFour_text_changed(new_text):
 func _on_PlayerFive_text_changed(new_text):
 	Global.playernamefive = $VBoxContainer/VBoxContainer/PlayerFive.text
 
-
-
 func _on_SpinBox_value_changed(value):
 	if value == 2:
 		$VBoxContainer/VBoxContainer/PlayerThree.set_visible(false)
