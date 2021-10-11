@@ -8,7 +8,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -128.0
-margin_top = -192.0
+margin_top = -86.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -16,39 +16,33 @@ __meta__ = {
 
 [node name="Players" type="VBoxContainer" parent="."]
 margin_right = 128.0
-margin_bottom = 192.0
+margin_bottom = 86.0
 
 [node name="PlayerOne" type="Label" parent="Players"]
-margin_top = 10.0
 margin_right = 128.0
-margin_bottom = 24.0
-size_flags_vertical = 6
+margin_bottom = 14.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="PlayerTwo" type="Label" parent="Players"]
-margin_top = 49.0
+margin_top = 18.0
 margin_right = 128.0
-margin_bottom = 63.0
-size_flags_vertical = 6
+margin_bottom = 32.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="PlayerThree" type="Label" parent="Players"]
-margin_top = 88.0
+margin_top = 36.0
 margin_right = 128.0
-margin_bottom = 102.0
-size_flags_vertical = 6
+margin_bottom = 50.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="PlayerFour" type="Label" parent="Players"]
-margin_top = 127.0
+margin_top = 54.0
 margin_right = 128.0
-margin_bottom = 141.0
-size_flags_vertical = 6
+margin_bottom = 68.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="PlayerFive" type="Label" parent="Players"]
-margin_top = 167.0
+margin_top = 72.0
 margin_right = 128.0
-margin_bottom = 181.0
-size_flags_vertical = 6
+margin_bottom = 86.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )

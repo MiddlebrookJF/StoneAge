@@ -6,11 +6,13 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="Background" type="Sprite" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 modulate = Color( 0.12549, 0.12549, 0.12549, 1 )
-position = Vector2( 688, 384 )
-scale = Vector2( 0.65, 0.45 )
+rect_scale = Vector2( 0.64, 0.44 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MainMenu" parent="." instance=ExtResource( 1 )]
 margin_right = 1246.0
