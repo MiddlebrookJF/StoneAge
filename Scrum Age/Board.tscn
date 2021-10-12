@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/Scrum age new design.png" type="Texture" id=1]
 [ext_resource path="res://Board.gd" type="Script" id=2]
 [ext_resource path="res://PlayerMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Meeples/Orc-3/3_ORK_head.png" type="Texture" id=4]
 
 [node name="Board" type="Node2D"]
 script = ExtResource( 2 )
@@ -19,3 +20,25 @@ margin_left = 1197.06
 margin_top = 675.263
 margin_right = 1325.06
 margin_bottom = 761.263
+
+[node name="Meeples" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3_ORK_head" type="Sprite" parent="Meeples"]
+position = Vector2( 1069.99, 743.206 )
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 4 )
+
+[node name="3_ORK_head2" type="Sprite" parent="Meeples"]
+position = Vector2( 1114.35, 743.206 )
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 4 )
+
+[node name="3_ORK_head3" type="Sprite" parent="Meeples"]
+position = Vector2( 1155.88, 744.149 )
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 4 )
