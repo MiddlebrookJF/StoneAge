@@ -8,6 +8,10 @@
 script = ExtResource( 2 )
 
 [node name="Sprite" type="TextureRect" parent="."]
+margin_left = 2.37842
+margin_top = 23.7841
+margin_right = 1154.38
+margin_bottom = 671.784
 rect_scale = Vector2( 1.187, 1.185 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -15,7 +19,7 @@ __meta__ = {
 }
 
 [node name="PlayerMenu" parent="." instance=ExtResource( 3 )]
-margin_left = 1197.06
-margin_top = 675.263
-margin_right = 1325.06
-margin_bottom = 761.263
+margin_left = 1197.0
+margin_top = 585.0
+margin_right = 1358.0
+margin_bottom = 756.0

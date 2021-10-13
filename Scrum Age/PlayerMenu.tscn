@@ -1,48 +1,115 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://PlayerMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/flag2.png" type="Texture" id=2]
+[ext_resource path="res://assets/empty.png" type="Texture" id=3]
 
 [node name="PlayerMenu" type="MarginContainer"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -128.0
-margin_top = -86.0
+margin_left = -161.0
+margin_top = -171.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Players" type="VBoxContainer" parent="."]
-margin_right = 128.0
-margin_bottom = 86.0
+margin_right = 175.0
+margin_bottom = 171.0
 
-[node name="PlayerOne" type="Label" parent="Players"]
-margin_right = 128.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+[node name="P1 Container" type="HBoxContainer" parent="Players"]
+margin_right = 175.0
+margin_bottom = 31.0
+size_flags_vertical = 3
 
-[node name="PlayerTwo" type="Label" parent="Players"]
-margin_top = 18.0
-margin_right = 128.0
-margin_bottom = 32.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+[node name="TurnIndicatorP" type="TextureRect" parent="Players/P1 Container"]
+margin_right = 31.0
+margin_bottom = 31.0
+texture = ExtResource( 2 )
 
-[node name="PlayerThree" type="Label" parent="Players"]
-margin_top = 36.0
-margin_right = 128.0
-margin_bottom = 50.0
+[node name="PlayerOne" type="Label" parent="Players/P1 Container"]
+margin_left = 35.0
+margin_right = 35.0
+margin_bottom = 31.0
+size_flags_vertical = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+valign = 1
 
-[node name="PlayerFour" type="Label" parent="Players"]
-margin_top = 54.0
-margin_right = 128.0
-margin_bottom = 68.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+[node name="P2 Container" type="HBoxContainer" parent="Players"]
+margin_top = 35.0
+margin_right = 175.0
+margin_bottom = 66.0
+size_flags_vertical = 3
 
-[node name="PlayerFive" type="Label" parent="Players"]
-margin_top = 72.0
-margin_right = 128.0
-margin_bottom = 86.0
+[node name="TurnIndicatorP2" type="TextureRect" parent="Players/P2 Container"]
+margin_right = 31.0
+margin_bottom = 31.0
+texture = ExtResource( 3 )
+
+[node name="PlayerTwo" type="Label" parent="Players/P2 Container"]
+margin_left = 35.0
+margin_right = 35.0
+margin_bottom = 31.0
+size_flags_vertical = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+valign = 1
+
+[node name="P3 Container" type="HBoxContainer" parent="Players"]
+margin_top = 70.0
+margin_right = 175.0
+margin_bottom = 101.0
+size_flags_vertical = 3
+
+[node name="TurnIndicatorP3" type="TextureRect" parent="Players/P3 Container"]
+margin_right = 31.0
+margin_bottom = 31.0
+texture = ExtResource( 3 )
+
+[node name="PlayerThree" type="Label" parent="Players/P3 Container"]
+margin_left = 35.0
+margin_right = 35.0
+margin_bottom = 31.0
+size_flags_vertical = 7
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+valign = 1
+
+[node name="P4 Container" type="HBoxContainer" parent="Players"]
+margin_top = 105.0
+margin_right = 175.0
+margin_bottom = 136.0
+size_flags_vertical = 3
+
+[node name="TurnIndicatorP4" type="TextureRect" parent="Players/P4 Container"]
+margin_right = 31.0
+margin_bottom = 31.0
+texture = ExtResource( 3 )
+
+[node name="PlayerFour" type="Label" parent="Players/P4 Container"]
+margin_left = 35.0
+margin_right = 35.0
+margin_bottom = 31.0
+size_flags_vertical = 7
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+valign = 1
+
+[node name="P5 Container" type="HBoxContainer" parent="Players"]
+margin_top = 140.0
+margin_right = 175.0
+margin_bottom = 171.0
+size_flags_vertical = 3
+
+[node name="TurnIndicatorP5" type="TextureRect" parent="Players/P5 Container"]
+margin_right = 31.0
+margin_bottom = 31.0
+texture = ExtResource( 3 )
+
+[node name="PlayerFive" type="Label" parent="Players/P5 Container"]
+margin_left = 35.0
+margin_right = 35.0
+margin_bottom = 31.0
+size_flags_vertical = 7
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+valign = 1
