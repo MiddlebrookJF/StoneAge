@@ -2,6 +2,9 @@ extends Node
 
 var current_scene = null
 var playernameone = ""
+var playeronemeeplecount = 3
+var playeronescore = 0
+
 var playernametwo = ""
 var playernamethree = ""
 var playernamefour = ""
