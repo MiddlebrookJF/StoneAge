@@ -1,48 +1,358 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://PlayerMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/label_HP_bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/bombs_icon.png" type="Texture" id=3]
 
 [node name="PlayerMenu" type="MarginContainer"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -128.0
-margin_top = -86.0
+margin_left = -347.0
+margin_top = -403.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Players" type="VBoxContainer" parent="."]
-margin_right = 128.0
-margin_bottom = 86.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 327.0
+margin_bottom = 383.0
 
-[node name="PlayerOne" type="Label" parent="Players"]
-margin_right = 128.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-
-[node name="PlayerTwo" type="Label" parent="Players"]
-margin_top = 18.0
-margin_right = 128.0
-margin_bottom = 32.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-
-[node name="PlayerThree" type="Label" parent="Players"]
-margin_top = 36.0
-margin_right = 128.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Players"]
+margin_right = 307.0
 margin_bottom = 50.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 
-[node name="PlayerFour" type="Label" parent="Players"]
+[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer/MarginContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+texture = ExtResource( 2 )
+
+[node name="PlayerOne" type="Label" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 5.0
+margin_top = -7.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -98.0
+margin_top = -43.0
+margin_right = -18.0
+margin_bottom = 37.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Players"]
 margin_top = 54.0
-margin_right = 128.0
-margin_bottom = 68.0
+margin_right = 307.0
+margin_bottom = 104.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer2"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer2/MarginContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+texture = ExtResource( 2 )
+
+[node name="PlayerTwo" type="Label" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 5.0
+margin_top = -7.0
+margin_right = 307.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -98.1151
+margin_top = -42.9966
+margin_right = 101.885
+margin_bottom = 37.0034
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Players"]
+margin_top = 108.0
+margin_right = 307.0
+margin_bottom = 158.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer3"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer3/MarginContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+texture = ExtResource( 2 )
+
+[node name="PlayerThree" type="Label" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 5.0
+margin_top = -7.0
+margin_right = 307.0
+margin_bottom = 7.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
-[node name="PlayerFive" type="Label" parent="Players"]
-margin_top = 72.0
-margin_right = 128.0
-margin_bottom = 86.0
+[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_bottom = 7.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -98.1151
+margin_top = -42.9966
+margin_right = 101.885
+margin_bottom = 37.0034
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Players"]
+margin_top = 162.0
+margin_right = 307.0
+margin_bottom = 212.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer4"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer4/MarginContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+texture = ExtResource( 2 )
+
+[node name="PlayerFour" type="Label" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_right = 302.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+
+[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -98.1151
+margin_top = -42.9966
+margin_right = 101.885
+margin_bottom = 37.0034
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Players"]
+margin_top = 216.0
+margin_right = 307.0
+margin_bottom = 266.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer5"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer5/MarginContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+texture = ExtResource( 2 )
+
+[node name="PlayerFive" type="Label" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_right = 302.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -98.1151
+margin_top = -42.9966
+margin_right = 101.885
+margin_bottom = 37.0034
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
