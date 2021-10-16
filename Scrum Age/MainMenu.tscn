@@ -137,6 +137,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 align = 1
+max_length = 6
 placeholder_text = "Player One"
 
 [node name="PlayerTwo" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
@@ -149,6 +150,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 align = 1
+max_length = 6
 placeholder_text = "Player Two"
 
 [node name="PlayerThree" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
@@ -162,6 +164,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 align = 1
+max_length = 6
 placeholder_text = "Player Three"
 
 [node name="PlayerFour" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
@@ -175,6 +178,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 align = 1
+max_length = 6
 placeholder_text = "Player Four"
 
 [node name="PlayerFive" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
@@ -188,6 +192,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 align = 1
+max_length = 6
 placeholder_text = "Player Five"
 
 [node name="MenuOptions" type="HBoxContainer" parent="VBoxContainer"]
