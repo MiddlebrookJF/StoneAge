@@ -1,44 +1,131 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/Scrum age new design.png" type="Texture" id=1]
+[ext_resource path="res://assets/gwent board.png" type="Texture" id=1]
 [ext_resource path="res://Board.gd" type="Script" id=2]
 [ext_resource path="res://PlayerMenu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/Meeples/Orc-3/3_ORK_head.png" type="Texture" id=4]
+[ext_resource path="res://assets/Kingthings-Petrock/Kingthings_Petrock.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = ExtResource( 4 )
 
 [node name="Board" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="TextureRect" parent="."]
-rect_scale = Vector2( 1.187, 1.185 )
+[node name="Background" type="TextureRect" parent="."]
+margin_top = -2.51984
+margin_right = 900.159
+margin_bottom = 487.48
+rect_scale = Vector2( 1.02, 0.96 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PlayerMenu" parent="." instance=ExtResource( 3 )]
-margin_left = 1197.06
-margin_top = 675.263
-margin_right = 1325.06
-margin_bottom = 761.263
+margin_left = 1128.73
+margin_top = 386.682
+margin_right = 1368.73
+margin_bottom = 765.682
 
-[node name="Meeples" type="HBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Testing" type="Label" parent="."]
+margin_left = 604.522
+margin_top = 281.774
+margin_right = 710.522
+margin_bottom = 327.774
+custom_fonts/font = SubResource( 1 )
+text = "Testing"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="3_ORK_head" type="Sprite" parent="Meeples"]
-position = Vector2( 1069.99, 743.206 )
-scale = Vector2( 0.06, 0.06 )
-texture = ExtResource( 4 )
 
-[node name="3_ORK_head2" type="Sprite" parent="Meeples"]
-position = Vector2( 1114.35, 743.206 )
-scale = Vector2( 0.06, 0.06 )
-texture = ExtResource( 4 )
+[node name="Implementation" type="Label" parent="."]
+margin_left = 1040.23
+margin_top = 118.5
+margin_right = 1267.23
+margin_bottom = 164.5
+custom_fonts/font = SubResource( 2 )
+text = "Implementation"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="3_ORK_head3" type="Sprite" parent="Meeples"]
-position = Vector2( 1155.88, 744.149 )
-scale = Vector2( 0.06, 0.06 )
-texture = ExtResource( 4 )
+[node name="Design" type="Label" parent="."]
+margin_left = 766.462
+margin_top = 114.605
+margin_right = 861.462
+margin_bottom = 160.605
+custom_fonts/font = SubResource( 3 )
+text = "Design"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Requirements" type="Label" parent="."]
+margin_left = 394.024
+margin_top = 120.201
+margin_right = 593.024
+margin_bottom = 166.201
+custom_fonts/font = SubResource( 4 )
+text = "Requirements"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Training" type="Label" parent="."]
+margin_left = 124.757
+margin_top = 111.976
+margin_right = 174.757
+margin_bottom = 125.976
+custom_fonts/font = SubResource( 5 )
+text = "Training"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tools" type="Label" parent="."]
+margin_left = 833.427
+margin_top = 406.653
+margin_right = 906.427
+margin_bottom = 452.653
+custom_fonts/font = SubResource( 6 )
+text = "Tools"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SexHut" type="Label" parent="."]
+margin_left = 394.362
+margin_top = 412.983
+margin_right = 505.362
+margin_bottom = 458.983
+custom_fonts/font = SubResource( 7 )
+text = "Sex Hut"
+__meta__ = {
+"_edit_use_anchors_": false
+}
