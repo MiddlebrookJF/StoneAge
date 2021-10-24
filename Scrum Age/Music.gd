@@ -17,5 +17,4 @@ func play_board_music():
 	$Music.stream = board_theme
 	$Music.play()
 
-func some_method():
-	return "apples"
+

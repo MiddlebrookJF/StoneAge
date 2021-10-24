@@ -3,12 +3,16 @@ extends "res://addons/gut/test.gd"
 #var Global = load("res://Global.gd");
 var Main = load("res://Main.gd");
 var _main = null;
+var Player = load("res://PlayerMenu.gd");
+var _player = null;
 
 func before_each():
-	_main = Main.new();
+	#main = Main.new();
+	_player = Player.new()
 
 func after_each():
-	pass;
+	_main.free();
+	_player.free();
 
 #func test_scene_change():
 #	var _global = Global.new();
@@ -22,7 +26,7 @@ func after_each():
 #	
 #	assert_true(menu_theme == "res://assets/The Elder Scrolls IV - Oblivion.mp3", "Supposed to play menu theme");
 
-func test_some_method():
-	var result = _main.get_node("Board").some_method();
-	 
-	assert_eq(result, "apples", "Test does not work (just for testing out the GUT extension)");
+func test_player_array():
+	_player.nameArray = ["Johhnn", "FuckAssBoiven" , "AVEEEEEERRRRRRYYY", "Edwad" ,"god"];
+	
+	assert_eq(_player.nameArray[1], "you");
