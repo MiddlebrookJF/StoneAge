@@ -1,14 +1,9 @@
 extends Node
 
 var current_scene = null
-var playernameone = ""
-var playeronemeeplecount = 3
-var playeronescore = 0
+var player_names = ["", "", "", "", ""]
 
-var playernametwo = ""
-var playernamethree = ""
-var playernamefour = ""
-var playernamefive = ""
+var meeple_counts = [3, 3, 3, 3, 3]
 
 func _ready():
 	var root = get_tree().get_root()

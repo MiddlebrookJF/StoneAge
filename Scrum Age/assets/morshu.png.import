@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bombs_icon.png-a8a3694a10e3cfb0ebd796739af40264.stex"
+path="res://.import/morshu.png-24d53ecbf3441a952a5b94c00596c46f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bombs_icon.png"
-dest_files=[ "res://.import/bombs_icon.png-a8a3694a10e3cfb0ebd796739af40264.stex" ]
+source_file="res://assets/morshu.png"
+dest_files=[ "res://.import/morshu.png-24d53ecbf3441a952a5b94c00596c46f.stex" ]
 
 [params]
 

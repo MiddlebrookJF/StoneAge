@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tavern background.jpg-41c42e3baec5f9f3687b506af775c69c.stex"
+path="res://.import/icon.png-91b084043b8aaf2f1c906e7b9fa92969.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tavern background.jpg"
-dest_files=[ "res://.import/tavern background.jpg-41c42e3baec5f9f3687b506af775c69c.stex" ]
+source_file="res://addons/gut/icon.png"
+dest_files=[ "res://.import/icon.png-91b084043b8aaf2f1c906e7b9fa92969.stex" ]
 
 [params]
 
