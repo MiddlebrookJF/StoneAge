@@ -1,48 +1,447 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://PlayerMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/flag2.png" type="Texture" id=2]
+[ext_resource path="res://assets/empty.png" type="Texture" id=3]
+[ext_resource path="res://assets/label_HP_bg.png" type="Texture" id=4]
+[ext_resource path="res://assets/morshu.png" type="Texture" id=6]
 
 [node name="PlayerMenu" type="MarginContainer"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -128.0
-margin_top = -86.0
+margin_left = -347.0
+margin_top = -403.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Players" type="VBoxContainer" parent="."]
-margin_right = 128.0
-margin_bottom = 86.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 327.0
+margin_bottom = 383.0
 
-[node name="PlayerOne" type="Label" parent="Players"]
-margin_right = 128.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-
-[node name="PlayerTwo" type="Label" parent="Players"]
-margin_top = 18.0
-margin_right = 128.0
-margin_bottom = 32.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-
-[node name="PlayerThree" type="Label" parent="Players"]
-margin_top = 36.0
-margin_right = 128.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Players"]
+margin_right = 307.0
 margin_bottom = 50.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 
-[node name="PlayerFour" type="Label" parent="Players"]
+[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer/MarginContainer"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 275, 0 )
+texture = ExtResource( 4 )
+
+[node name="TurnIndicatorP" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+anchor_top = -0.021189
+anchor_bottom = -0.021189
+margin_left = 4.0
+margin_top = 10.0594
+margin_right = 35.0
+margin_bottom = 41.0594
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOne" type="Label" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 35.0
+margin_top = -7.0
+margin_right = -167.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 184.0
+margin_top = -7.0
+margin_right = -70.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3/3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+modulate = Color( 1, 0.47451, 0.47451, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -68.5908
+margin_top = -13.7004
+margin_right = 202.409
+margin_bottom = 229.3
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 157.0
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Players"]
 margin_top = 54.0
-margin_right = 128.0
-margin_bottom = 68.0
+margin_right = 307.0
+margin_bottom = 104.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer2"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer2/MarginContainer"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 275, 0 )
+texture = ExtResource( 4 )
+
+[node name="TurnIndicatorP2" type="TextureRect" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+margin_left = 4.0
+margin_top = 9.0
+margin_right = 35.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerTwo" type="Label" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 35.0
+margin_top = -7.0
+margin_right = 108.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 184.0
+margin_top = -7.0
+margin_right = -70.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3/3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+modulate = Color( 0.431373, 0.490196, 0.984314, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -68.5908
+margin_top = -14.3303
+margin_right = 202.409
+margin_bottom = 228.67
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 157.0
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Players"]
+margin_top = 108.0
+margin_right = 307.0
+margin_bottom = 158.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer3"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer3/MarginContainer"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 275, 0 )
+texture = ExtResource( 4 )
+
+[node name="TurnIndicatorP3" type="TextureRect" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+margin_left = 4.0
+margin_top = 9.0
+margin_right = 35.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerThree" type="Label" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 35.0
+margin_top = -7.0
+margin_right = 108.0
+margin_bottom = 7.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
-[node name="PlayerFive" type="Label" parent="Players"]
-margin_top = 72.0
-margin_right = 128.0
-margin_bottom = 86.0
+[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 184.0
+margin_top = -7.0
+margin_right = -70.0
+margin_bottom = 7.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3/3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+modulate = Color( 0.396078, 0.972549, 0.419608, 1 )
+anchor_left = 1.00375
+anchor_top = 0.5
+anchor_right = 1.00375
+anchor_bottom = 0.5
+margin_left = -70.5996
+margin_top = -13.7007
+margin_right = 200.4
+margin_bottom = 229.299
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 157.0
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Players"]
+margin_top = 162.0
+margin_right = 307.0
+margin_bottom = 212.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer4"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer4/MarginContainer"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 275, 0 )
+texture = ExtResource( 4 )
+
+[node name="TurnIndicatorP4" type="TextureRect" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+margin_left = 4.0
+margin_top = 9.0
+margin_right = 35.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerFour" type="Label" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 35.0
+margin_top = -7.0
+margin_right = 108.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 184.0
+margin_top = -7.0
+margin_right = -70.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3/3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+modulate = Color( 0.929412, 0.972549, 0.368627, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.2207
+margin_top = -15.5903
+margin_right = 201.779
+margin_bottom = 227.41
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 157.0
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Players"]
+margin_top = 216.0
+margin_right = 307.0
+margin_bottom = 266.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer5"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer5/MarginContainer"]
+margin_right = 275.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 275, 0 )
+rect_pivot_offset = Vector2( -214.692, -234 )
+texture = ExtResource( 4 )
+
+[node name="TurnIndicatorP5" type="TextureRect" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+margin_left = 4.0
+margin_top = 9.0
+margin_right = 35.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+
+[node name="PlayerFive" type="Label" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 35.0
+margin_top = -7.0
+margin_right = 108.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 184.0
+margin_top = -7.0
+margin_right = -70.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3/3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+modulate = Color( 0.729412, 0.396078, 0.980392, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -69.2207
+margin_top = -13.7007
+margin_right = 201.779
+margin_bottom = 229.299
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 157.0
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

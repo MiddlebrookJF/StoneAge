@@ -36,19 +36,6 @@ size = 32
 outline_size = 5
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=7]
-size = 50
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=8]
-size = 100
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 50
-font_data = ExtResource( 4 )
-
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -68,16 +55,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Logo" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 1126.0
-margin_bottom = 163.0
+margin_right = 1135.0
+margin_bottom = 169.0
 size_flags_vertical = 3
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/Logo"]
-margin_left = 375.0
-margin_top = 27.0
-margin_right = 751.0
-margin_bottom = 135.0
+margin_left = 379.0
+margin_top = 30.0
+margin_right = 755.0
+margin_bottom = 138.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Scrum Age"
@@ -85,14 +72,14 @@ align = 1
 valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 167.0
-margin_right = 1126.0
-margin_bottom = 199.0
+margin_top = 173.0
+margin_right = 1135.0
+margin_bottom = 205.0
 alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 425.0
-margin_right = 623.0
+margin_left = 429.0
+margin_right = 627.0
 margin_bottom = 32.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
@@ -109,8 +96,8 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 627.0
-margin_right = 701.0
+margin_left = 631.0
+margin_right = 705.0
 margin_bottom = 32.0
 alignment = 1
 
@@ -126,42 +113,44 @@ value = 2.0
 align = 1
 
 [node name="ListOfPlayers" type="Label" parent="VBoxContainer"]
-margin_top = 203.0
-margin_right = 1126.0
-margin_bottom = 258.0
+margin_top = 209.0
+margin_right = 1135.0
+margin_bottom = 264.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "List of Players"
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 262.0
-margin_right = 1126.0
-margin_bottom = 425.0
+margin_top = 268.0
+margin_right = 1135.0
+margin_bottom = 437.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="PlayerOne" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
-margin_left = 438.0
-margin_right = 688.0
-margin_bottom = 79.0
+margin_left = 442.0
+margin_right = 692.0
+margin_bottom = 82.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 align = 1
+max_length = 12
 placeholder_text = "Player One"
 
 [node name="PlayerTwo" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
-margin_left = 438.0
-margin_top = 83.0
-margin_right = 688.0
-margin_bottom = 163.0
+margin_left = 442.0
+margin_top = 86.0
+margin_right = 692.0
+margin_bottom = 169.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 align = 1
+max_length = 12
 placeholder_text = "Player Two"
 
 [node name="PlayerThree" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
@@ -175,6 +164,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 align = 1
+max_length = 12
 placeholder_text = "Player Three"
 
 [node name="PlayerFour" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
@@ -188,6 +178,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 align = 1
+max_length = 12
 placeholder_text = "Player Four"
 
 [node name="PlayerFive" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
@@ -201,12 +192,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 align = 1
+max_length = 12
 placeholder_text = "Player Five"
 
 [node name="MenuOptions" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 429.0
-margin_right = 1126.0
-margin_bottom = 529.0
+margin_top = 441.0
+margin_right = 1135.0
+margin_bottom = 541.0
 rect_min_size = Vector2( 1000, 0 )
 alignment = 1
 
@@ -251,4 +243,3 @@ align = 1
 [connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerFive" to="." method="_on_PlayerFive_text_changed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/End" to="." method="_on_End_pressed"]
-[connection signal="pressed" from="WarningPanel/Button" to="." method="_on_Button_pressed"]
