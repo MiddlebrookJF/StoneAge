@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/flag2.png" type="Texture" id=2]
 [ext_resource path="res://assets/empty.png" type="Texture" id=3]
 [ext_resource path="res://assets/label_HP_bg.png" type="Texture" id=4]
-[ext_resource path="res://assets/morshu.png" type="Texture" id=6]
+[ext_resource path="res://assets/Meeples/Knight-1/1_head_.png" type="Texture" id=5]
 
 [node name="PlayerMenu" type="MarginContainer"]
 anchor_left = 1.0
@@ -43,7 +43,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
-[node name="TurnIndicatorP" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/Player1"]
+[node name="TurnIndicatorP1" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/Player1"]
 anchor_top = -0.021189
 anchor_bottom = -0.021189
 margin_left = 4.0
@@ -68,7 +68,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
+[node name="MeeplesLabel" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -83,23 +83,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/Player1"]
-modulate = Color( 1, 0.47451, 0.47451, 1 )
+[node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/Player1"]
+modulate = Color( 1, 0.262745, 0.262745, 1 )
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -68.5908
 margin_top = -13.7004
-margin_right = 202.409
-margin_bottom = 229.3
-rect_scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 6 )
+margin_right = 519.409
+margin_bottom = 559.3
+rect_scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
+[node name="ScoreLabel" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
 anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
@@ -169,17 +169,17 @@ __meta__ = {
 }
 
 [node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer2/MarginContainer/Player2"]
-modulate = Color( 0.431373, 0.490196, 0.984314, 1 )
+modulate = Color( 0.607843, 0.65098, 1, 1 )
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -68.5908
 margin_top = -14.3303
-margin_right = 202.409
-margin_bottom = 228.67
-rect_scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 6 )
+margin_right = 519.409
+margin_bottom = 558.67
+rect_scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -250,17 +250,17 @@ __meta__ = {
 }
 
 [node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer3/MarginContainer/Player3"]
-modulate = Color( 0.396078, 0.972549, 0.419608, 1 )
+modulate = Color( 0.227451, 0.717647, 0.376471, 1 )
 anchor_left = 1.00375
 anchor_top = 0.5
 anchor_right = 1.00375
 anchor_bottom = 0.5
 margin_left = -70.5996
 margin_top = -13.7007
-margin_right = 200.4
-margin_bottom = 229.299
-rect_scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 6 )
+margin_right = 517.4
+margin_bottom = 559.299
+rect_scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -334,17 +334,17 @@ __meta__ = {
 }
 
 [node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer4/MarginContainer/Player4"]
-modulate = Color( 0.929412, 0.972549, 0.368627, 1 )
+modulate = Color( 0.933333, 0.988235, 0.211765, 1 )
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -69.2207
 margin_top = -15.5903
-margin_right = 201.779
-margin_bottom = 227.41
-rect_scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 6 )
+margin_right = 518.779
+margin_bottom = 557.41
+rect_scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -416,17 +416,17 @@ __meta__ = {
 }
 
 [node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer5/MarginContainer/Player5"]
-modulate = Color( 0.729412, 0.396078, 0.980392, 1 )
+modulate = Color( 1, 0.243137, 0.717647, 1 )
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -69.2207
 margin_top = -13.7007
-margin_right = 201.779
-margin_bottom = 229.299
-rect_scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 6 )
+margin_right = 518.779
+margin_bottom = 559.299
+rect_scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
