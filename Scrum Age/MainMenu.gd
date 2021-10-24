@@ -22,49 +22,49 @@ func _on_End_pressed():
 
 
 func _on_PlayerOne_text_changed(new_text):
-	Global.playernameone = $VBoxContainer/VBoxContainer/PlayerOne.text
+	Global.player_names[0] = $VBoxContainer/VBoxContainer/PlayerOne.text
 
 
 func _on_PlayerTwo_text_changed(new_text):
-	Global.playernametwo= 	$VBoxContainer/VBoxContainer/PlayerTwo.text
+	Global.player_names[1]= 	$VBoxContainer/VBoxContainer/PlayerTwo.text
 
 
 func _on_PlayerThree_text_changed(new_text):
-	Global.playernamethree = $VBoxContainer/VBoxContainer/PlayerThree.text
+	Global.player_names[2] = $VBoxContainer/VBoxContainer/PlayerThree.text
 
 
 func _on_PlayerFour_text_changed(new_text):
-	Global.playernamefour = $VBoxContainer/VBoxContainer/PlayerFour.text
+	Global.player_names[3] = $VBoxContainer/VBoxContainer/PlayerFour.text
 	
 
 func _on_PlayerFive_text_changed(new_text):
-	Global.playernamefive = $VBoxContainer/VBoxContainer/PlayerFive.text
+	Global.player_names[4] = $VBoxContainer/VBoxContainer/PlayerFive.text
 
 func _on_SpinBox_value_changed(value):
 	if value == 2:
 		$VBoxContainer/VBoxContainer/PlayerThree.set_visible(false)
 		$VBoxContainer/VBoxContainer/PlayerThree.text = ""
-		Global.playernamethree = ""
+		Global.player_names[2] = ""
 		$VBoxContainer/VBoxContainer/PlayerFour.set_visible(false)
 		$VBoxContainer/VBoxContainer/PlayerFour.text = ""
-		Global.playernamefour = ""
+		Global.player_names[3] = ""
 		$VBoxContainer/VBoxContainer/PlayerFive.set_visible(false)
 		$VBoxContainer/VBoxContainer/PlayerFive.text = ""
-		Global.playernamefive = ""
+		Global.player_names[4] = ""
 	elif value == 3:
 		$VBoxContainer/VBoxContainer/PlayerThree.set_visible(true)
 		$VBoxContainer/VBoxContainer/PlayerFour.set_visible(false)
 		$VBoxContainer/VBoxContainer/PlayerFour.text = ""
-		Global.playernamefour = ""
+		Global.player_names[3] = ""
 		$VBoxContainer/VBoxContainer/PlayerFive.set_visible(false)
 		$VBoxContainer/VBoxContainer/PlayerFive.text = ""
-		Global.playernamefive = ""
+		Global.player_names[4] = ""
 	elif value == 4:
 		$VBoxContainer/VBoxContainer/PlayerThree.set_visible(true)
 		$VBoxContainer/VBoxContainer/PlayerFour.set_visible(true)
 		$VBoxContainer/VBoxContainer/PlayerFive.set_visible(false)
 		$VBoxContainer/VBoxContainer/PlayerFive.text = ""
-		Global.playernamefive = ""
+		Global.player_names[4] = ""
 	elif value == 5:
 		$VBoxContainer/VBoxContainer/PlayerThree.set_visible(true)
 		$VBoxContainer/VBoxContainer/PlayerFour.set_visible(true)

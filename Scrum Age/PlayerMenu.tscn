@@ -37,13 +37,13 @@ margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 200, 50 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer/MarginContainer"]
+[node name="Player1" type="NinePatchRect" parent="Players/HBoxContainer/MarginContainer"]
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
-[node name="TurnIndicatorP" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+[node name="TurnIndicatorP" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/Player1"]
 anchor_top = -0.021189
 anchor_bottom = -0.021189
 margin_left = 4.0
@@ -55,7 +55,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOne" type="Label" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+[node name="PlayerOne" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -68,7 +68,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -83,7 +83,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/Player1"]
 modulate = Color( 1, 0.47451, 0.47451, 1 )
 anchor_left = 1.0
 anchor_top = 0.5
@@ -99,7 +99,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer/MarginContainer/NinePatchRect"]
+[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
 anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
@@ -125,13 +125,13 @@ margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 200, 50 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer2/MarginContainer"]
+[node name="Player2" type="NinePatchRect" parent="Players/HBoxContainer2/MarginContainer"]
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
-[node name="TurnIndicatorP2" type="TextureRect" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+[node name="TurnIndicatorP2" type="TextureRect" parent="Players/HBoxContainer2/MarginContainer/Player2"]
 margin_left = 4.0
 margin_top = 9.0
 margin_right = 35.0
@@ -141,7 +141,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerTwo" type="Label" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+[node name="NameLabel" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 35.0
@@ -153,7 +153,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+[node name="MeeplesLabel" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -168,7 +168,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+[node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer2/MarginContainer/Player2"]
 modulate = Color( 0.431373, 0.490196, 0.984314, 1 )
 anchor_left = 1.0
 anchor_top = 0.5
@@ -184,7 +184,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer2/MarginContainer/NinePatchRect"]
+[node name="ScoreLabel" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -209,13 +209,13 @@ margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 200, 50 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer3/MarginContainer"]
+[node name="Player3" type="NinePatchRect" parent="Players/HBoxContainer3/MarginContainer"]
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
-[node name="TurnIndicatorP3" type="TextureRect" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+[node name="TurnIndicatorP3" type="TextureRect" parent="Players/HBoxContainer3/MarginContainer/Player3"]
 margin_left = 4.0
 margin_top = 9.0
 margin_right = 35.0
@@ -225,7 +225,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerThree" type="Label" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+[node name="NameLabel" type="Label" parent="Players/HBoxContainer3/MarginContainer/Player3"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 35.0
@@ -234,7 +234,7 @@ margin_right = 108.0
 margin_bottom = 7.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
-[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+[node name="MeeplesLabel" type="Label" parent="Players/HBoxContainer3/MarginContainer/Player3"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -249,7 +249,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+[node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer3/MarginContainer/Player3"]
 modulate = Color( 0.396078, 0.972549, 0.419608, 1 )
 anchor_left = 1.00375
 anchor_top = 0.5
@@ -265,7 +265,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer3/MarginContainer/NinePatchRect"]
+[node name="ScoreLabel" type="Label" parent="Players/HBoxContainer3/MarginContainer/Player3"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -290,13 +290,13 @@ margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 200, 50 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer4/MarginContainer"]
+[node name="Player4" type="NinePatchRect" parent="Players/HBoxContainer4/MarginContainer"]
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
-[node name="TurnIndicatorP4" type="TextureRect" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+[node name="TurnIndicatorP4" type="TextureRect" parent="Players/HBoxContainer4/MarginContainer/Player4"]
 margin_left = 4.0
 margin_top = 9.0
 margin_right = 35.0
@@ -306,7 +306,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerFour" type="Label" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+[node name="NameLabel" type="Label" parent="Players/HBoxContainer4/MarginContainer/Player4"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 35.0
@@ -318,7 +318,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+[node name="MeeplesLabel" type="Label" parent="Players/HBoxContainer4/MarginContainer/Player4"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -333,7 +333,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+[node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer4/MarginContainer/Player4"]
 modulate = Color( 0.929412, 0.972549, 0.368627, 1 )
 anchor_left = 1.0
 anchor_top = 0.5
@@ -349,7 +349,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer4/MarginContainer/NinePatchRect"]
+[node name="ScoreLabel" type="Label" parent="Players/HBoxContainer4/MarginContainer/Player4"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -374,21 +374,21 @@ margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 200, 50 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Players/HBoxContainer5/MarginContainer"]
+[node name="Player5" type="NinePatchRect" parent="Players/HBoxContainer5/MarginContainer"]
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 275, 0 )
 rect_pivot_offset = Vector2( -214.692, -234 )
 texture = ExtResource( 4 )
 
-[node name="TurnIndicatorP5" type="TextureRect" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+[node name="TurnIndicatorP5" type="TextureRect" parent="Players/HBoxContainer5/MarginContainer/Player5"]
 margin_left = 4.0
 margin_top = 9.0
 margin_right = 35.0
 margin_bottom = 40.0
 texture = ExtResource( 3 )
 
-[node name="PlayerFive" type="Label" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+[node name="NameLabel" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 35.0
@@ -400,7 +400,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneMeeples" type="Label" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+[node name="MeeplesLabel" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -415,7 +415,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneMeepleIcon" type="TextureRect" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+[node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer5/MarginContainer/Player5"]
 modulate = Color( 0.729412, 0.396078, 0.980392, 1 )
 anchor_left = 1.0
 anchor_top = 0.5
@@ -431,7 +431,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOneScore" type="Label" parent="Players/HBoxContainer5/MarginContainer/NinePatchRect"]
+[node name="ScoreLabel" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5

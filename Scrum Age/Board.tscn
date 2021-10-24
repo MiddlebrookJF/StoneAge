@@ -37,9 +37,10 @@ font_data = ExtResource( 4 )
 script = ExtResource( 2 )
 
 [node name="Background" type="TextureRect" parent="."]
-margin_top = -2.51984
-margin_right = 900.159
-margin_bottom = 487.48
+margin_left = 3.4538
+margin_top = -3.85468
+margin_right = 1343.45
+margin_bottom = 799.145
 rect_scale = Vector2( 1.02, 0.96 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -119,12 +120,12 @@ __meta__ = {
 }
 
 [node name="SexHut" type="Label" parent="."]
-margin_left = 394.362
-margin_top = 412.983
-margin_right = 505.362
-margin_bottom = 458.983
+margin_left = 431.417
+margin_top = 412.156
+margin_right = 473.417
+margin_bottom = 458.156
 custom_fonts/font = SubResource( 7 )
-text = "Sex Hut"
+text = "HR"
 __meta__ = {
 "_edit_use_anchors_": false
 }

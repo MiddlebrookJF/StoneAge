@@ -9,7 +9,7 @@ func _ready():
 	var random = RandomNumberGenerator.new()
 	random.randomize()
 	
-	var nameArray = [Global.playernameone, Global.playernametwo, Global.playernamethree, Global.playernamefour, Global.playernamefive]
+	var nameArray = Global.player_names
 	var turnOrder = ["", "", "", "", ""]
 	var numPlayers = 5
 	

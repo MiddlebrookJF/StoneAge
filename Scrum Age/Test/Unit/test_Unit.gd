@@ -1,11 +1,11 @@
 extends "res://addons/gut/test.gd"
 
 #var Global = load("res://Global.gd");
-var Music = load("res://Music.gd");
-var _music = null;
+var Main = load("res://Main.gd");
+var _main = null;
 
 func before_each():
-	_music = Music.new();
+	_main = Main.new();
 
 func after_each():
 	pass;
@@ -23,6 +23,6 @@ func after_each():
 #	assert_true(menu_theme == "res://assets/The Elder Scrolls IV - Oblivion.mp3", "Supposed to play menu theme");
 
 func test_some_method():
-	var result = _music.some_method();
-	
-	assert_eq(result, "apples", "Test does not work");
+	var result = _main.get_node("Board").some_method();
+	 
+	assert_eq(result, "apples", "Test does not work (just for testing out the GUT extension)");
