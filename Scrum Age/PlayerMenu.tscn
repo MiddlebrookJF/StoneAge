@@ -43,6 +43,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
+
 [node name="TurnIndicatorP1" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/Player1"]
 anchor_top = -0.021189
 anchor_bottom = -0.021189
@@ -55,7 +56,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayerOne" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
+
+[node name="NameLabel" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -67,6 +69,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 
 [node name="MeeplesLabel" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
 anchor_top = 0.5
@@ -83,6 +86,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+
 [node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/Player1"]
 modulate = Color( 1, 0.262745, 0.262745, 1 )
 anchor_left = 1.0
@@ -98,6 +102,7 @@ texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 
 [node name="ScoreLabel" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
 anchor_left = -0.00374573
@@ -131,6 +136,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
+
 [node name="TurnIndicatorP2" type="TextureRect" parent="Players/HBoxContainer2/MarginContainer/Player2"]
 margin_left = 4.0
 margin_top = 9.0
@@ -140,6 +146,7 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 
 [node name="NameLabel" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
 anchor_top = 0.5
@@ -152,6 +159,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 
 [node name="MeeplesLabel" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
 anchor_top = 0.5
@@ -167,6 +175,7 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 
 [node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer2/MarginContainer/Player2"]
 modulate = Color( 0.607843, 0.65098, 1, 1 )
@@ -208,6 +217,7 @@ margin_bottom = 158.0
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 200, 50 )
+
 
 [node name="Player3" type="NinePatchRect" parent="Players/HBoxContainer3/MarginContainer"]
 margin_right = 275.0
@@ -388,6 +398,7 @@ margin_right = 35.0
 margin_bottom = 40.0
 texture = ExtResource( 3 )
 
+
 [node name="NameLabel" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -399,6 +410,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 
 [node name="MeeplesLabel" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
 anchor_top = 0.5
@@ -415,6 +427,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+
 [node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer5/MarginContainer/Player5"]
 modulate = Color( 1, 0.243137, 0.717647, 1 )
 anchor_left = 1.0
@@ -430,6 +443,7 @@ texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 
 [node name="ScoreLabel" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
 anchor_top = 0.5

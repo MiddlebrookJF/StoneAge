@@ -1,8 +1,8 @@
 extends Node
 
 var current_scene = null
-var player_names = ["", "", "", "", ""]
 
+var player_names = ["", "", "", "", ""]
 var meeple_counts = [3, 3, 3, 3, 3]
 
 func _ready():

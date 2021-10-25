@@ -9,6 +9,7 @@ func _ready():
 	var random = RandomNumberGenerator.new()
 	random.randomize()
 	
+
 	var nameArray = Global.player_names
 	var turnOrder = ["", "", "", "", ""]
 	var numPlayers = 5
@@ -25,8 +26,8 @@ func _ready():
 			turnOrder[first + i - numPlayers] = nameArray[i]
 		else:
 			turnOrder[first + i] = nameArray[i]
-	
-	get_node("Players/HBoxContainer/MarginContainer/Player1/PlayerOne").text = turnOrder[0]
+
+	get_node("Players/HBoxContainer/MarginContainer/Player1/NameLabel").text = turnOrder[0]
 	get_node("Players/HBoxContainer2/MarginContainer/Player2/NameLabel").text = turnOrder[1]
 	get_node("Players/HBoxContainer3/MarginContainer/Player3/NameLabel").text = turnOrder[2]
 	get_node("Players/HBoxContainer4/MarginContainer/Player4/NameLabel").text = turnOrder[3]

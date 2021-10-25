@@ -16,5 +16,3 @@ func play_menu_music():
 func play_board_music():
 	$Music.stream = board_theme
 	$Music.play()
-
-

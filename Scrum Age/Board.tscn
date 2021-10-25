@@ -4,6 +4,14 @@
 [ext_resource path="res://Board.gd" type="Script" id=2]
 [ext_resource path="res://PlayerMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/Kingthings-Petrock/Kingthings_Petrock.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/EmptyBox.png" type="Texture" id=5]
+[ext_resource path="res://RequirementsGrid.gd" type="Script" id=6]
+[ext_resource path="res://DesignGrid.gd" type="Script" id=8]
+[ext_resource path="res://HRGrid.gd" type="Script" id=9]
+[ext_resource path="res://TestingGrid.gd" type="Script" id=10]
+[ext_resource path="res://ImpGrid.gd" type="Script" id=11]
+[ext_resource path="res://TrainingGrid.gd" type="Script" id=12]
+[ext_resource path="res://ToolGrid.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -34,6 +42,7 @@ size = 40
 font_data = ExtResource( 4 )
 
 [node name="Board" type="Node2D"]
+position = Vector2( 0, -1 )
 script = ExtResource( 2 )
 
 [node name="Background" type="TextureRect" parent="."]
@@ -64,13 +73,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Design" type="Label" parent="."]
+margin_left = 778.462
+margin_top = 117.605
+margin_right = 873.462
+margin_bottom = 163.605
+custom_fonts/font = SubResource( 2 )
+text = "Design"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Implementation" type="Label" parent="."]
 margin_left = 1040.23
 margin_top = 118.5
 margin_right = 1267.23
 margin_bottom = 164.5
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Implementation"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -99,10 +118,10 @@ __meta__ = {
 }
 
 [node name="Training" type="Label" parent="."]
-margin_left = 124.757
-margin_top = 111.976
-margin_right = 174.757
-margin_bottom = 125.976
+margin_left = 153.073
+margin_top = 123.302
+margin_right = 273.073
+margin_bottom = 169.302
 custom_fonts/font = SubResource( 5 )
 text = "Training"
 __meta__ = {
@@ -120,7 +139,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SexHut" type="Label" parent="."]
+[node name="HR" type="Label" parent="."]
 margin_left = 431.417
 margin_top = 412.156
 margin_right = 473.417
@@ -130,3 +149,439 @@ text = "HR"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RequirementsGrid" type="GridContainer" parent="."]
+margin_left = 423.08
+margin_top = 9.66177
+margin_right = 614.08
+margin_bottom = 209.662
+rect_scale = Vector2( 0.6, 0.6 )
+columns = 3
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot1" type="TextureButton" parent="RequirementsGrid"]
+margin_right = 61.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot2" type="TextureButton" parent="RequirementsGrid"]
+margin_left = 65.0
+margin_right = 126.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot3" type="TextureButton" parent="RequirementsGrid"]
+margin_left = 130.0
+margin_right = 191.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot4" type="TextureButton" parent="RequirementsGrid"]
+margin_top = 67.0
+margin_right = 61.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot5" type="TextureButton" parent="RequirementsGrid"]
+margin_left = 65.0
+margin_top = 67.0
+margin_right = 126.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot6" type="TextureButton" parent="RequirementsGrid"]
+margin_left = 130.0
+margin_top = 67.0
+margin_right = 191.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot7" type="TextureButton" parent="RequirementsGrid"]
+margin_top = 134.0
+margin_right = 61.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot8" type="TextureButton" parent="RequirementsGrid"]
+margin_left = 65.0
+margin_top = 134.0
+margin_right = 126.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot9" type="TextureButton" parent="RequirementsGrid"]
+margin_left = 130.0
+margin_top = 134.0
+margin_right = 191.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="TrainingGrid" type="GridContainer" parent="."]
+margin_left = 155.019
+margin_top = 8.7179
+margin_right = 346.019
+margin_bottom = 208.718
+rect_scale = Vector2( 0.6, 0.6 )
+columns = 3
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot1" type="TextureButton" parent="TrainingGrid"]
+margin_right = 61.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot2" type="TextureButton" parent="TrainingGrid"]
+margin_left = 65.0
+margin_right = 126.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot3" type="TextureButton" parent="TrainingGrid"]
+margin_left = 130.0
+margin_right = 191.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot4" type="TextureButton" parent="TrainingGrid"]
+margin_top = 67.0
+margin_right = 61.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot5" type="TextureButton" parent="TrainingGrid"]
+margin_left = 65.0
+margin_top = 67.0
+margin_right = 126.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot6" type="TextureButton" parent="TrainingGrid"]
+margin_left = 130.0
+margin_top = 67.0
+margin_right = 191.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot7" type="TextureButton" parent="TrainingGrid"]
+margin_top = 134.0
+margin_right = 61.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot8" type="TextureButton" parent="TrainingGrid"]
+margin_left = 65.0
+margin_top = 134.0
+margin_right = 126.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot9" type="TextureButton" parent="TrainingGrid"]
+margin_left = 130.0
+margin_top = 134.0
+margin_right = 191.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="DesignGrid" type="GridContainer" parent="."]
+margin_left = 765.854
+margin_top = 6.42059
+margin_right = 956.854
+margin_bottom = 206.421
+rect_scale = Vector2( 0.6, 0.6 )
+columns = 3
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot1" type="TextureButton" parent="DesignGrid"]
+margin_right = 61.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot2" type="TextureButton" parent="DesignGrid"]
+margin_left = 65.0
+margin_right = 126.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot3" type="TextureButton" parent="DesignGrid"]
+margin_left = 130.0
+margin_right = 191.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot4" type="TextureButton" parent="DesignGrid"]
+margin_top = 67.0
+margin_right = 61.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot5" type="TextureButton" parent="DesignGrid"]
+margin_left = 65.0
+margin_top = 67.0
+margin_right = 126.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot6" type="TextureButton" parent="DesignGrid"]
+margin_left = 130.0
+margin_top = 67.0
+margin_right = 191.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot7" type="TextureButton" parent="DesignGrid"]
+margin_top = 134.0
+margin_right = 61.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot8" type="TextureButton" parent="DesignGrid"]
+margin_left = 65.0
+margin_top = 134.0
+margin_right = 126.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot9" type="TextureButton" parent="DesignGrid"]
+margin_left = 130.0
+margin_top = 134.0
+margin_right = 191.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="ImpGrid" type="GridContainer" parent="."]
+margin_left = 1062.0
+margin_top = -46.0
+margin_right = 1253.0
+margin_bottom = 154.0
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 65, 130 )
+columns = 3
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot1" type="TextureButton" parent="ImpGrid"]
+margin_right = 61.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot2" type="TextureButton" parent="ImpGrid"]
+margin_left = 65.0
+margin_right = 126.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot3" type="TextureButton" parent="ImpGrid"]
+margin_left = 130.0
+margin_right = 191.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot4" type="TextureButton" parent="ImpGrid"]
+margin_top = 67.0
+margin_right = 61.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot5" type="TextureButton" parent="ImpGrid"]
+margin_left = 65.0
+margin_top = 67.0
+margin_right = 126.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot6" type="TextureButton" parent="ImpGrid"]
+margin_left = 130.0
+margin_top = 67.0
+margin_right = 191.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot7" type="TextureButton" parent="ImpGrid"]
+margin_top = 134.0
+margin_right = 61.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot8" type="TextureButton" parent="ImpGrid"]
+margin_left = 65.0
+margin_top = 134.0
+margin_right = 126.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot9" type="TextureButton" parent="ImpGrid"]
+margin_left = 130.0
+margin_top = 134.0
+margin_right = 191.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="TestingGrid" type="GridContainer" parent="."]
+margin_left = 574.567
+margin_top = 115.724
+margin_right = 765.567
+margin_bottom = 315.724
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 65, 130 )
+columns = 3
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot1" type="TextureButton" parent="TestingGrid"]
+margin_right = 61.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot2" type="TextureButton" parent="TestingGrid"]
+margin_left = 65.0
+margin_right = 126.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot3" type="TextureButton" parent="TestingGrid"]
+margin_left = 130.0
+margin_right = 191.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot4" type="TextureButton" parent="TestingGrid"]
+margin_top = 67.0
+margin_right = 61.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot5" type="TextureButton" parent="TestingGrid"]
+margin_left = 65.0
+margin_top = 67.0
+margin_right = 126.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot6" type="TextureButton" parent="TestingGrid"]
+margin_left = 130.0
+margin_top = 67.0
+margin_right = 191.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot7" type="TextureButton" parent="TestingGrid"]
+margin_top = 134.0
+margin_right = 61.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot8" type="TextureButton" parent="TestingGrid"]
+margin_left = 65.0
+margin_top = 134.0
+margin_right = 126.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot9" type="TextureButton" parent="TestingGrid"]
+margin_left = 130.0
+margin_top = 134.0
+margin_right = 191.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+
+[node name="HRGrid" type="GridContainer" parent="."]
+margin_left = 386.08
+margin_top = 598.212
+margin_right = 512.08
+margin_bottom = 661.212
+columns = 2
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot1" type="TextureButton" parent="HRGrid"]
+margin_right = 61.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="Slot2" type="TextureButton" parent="HRGrid"]
+margin_left = 65.0
+margin_right = 126.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+
+[node name="ToolGrid" type="GridContainer" parent="."]
+margin_left = 840.367
+margin_top = 578.304
+margin_right = 901.367
+margin_bottom = 641.304
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolsButton1" type="TextureButton" parent="ToolGrid"]
+margin_right = 61.0
+margin_bottom = 63.0
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="RequirementsGrid/Slot1" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="RequirementsGrid/Slot2" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="RequirementsGrid/Slot3" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="RequirementsGrid/Slot4" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="RequirementsGrid/Slot5" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 5 ]]
+[connection signal="pressed" from="RequirementsGrid/Slot6" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 6 ]]
+[connection signal="pressed" from="RequirementsGrid/Slot7" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 7 ]]
+[connection signal="pressed" from="RequirementsGrid/Slot8" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 8 ]]
+[connection signal="pressed" from="RequirementsGrid/Slot9" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 9 ]]
+[connection signal="pressed" from="TrainingGrid/Slot1" to="TrainingGrid" method="_on_Slot_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="TrainingGrid/Slot2" to="TrainingGrid" method="_on_Slot_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="TrainingGrid/Slot3" to="TrainingGrid" method="_on_Slot_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="TrainingGrid/Slot4" to="TrainingGrid" method="_on_Slot_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="TrainingGrid/Slot5" to="TrainingGrid" method="_on_Slot_pressed" binds= [ 5 ]]
+[connection signal="pressed" from="TrainingGrid/Slot6" to="TrainingGrid" method="_on_Slot_pressed" binds= [ 6 ]]
+[connection signal="pressed" from="TrainingGrid/Slot7" to="TrainingGrid" method="_on_Slot_pressed" binds= [ 7 ]]
+[connection signal="pressed" from="TrainingGrid/Slot8" to="TrainingGrid" method="_on_Slot_pressed" binds= [ 8 ]]
+[connection signal="pressed" from="TrainingGrid/Slot9" to="TrainingGrid" method="_on_Slot_pressed" binds= [ 9 ]]
+[connection signal="pressed" from="DesignGrid/Slot1" to="DesignGrid" method="_on_Slot_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="DesignGrid/Slot2" to="DesignGrid" method="_on_Slot_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="DesignGrid/Slot3" to="DesignGrid" method="_on_Slot_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="DesignGrid/Slot4" to="DesignGrid" method="_on_Slot_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="DesignGrid/Slot5" to="DesignGrid" method="_on_Slot_pressed" binds= [ 5 ]]
+[connection signal="pressed" from="DesignGrid/Slot6" to="DesignGrid" method="_on_Slot_pressed" binds= [ 6 ]]
+[connection signal="pressed" from="DesignGrid/Slot7" to="DesignGrid" method="_on_Slot_pressed" binds= [ 7 ]]
+[connection signal="pressed" from="DesignGrid/Slot8" to="DesignGrid" method="_on_Slot_pressed" binds= [ 8 ]]
+[connection signal="pressed" from="DesignGrid/Slot9" to="DesignGrid" method="_on_Slot_pressed" binds= [ 9 ]]
+[connection signal="pressed" from="ImpGrid/Slot1" to="ImpGrid" method="_on_Slot_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="ImpGrid/Slot2" to="ImpGrid" method="_on_Slot_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="ImpGrid/Slot3" to="ImpGrid" method="_on_Slot_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="ImpGrid/Slot4" to="ImpGrid" method="_on_Slot_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="ImpGrid/Slot5" to="ImpGrid" method="_on_Slot_pressed" binds= [ 5 ]]
+[connection signal="pressed" from="ImpGrid/Slot6" to="ImpGrid" method="_on_Slot_pressed" binds= [ 6 ]]
+[connection signal="pressed" from="ImpGrid/Slot7" to="ImpGrid" method="_on_Slot_pressed" binds= [ 7 ]]
+[connection signal="pressed" from="ImpGrid/Slot8" to="ImpGrid" method="_on_Slot_pressed" binds= [ 8 ]]
+[connection signal="pressed" from="ImpGrid/Slot9" to="ImpGrid" method="_on_Slot_pressed" binds= [ 9 ]]
+[connection signal="pressed" from="TestingGrid/Slot1" to="TestingGrid" method="_on_Slot_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="TestingGrid/Slot2" to="TestingGrid" method="_on_Slot_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="TestingGrid/Slot3" to="TestingGrid" method="_on_Slot_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="TestingGrid/Slot4" to="TestingGrid" method="_on_Slot_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="TestingGrid/Slot5" to="TestingGrid" method="_on_Slot_pressed" binds= [ 5 ]]
+[connection signal="pressed" from="TestingGrid/Slot6" to="TestingGrid" method="_on_Slot_pressed" binds= [ 6 ]]
+[connection signal="pressed" from="TestingGrid/Slot7" to="TestingGrid" method="_on_Slot_pressed" binds= [ 7 ]]
+[connection signal="pressed" from="TestingGrid/Slot8" to="TestingGrid" method="_on_Slot_pressed" binds= [ 8 ]]
+[connection signal="pressed" from="TestingGrid/Slot9" to="TestingGrid" method="_on_Slot_pressed" binds= [ 9 ]]
+[connection signal="pressed" from="HRGrid/Slot1" to="HRGrid" method="_on_Slot_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="HRGrid/Slot2" to="HRGrid" method="_on_Slot_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="ToolGrid/ToolsButton1" to="ToolGrid" method="_on_ToolsButton_pressed"]
