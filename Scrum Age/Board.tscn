@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/gwent board.png" type="Texture" id=1]
 [ext_resource path="res://Board.gd" type="Script" id=2]
@@ -46,9 +46,10 @@ position = Vector2( 0, -1 )
 script = ExtResource( 2 )
 
 [node name="Background" type="TextureRect" parent="."]
-margin_top = -0.51984
-margin_right = 1340.0
-margin_bottom = 802.48
+margin_left = 3.4538
+margin_top = -3.85468
+margin_right = 1343.45
+margin_bottom = 799.145
 rect_scale = Vector2( 1.02, 0.96 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -94,6 +95,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Design" type="Label" parent="."]
+margin_left = 766.462
+margin_top = 114.605
+margin_right = 861.462
+margin_bottom = 160.605
+custom_fonts/font = SubResource( 3 )
+text = "Design"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Requirements" type="Label" parent="."]
 margin_left = 394.024
 margin_top = 120.201
@@ -127,13 +139,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SexHut" type="Label" parent="."]
-margin_left = 394.362
-margin_top = 412.983
-margin_right = 505.362
-margin_bottom = 458.983
+[node name="HR" type="Label" parent="."]
+margin_left = 431.417
+margin_top = 412.156
+margin_right = 473.417
+margin_bottom = 458.156
 custom_fonts/font = SubResource( 7 )
-text = "Sex Hut"
+text = "HR"
 __meta__ = {
 "_edit_use_anchors_": false
 }
