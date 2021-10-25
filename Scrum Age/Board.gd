@@ -13,7 +13,7 @@ func _ready():
 	pass
 
 var emptySpace = load("res://assets/EmptyBox.png")
-var knight_path = load("res://assets/Meeples/head.png")
+var knight_path = load("res://assets/Meeples/knight_head.png")
 
 #Get colored textures associated with each player, based on player value calling method (NEEDS TO BE UPDATED)
 func set_meeple_color(texture_path, player):
