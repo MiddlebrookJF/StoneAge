@@ -13,15 +13,15 @@
 [ext_resource path="res://TrainingGrid.gd" type="Script" id=12]
 [ext_resource path="res://ToolGrid.gd" type="Script" id=13]
 
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 4 )
+
 [sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 40
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=1]
 size = 40
 font_data = ExtResource( 4 )
 
@@ -66,7 +66,7 @@ margin_left = 604.522
 margin_top = 281.774
 margin_right = 710.522
 margin_bottom = 327.774
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Testing"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -77,7 +77,7 @@ margin_left = 778.462
 margin_top = 117.605
 margin_right = 873.462
 margin_bottom = 163.605
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Design"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -88,7 +88,7 @@ margin_left = 1040.23
 margin_top = 118.5
 margin_right = 1267.23
 margin_bottom = 164.5
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Implementation"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -472,10 +472,6 @@ margin_bottom = 197.0
 texture_normal = ExtResource( 5 )
 
 [node name="Slot8" type="TextureButton" parent="TestingGrid"]
-anchor_left = 0.00872643
-anchor_top = -7.62939e-08
-anchor_right = 0.00872643
-anchor_bottom = -7.62939e-08
 margin_left = 65.0
 margin_top = 134.0
 margin_right = 126.0

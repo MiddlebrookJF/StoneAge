@@ -1,12 +1,5 @@
 extends GridContainer
 
-#Texture values for each scrumple color
-var emptySpace = load ("res://assets/EmptyBox.png")
-var blueTexture = load ("res://assets/GMFBlue.png")
-
-
-var playerFillColor; #Empty variable for returning different fill color textures.
-
 #Variable to check WHO is in what slot on the map. 0-5, (0 EMPTY, 1 = P1, 2 = P2, etc)
 var booleanSlotArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
