@@ -29,11 +29,11 @@ func set_meeple_color(texture_path, player):
 func touch_slot(grid_name, slot):
 	var child = get_node(grid_name)
 	if child.booleanSlotArray[slot-1] == 0:
-		set_meeple_color(grid_name+"/$Slot"+slot, current_player); #Set the texture to the player's color
-		child.get_node("Slot"+slot).texture_normal = knight_path
+		set_meeple_color(grid_name+"/$Slot"+str(slot), current_player); #Set the texture to the player's color
+		child.get_node("Slot"+str(slot)).texture_normal = knight_path
 		child.booleanSlotArray[slot-1] = 1;
 		print(child.booleanSlotArray);
 	else:
 		if child.booleanSlotArray[slot-1] != 0:
-			child.get_node("Slot"+slot).texture_normal = emptySpace;
+			child.get_node("Slot"+str(slot)).texture_normal = emptySpace;
 			child.booleanSlotArray[slot-1] = 0;
