@@ -26,14 +26,37 @@ func set_meeple_color(texture_path, player):
 		5: get_node(texture_path).modulate = purple
 	return knight_path;
 
+func addMeeples(index, amount):
+	if(Global.meeple_counts[index]<Global.meeple_max[index]):
+		Global.meeple_counts[index] += amount;
+	else:
+		print("Max meeple count reached, cannot add");
+		
+func subtractMeeples(index, amount):
+	if(Global.meeple_counts[index]>Global.meeple_min):
+		Global.meeple_counts[index] -= amount;
+	else:
+		print("Min meeple count reached, cannot subtract");
+		
+func updateMeepleLabels(label):
+	$Players/HBoxContainer/MarginContainer/Player1/MeeplesLabel.Text = str(Global.meeple_counts[0]) + "/" + str(Global.meeple_max);
+
 func touch_slot(grid_name, slot):
 	var child = get_node(grid_name)
 	if child.booleanSlotArray[slot-1] == 0:
-		set_meeple_color(grid_name+"/$Slot"+str(slot), current_player); #Set the texture to the player's color
-		child.get_node("Slot"+str(slot)).texture_normal = knight_path
-		child.booleanSlotArray[slot-1] = 1;
-		print(child.booleanSlotArray);
+			if (Global.meeple_counts[current_player] > 0):	
+				set_meeple_color(grid_name+"/$Slot"+str(slot), current_player); #Set the texture to the player's color
+				child.get_node("Slot"+str(slot)).texture_normal = knight_path
+				child.booleanSlotArray[slot-1] = 1;
+				subtractMeeples(current_player, 1);
+				print(child.booleanSlotArray);
+				print(Global.meeple_counts);
+				$PlayerMenu.updateMeepleLabels();			
 	else:
 		if child.booleanSlotArray[slot-1] != 0:
 			child.get_node("Slot"+str(slot)).texture_normal = emptySpace;
 			child.booleanSlotArray[slot-1] = 0;
+			addMeeples(current_player, 1);			
+			print(Global.meeple_counts);		
+			$PlayerMenu.updateMeepleLabels();		
+

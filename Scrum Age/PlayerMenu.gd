@@ -33,6 +33,8 @@ func _ready():
 	get_node("Players/HBoxContainer4/MarginContainer/Player4/NameLabel").text = turnOrder[3]
 	get_node("Players/HBoxContainer5/MarginContainer/Player5/NameLabel").text = turnOrder[4]
 
+func updateMeepleLabels():
+	$Players/HBoxContainer/MarginContainer/Player1/MeeplesLabel.text = str(Global.meeple_counts[0]) + "/" + str(Global.meeple_max[0]);
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
