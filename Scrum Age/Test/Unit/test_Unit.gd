@@ -21,11 +21,10 @@ func after_each():
 #	_main.free();
 	_player.free();
 	_board.free();
-	slot.free()
 
 func test_set_meeple_color_1_redcolor():
-	_board.add_child(slot)
 	slot.name = "slot"
+	_board.add_child(slot)
 	get_node("Board/slot").modulate = Color(1,0,1)
 	print(get_node("Board/slot").name)
 	_board.set_meeple_color("slot", 1)
