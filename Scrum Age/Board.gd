@@ -25,7 +25,6 @@ func set_meeple_color(texture_path, player):
 		3: get_node(texture_path).modulate = green
 		4: get_node(texture_path).modulate = yellow
 		5: get_node(texture_path).modulate = purple
-	return knight_path;
 
 func addMeeples(index, amount):
 	if(Global.meeple_counts[index]<Global.meeple_max[index]):
@@ -41,21 +40,21 @@ func subtractMeeples(index, amount):
 
 func touch_slot(grid_name, slot):
 	var child = get_node(grid_name)
+	#current_player-1 is used as index <== meeple_counts[] has player 1 at index 0
 	if child.booleanSlotArray[slot-1] == 0:
-			if (Global.meeple_counts[current_player] > 0):
+			if (Global.meeple_counts[current_player-1] > 0):
 				set_meeple_color(grid_name+"/Slot"+str(slot), current_player); #Set the texture to the player's color
 				child.get_node("Slot"+str(slot)).texture_normal = knight_path
 				child.booleanSlotArray[slot-1] = 1;
-				subtractMeeples(current_player, 1);
-				print(child.booleanSlotArray);
-				print(Global.meeple_counts);
-				$PlayerMenu.updateMeepleLabels();
+				subtractMeeples(current_player-1, 1);
+				print(Global.meeple_counts) 			#debug
+				$PlayerMenu.updateMeepleLabels(current_player);
 	else:
 		if child.booleanSlotArray[slot-1] != 0:
 			child.get_node("Slot"+str(slot)).texture_normal = emptySpace;
 			set_meeple_color(grid_name+"/Slot"+str(slot), 0);
 			child.booleanSlotArray[slot-1] = 0;
-			addMeeples(current_player, 1);
+			addMeeples(current_player-1, 1);
 			print(Global.meeple_counts);
-			$PlayerMenu.updateMeepleLabels();
+			$PlayerMenu.updateMeepleLabels(current_player);
 

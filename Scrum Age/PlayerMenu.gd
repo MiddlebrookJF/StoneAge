@@ -27,5 +27,5 @@ func _ready():
 	get_node("Players/HBoxContainer4/MarginContainer/Player4/NameLabel").text = turnOrder[3]
 	get_node("Players/HBoxContainer5/MarginContainer/Player5/NameLabel").text = turnOrder[4]
 
-func updateMeepleLabels():
-	$Players/HBoxContainer1/MarginContainer/Player1/MeeplesLabel.text = str(Global.meeple_counts[0]) + "/" + str(Global.meeple_max[0]);
+func updateMeepleLabels(player):
+	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/MeeplesLabel").text = str(Global.meeple_counts[0]) + "/" + str(Global.meeple_max[0]);
