@@ -38,9 +38,6 @@ func subtractMeeples(index, amount):
 		Global.meeple_counts[index] -= amount;
 	else:
 		print("Min meeple count reached, cannot subtract");
-		
-func updateMeepleLabels(label):
-	$Players/HBoxContainer/MarginContainer/Player1/MeeplesLabel.Text = str(Global.meeple_counts[0]) + "/" + str(Global.meeple_max);
 
 func touch_slot(grid_name, slot):
 	var child = get_node(grid_name)

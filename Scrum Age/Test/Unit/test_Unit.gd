@@ -1,32 +1,37 @@
 extends "res://addons/gut/test.gd"
 
 #var Global = load("res://Global.gd");
-var Main = load("res://Main.gd");
-var _main = null;
+#var Main = load("res://Main.gd");
+#var _main = null;
 var Player = load("res://PlayerMenu.gd");
 var _player = null;
+var Board = load("res://Board.gd")
+var _board = null;
+var slot = TextureButton.new()
 
 func before_each():
-	#main = Main.new();
+#	_main = Main.new()
 	_player = Player.new()
+	_board = Board.new()
+	add_child(_board)
+	_board.name = "Board"
+	self.name = "test"
 
 func after_each():
-	_main.free();
+#	_main.free();
 	_player.free();
+	_board.free();
+	slot.free()
 
-#func test_scene_change():
-#	var _global = Global.new();
-#	var result = _global.goto_scene("res://Board.tscn");
-#	
-#	assert_true(result == "res://MainMenu.tscn", "Supposed to be board scene");
-
-#func test_music():
-#	var _music = Music.new();
-#	var menu_theme = _music.play_menu_music();
-#	
-#	assert_true(menu_theme == "res://assets/The Elder Scrolls IV - Oblivion.mp3", "Supposed to play menu theme");
+func test_set_meeple_color_1_redcolor():
+	_board.add_child(slot)
+	slot.name = "slot"
+	get_node("Board/slot").modulate = Color(1,0,1)
+	print(get_node("Board/slot").name)
+	_board.set_meeple_color("slot", 1)
+	assert_eq(get_node("Board/slot").modulate, _board.red)
 
 func test_player_array():
-	_player.nameArray = ["Johhnn", "FuckAssBoiven" , "AVEEEEEERRRRRRYYY", "Edwad" ,"god"];
+	_player.nameArray = ["Johhnn", "One", "AVEEEEEERRRRRRYYY", "trois", "4"];
 	
-	assert_eq(_player.nameArray[1], "you");
+	assert_eq(_player.nameArray[1], "One");

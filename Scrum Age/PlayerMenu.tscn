@@ -28,22 +28,22 @@ margin_top = 20.0
 margin_right = 327.0
 margin_bottom = 383.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Players"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="Players"]
 margin_right = 307.0
 margin_bottom = 50.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer1"]
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 200, 50 )
 
-[node name="Player1" type="NinePatchRect" parent="Players/HBoxContainer/MarginContainer"]
+[node name="Player1" type="NinePatchRect" parent="Players/HBoxContainer1/MarginContainer"]
 margin_right = 275.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
-[node name="TurnIndicatorP1" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/Player1"]
+[node name="TurnIndicatorP1" type="TextureRect" parent="Players/HBoxContainer1/MarginContainer/Player1"]
 anchor_top = -0.021189
 anchor_bottom = -0.021189
 margin_left = 4.0
@@ -55,7 +55,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NameLabel" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
+[node name="NameLabel" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -68,7 +68,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MeeplesLabel" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
+[node name="MeeplesLabel" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -83,7 +83,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer/MarginContainer/Player1"]
+[node name="MeeplesIcon" type="TextureRect" parent="Players/HBoxContainer1/MarginContainer/Player1"]
 modulate = Color( 1, 0.262745, 0.262745, 1 )
 anchor_left = 1.0
 anchor_top = 0.5
@@ -99,7 +99,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScoreLabel" type="Label" parent="Players/HBoxContainer/MarginContainer/Player1"]
+[node name="ScoreLabel" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
 anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
