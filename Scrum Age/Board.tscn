@@ -518,7 +518,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ToolsButton1" type="TextureButton" parent="ToolGrid"]
+[node name="Slot1" type="TextureButton" parent="ToolGrid"]
 margin_right = 61.0
 margin_bottom = 63.0
 texture_normal = ExtResource( 5 )
@@ -573,4 +573,4 @@ __meta__ = {
 [connection signal="pressed" from="TestingGrid/Slot9" to="TestingGrid" method="_on_Slot_pressed" binds= [ 9 ]]
 [connection signal="pressed" from="HRGrid/Slot1" to="HRGrid" method="_on_Slot_pressed" binds= [ 1 ]]
 [connection signal="pressed" from="HRGrid/Slot2" to="HRGrid" method="_on_Slot_pressed" binds= [ 2 ]]
-[connection signal="pressed" from="ToolGrid/ToolsButton1" to="ToolGrid" method="_on_ToolsButton_pressed"]
+[connection signal="pressed" from="ToolGrid/Slot1" to="ToolGrid" method="_on_Slot_pressed" binds= [ 1 ]]
