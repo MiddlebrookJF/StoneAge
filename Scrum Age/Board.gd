@@ -11,6 +11,10 @@ const purple = Color(1, 0.110, 0.898)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+#	if(Global.meeple_counts[current_player] != 0):
+#		get_node("EndTurn").hide()
+#	else:
+#		get_node("EndTurn").show()
 	pass
 
 var emptySpace = load("res://assets/EmptyBox.png")
@@ -87,9 +91,10 @@ func touchHR_slot(grid_name,slot):
 
 func end_Turn():
 	#learn how to move flag
-	if(current_player < 5):
+	if(current_player < 4):
 		current_player+=1
-		$PlayerMenu.showTurn(current_player)
+		#$PlayerMenu.showTurn(current_player)
 	else:
 		current_player = 1
+	
 	print("I ended!")
