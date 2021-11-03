@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/gwent board.png" type="Texture" id=1]
 [ext_resource path="res://Board.gd" type="Script" id=2]
@@ -39,6 +39,10 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 60
 font_data = ExtResource( 4 )
 
 [node name="Board" type="Node2D"]
@@ -526,6 +530,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="EndTurn" type="Button" parent="."]
+margin_left = 524.0
+margin_top = 670.0
+margin_right = 818.0
+margin_bottom = 767.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="EndTurn"]
+margin_left = 31.9897
+margin_top = 10.7194
+margin_right = 259.99
+margin_bottom = 78.7194
+custom_fonts/font = SubResource( 8 )
+text = "END TURN"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="RequirementsGrid/Slot1" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 1 ]]
 [connection signal="pressed" from="RequirementsGrid/Slot2" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 2 ]]
 [connection signal="pressed" from="RequirementsGrid/Slot3" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 3 ]]
@@ -574,3 +600,4 @@ __meta__ = {
 [connection signal="pressed" from="HRGrid/Slot1" to="HRGrid" method="_on_Slot_pressed" binds= [ 1 ]]
 [connection signal="pressed" from="HRGrid/Slot2" to="HRGrid" method="_on_Slot_pressed" binds= [ 2 ]]
 [connection signal="pressed" from="ToolGrid/Slot1" to="ToolGrid" method="_on_Slot_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="EndTurn" to="." method="end_Turn"]

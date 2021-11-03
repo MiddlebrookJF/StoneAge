@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://PlayerMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/flag2.png" type="Texture" id=2]
-[ext_resource path="res://assets/empty.png" type="Texture" id=3]
 [ext_resource path="res://assets/label_HP_bg.png" type="Texture" id=4]
 [ext_resource path="res://assets/Meeples/Knight-1/1_head_.png" type="Texture" id=5]
 
@@ -136,7 +135,7 @@ margin_left = 4.0
 margin_top = 9.0
 margin_right = 35.0
 margin_bottom = 40.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -220,7 +219,7 @@ margin_left = 4.0
 margin_top = 9.0
 margin_right = 35.0
 margin_bottom = 40.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -301,7 +300,7 @@ margin_left = 4.0
 margin_top = 9.0
 margin_right = 35.0
 margin_bottom = 40.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -386,7 +385,10 @@ margin_left = 4.0
 margin_top = 9.0
 margin_right = 35.0
 margin_bottom = 40.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NameLabel" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
 anchor_top = 0.5

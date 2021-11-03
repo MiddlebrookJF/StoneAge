@@ -1,6 +1,6 @@
 extends Node2D
 
-var current_player = 1
+var current_player = 1;
 
 const white = Color(1, 1, 1)
 const red = Color(1, 0.262, 0.262)
@@ -44,17 +44,52 @@ func touch_slot(grid_name, slot):
 	if child.booleanSlotArray[slot-1] == 0:
 			if (Global.meeple_counts[current_player-1] > 0):
 				set_meeple_color(grid_name+"/Slot"+str(slot), current_player); #Set the texture to the player's color
-				child.get_node("Slot"+str(slot)).texture_normal = knight_path
-				child.booleanSlotArray[slot-1] = 1;
+				child.get_node("Slot"+str(slot)).texture_normal = knight_path #get knight icon
+				child.booleanSlotArray[slot-1] = 1;		#show that the slot is now taken
 				subtractMeeples(current_player-1, 1);
 				print(Global.meeple_counts) 			#debug
 				$PlayerMenu.updateMeepleLabels(current_player);
 	else:
 		if child.booleanSlotArray[slot-1] != 0:
-			child.get_node("Slot"+str(slot)).texture_normal = emptySpace;
+			child.get_node("Slot"+str(slot)).texture_normal = emptySpace;	#remove knight texture
 			set_meeple_color(grid_name+"/Slot"+str(slot), 0);
 			child.booleanSlotArray[slot-1] = 0;
 			addMeeples(current_player-1, 1);
 			print(Global.meeple_counts);
 			$PlayerMenu.updateMeepleLabels(current_player);
+			
+#called specifically to handle HR since it has slightly different properties to the other grids
+func touchHR_slot(grid_name,slot):
+		var child = get_node(grid_name)
+	#current_player-1 is used as index <== meeple_counts[] has player 1 at index 0
+		if child.booleanSlotArray[slot-1] == 0:
+			if (Global.meeple_counts[current_player-1] > 0):
+				set_meeple_color(grid_name+"/Slot1", current_player); #Set the texture to the player's color
+				set_meeple_color(grid_name+"/Slot2", current_player); 
+				child.get_node("Slot1").texture_normal = knight_path #get knight icon
+				child.get_node("Slot2").texture_normal = knight_path 
+				child.booleanSlotArray[0] = 1;		#show that HR is taken
+				child.booleanSlotArray[1] = 1;
+				subtractMeeples(current_player-1, 2);
+				print(Global.meeple_counts) 			#debug
+				$PlayerMenu.updateMeepleLabels(current_player);
+		else:
+			if child.booleanSlotArray[slot-1] != 0:
+				set_meeple_color(grid_name+"/Slot1", 0); #Set the texture to the player's color
+				set_meeple_color(grid_name+"/Slot2", 0); 
+				child.get_node("Slot1").texture_normal = emptySpace #get knight icon
+				child.get_node("Slot2").texture_normal = emptySpace
+				child.booleanSlotArray[0] = 0;		#show that the slots are free
+				child.booleanSlotArray[1] = 0;		
+				addMeeples(current_player-1, 2);
+				print(Global.meeple_counts);
+				$PlayerMenu.updateMeepleLabels(current_player);
 
+func end_Turn():
+	#learn how to move flag
+	if(current_player < 5):
+		current_player+=1
+		$PlayerMenu.showTurn(current_player)
+	else:
+		current_player = 1
+	print("I ended!")

@@ -29,3 +29,5 @@ func _ready():
 
 func updateMeepleLabels(player):
 	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/MeeplesLabel").text = str(Global.meeple_counts[0]) + "/" + str(Global.meeple_max[0]);
+func showTurn(player):
+	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/TurnIndicator").visible = false;

@@ -5,7 +5,7 @@ var booleanSlotArray = [0, 0]
 
 func _on_Slot_pressed(slot):
 	
-	get_parent().touch_slot(get_name(), slot)
+	get_parent().touchHR_slot(get_name(), slot)
 
 ##Get colored textures associated with each player, based on player value calling method (NEEDS TO BE UPDATED)
 #func _get_Fill_Color(player):
