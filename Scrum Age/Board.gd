@@ -11,11 +11,11 @@ const purple = Color(1, 0.110, 0.898)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	if(Global.meeple_counts[current_player] != 0):
-#		get_node("EndTurn").hide()
+#	if(Global.meeple_counts[current_player]!=0):
+		get_node("EndTurn").hide()
 #	else:
 #		get_node("EndTurn").show()
-	pass
+#	pass
 
 var emptySpace = load("res://assets/EmptyBox.png")
 var knight_path = load("res://assets/Meeples/knight_head.png")
@@ -53,6 +53,13 @@ func touch_slot(grid_name, slot):
 				subtractMeeples(current_player-1, 1);
 				print(Global.meeple_counts) 			#debug
 				$PlayerMenu.updateMeepleLabels(current_player);
+				if(Global.meeple_counts[current_player-1]==0):
+					get_node("EndTurn").show()
+				
+				if(Global.meeple_counts[current_player-1]==1):
+					get_node("HRGrid/Slot1").visible = false
+					get_node("HRGrid/Slot2").visible = false
+
 	else:
 		if child.booleanSlotArray[slot-1] != 0:
 			child.get_node("Slot"+str(slot)).texture_normal = emptySpace;	#remove knight texture
@@ -61,8 +68,15 @@ func touch_slot(grid_name, slot):
 			addMeeples(current_player-1, 1);
 			print(Global.meeple_counts);
 			$PlayerMenu.updateMeepleLabels(current_player);
+			if(Global.meeple_counts[current_player-1]!=0):
+				get_node("EndTurn").hide()
+			
+			if(Global.meeple_counts[current_player-1]>1):
+				get_node("HRGrid/Slot1").visible = true
+				get_node("HRGrid/Slot2").visible = true
 			
 #called specifically to handle HR since it has slightly different properties to the other grids
+#ERROR CHECK TO MAKE SURE PLAYER CANNOT CLICK HR IF 2 OTHER SLOTS ARE SELECTED
 func touchHR_slot(grid_name,slot):
 		var child = get_node(grid_name)
 	#current_player-1 is used as index <== meeple_counts[] has player 1 at index 0
@@ -77,6 +91,9 @@ func touchHR_slot(grid_name,slot):
 				subtractMeeples(current_player-1, 2);
 				print(Global.meeple_counts) 			#debug
 				$PlayerMenu.updateMeepleLabels(current_player);
+				if(Global.meeple_counts[current_player-1]==0):
+					get_node("EndTurn").show()
+	
 		else:
 			if child.booleanSlotArray[slot-1] != 0:
 				set_meeple_color(grid_name+"/Slot1", 0); #Set the texture to the player's color
@@ -88,13 +105,17 @@ func touchHR_slot(grid_name,slot):
 				addMeeples(current_player-1, 2);
 				print(Global.meeple_counts);
 				$PlayerMenu.updateMeepleLabels(current_player);
+				if(Global.meeple_counts[current_player-1]!=0):
+					get_node("EndTurn").hide()
 
 func end_Turn():
-	#learn how to move flag
-	if(current_player < 4):
+	if(current_player < 5):
 		current_player+=1
-		#$PlayerMenu.showTurn(current_player)
+		$PlayerMenu.showTurn(current_player)
 	else:
 		current_player = 1
 	
 	print("I ended!")
+	get_node("EndTurn").hide()
+	get_node("HRGrid/Slot1").visible = true
+	get_node("HRGrid/Slot2").visible = true

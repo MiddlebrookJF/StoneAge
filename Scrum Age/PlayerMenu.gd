@@ -7,6 +7,7 @@ var numPlayers = 5
 func _ready():
 	var random = RandomNumberGenerator.new()
 	random.randomize()
+	get_node("Players/HBoxContainer1/MarginContainer/Player1/TurnIndicatorP1").visible = true
 	
 	for i in range(0,5):
 		if (nameArray[i] == ""):
@@ -29,5 +30,8 @@ func _ready():
 
 func updateMeepleLabels(player):
 	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/MeeplesLabel").text = str(Global.meeple_counts[0]) + "/" + str(Global.meeple_max[0]);
-#func showTurn(player):
-#	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/TurnIndicator").visible = false;
+
+func showTurn(player):
+		get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/TurnIndicatorP"+str(player)).visible = true
+		get_node("Players/HBoxContainer"+str(player-1)+"/MarginContainer/Player"+str(player-1)+"/TurnIndicatorP"+str(player-1)).visible = false
+	
