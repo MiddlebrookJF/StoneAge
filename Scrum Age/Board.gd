@@ -1,6 +1,6 @@
 extends Node2D
 
-var current_player = 1;
+var current_player = 1;		#1-based. eg player1 = 1, player5 = 5
 
 const white = Color(1, 1, 1)
 const red = Color(1, 0.262, 0.262)
