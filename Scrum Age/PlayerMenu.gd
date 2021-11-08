@@ -29,7 +29,7 @@ func _ready():
 	get_node("Players/HBoxContainer5/MarginContainer/Player5/NameLabel").text = turnOrder[4]
 
 func updateMeepleLabels(player):
-	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/MeeplesLabel").text = str(Global.meeple_counts[0]) + "/" + str(Global.meeple_max[0]);
+	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/MeeplesLabel").text = str(Global.meeple_counts[player-1]) + "/" + str(Global.meeple_max[player-1]);
 
 func showTurn(player):
 		get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/TurnIndicatorP"+str(player)).visible = true

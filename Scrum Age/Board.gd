@@ -114,6 +114,7 @@ func end_Turn():
 		$PlayerMenu.showTurn(current_player)
 	else:
 		current_player = 1
+		#$PlayerMenu.showTurn(current_player)
 	
 	print("I ended!")
 	get_node("EndTurn").hide()
