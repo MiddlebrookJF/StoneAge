@@ -19,14 +19,11 @@ func _ready():
 		else:
 			turnOrder[first + i] = nameArray[i]
 	
-	#debugging
-	print(numPlayers)
-
-	get_node("Players/HBoxContainer1/MarginContainer/Player1/NameLabel").text = turnOrder[0]
-	get_node("Players/HBoxContainer2/MarginContainer/Player2/NameLabel").text = turnOrder[1]
-	get_node("Players/HBoxContainer3/MarginContainer/Player3/NameLabel").text = turnOrder[2]
-	get_node("Players/HBoxContainer4/MarginContainer/Player4/NameLabel").text = turnOrder[3]
-	get_node("Players/HBoxContainer5/MarginContainer/Player5/NameLabel").text = turnOrder[4]
+	for i in range(0,5):
+		if i < numPlayers:
+			get_node("Players/HBoxContainer"+str(i+1)+"/MarginContainer/Player"+str(i+1)+"/NameLabel").text = turnOrder[i]
+		else:
+			get_node("Players/HBoxContainer"+str(i+1)+"/MarginContainer/Player"+str(i+1)).visible = false
 
 func updateMeepleLabels(player):
 	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/MeeplesLabel").text = str(Global.meeple_counts[player-1]) + "/" + str(Global.meeple_max[player-1]);
