@@ -9,10 +9,7 @@ func _ready():
 	random.randomize()
 	get_node("Players/HBoxContainer1/MarginContainer/Player1/TurnIndicatorP1").visible = true
 	
-	for i in range(0,5):
-		if (nameArray[i] == ""):
-			numPlayers = i
-			break
+	numPlayers = Global.num_players
 	
 	var first = random.randi_range(0, numPlayers - 1)
 	
@@ -21,6 +18,9 @@ func _ready():
 			turnOrder[first + i - numPlayers] = nameArray[i]
 		else:
 			turnOrder[first + i] = nameArray[i]
+	
+	#debugging
+	print(numPlayers)
 
 	get_node("Players/HBoxContainer1/MarginContainer/Player1/NameLabel").text = turnOrder[0]
 	get_node("Players/HBoxContainer2/MarginContainer/Player2/NameLabel").text = turnOrder[1]

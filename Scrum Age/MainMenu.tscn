@@ -71,18 +71,18 @@ text = "Scrum Age"
 align = 1
 valign = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="NumPlayersContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 173.0
 margin_right = 1135.0
 margin_bottom = 205.0
 alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/NumPlayersContainer"]
 margin_left = 429.0
 margin_right = 627.0
 margin_bottom = 32.0
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="NumPlayersLabel" type="Label" parent="VBoxContainer/NumPlayersContainer/VBoxContainer2"]
 margin_right = 198.0
 margin_bottom = 32.0
 size_flags_horizontal = 0
@@ -95,13 +95,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/NumPlayersContainer"]
 margin_left = 631.0
 margin_right = 705.0
 margin_bottom = 32.0
 alignment = 1
 
-[node name="SpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="NumPlayersSpinBox" type="SpinBox" parent="VBoxContainer/NumPlayersContainer/VBoxContainer"]
 margin_top = 4.0
 margin_right = 74.0
 margin_bottom = 28.0
@@ -112,7 +112,7 @@ max_value = 5.0
 value = 2.0
 align = 1
 
-[node name="ListOfPlayers" type="Label" parent="VBoxContainer"]
+[node name="ListOfPlayersLabel" type="Label" parent="VBoxContainer"]
 margin_top = 209.0
 margin_right = 1135.0
 margin_bottom = 264.0
@@ -121,14 +121,14 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "List of Players"
 align = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+[node name="LineEditsContainer" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 268.0
 margin_right = 1135.0
 margin_bottom = 437.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PlayerOne" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
+[node name="PlayerOne" type="LineEdit" parent="VBoxContainer/LineEditsContainer"]
 margin_left = 442.0
 margin_right = 692.0
 margin_bottom = 82.0
@@ -140,7 +140,7 @@ align = 1
 max_length = 12
 placeholder_text = "Player One"
 
-[node name="PlayerTwo" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
+[node name="PlayerTwo" type="LineEdit" parent="VBoxContainer/LineEditsContainer"]
 margin_left = 442.0
 margin_top = 86.0
 margin_right = 692.0
@@ -153,7 +153,7 @@ align = 1
 max_length = 12
 placeholder_text = "Player Two"
 
-[node name="PlayerThree" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
+[node name="PlayerThree" type="LineEdit" parent="VBoxContainer/LineEditsContainer"]
 visible = false
 margin_left = 438.0
 margin_top = 111.0
@@ -167,7 +167,7 @@ align = 1
 max_length = 12
 placeholder_text = "Player Three"
 
-[node name="PlayerFour" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
+[node name="PlayerFour" type="LineEdit" parent="VBoxContainer/LineEditsContainer"]
 visible = false
 margin_left = 438.0
 margin_top = 125.0
@@ -181,7 +181,7 @@ align = 1
 max_length = 12
 placeholder_text = "Player Four"
 
-[node name="PlayerFive" type="LineEdit" parent="VBoxContainer/VBoxContainer"]
+[node name="PlayerFive" type="LineEdit" parent="VBoxContainer/LineEditsContainer"]
 visible = false
 margin_left = 438.0
 margin_top = 133.0
@@ -231,15 +231,15 @@ margin_bottom = 620.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Version 0.2 The critically acclaimed MMORPG Final Fantasy XIV with a
+text = "Version 0.3 The critically acclaimed MMORPG Final Fantasy XIV with a
 free trial until level 60 including the Heavensward Expansion"
 align = 1
 
-[connection signal="value_changed" from="VBoxContainer/HBoxContainer/VBoxContainer/SpinBox" to="." method="_on_SpinBox_value_changed"]
-[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerOne" to="." method="_on_PlayerOne_text_changed"]
-[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerTwo" to="." method="_on_PlayerTwo_text_changed"]
-[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerThree" to="." method="_on_PlayerThree_text_changed"]
-[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerFour" to="." method="_on_PlayerFour_text_changed"]
-[connection signal="text_changed" from="VBoxContainer/VBoxContainer/PlayerFive" to="." method="_on_PlayerFive_text_changed"]
+[connection signal="value_changed" from="VBoxContainer/NumPlayersContainer/VBoxContainer/NumPlayersSpinBox" to="." method="_on_SpinBox_value_changed"]
+[connection signal="text_changed" from="VBoxContainer/LineEditsContainer/PlayerOne" to="." method="_on_PlayerOne_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/LineEditsContainer/PlayerTwo" to="." method="_on_PlayerTwo_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/LineEditsContainer/PlayerThree" to="." method="_on_PlayerThree_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/LineEditsContainer/PlayerFour" to="." method="_on_PlayerFour_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/LineEditsContainer/PlayerFive" to="." method="_on_PlayerFive_text_changed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuOptions/End" to="." method="_on_End_pressed"]
