@@ -31,7 +31,8 @@ func set_meeple_color(texture_path, player):
 		5: get_node(texture_path).modulate = purple
 func resetMeepleCount():
 	for i in 5:
-		Global.meeple_counts[i]=Global.meeple_max[i];
+		Global.meeple_counts[i]=Global.meeple_max[i]
+		$PlayerMenu.updateMeepleLabels(i+1);
 	
 func addMeeples(index, amount):
 	if(Global.meeple_counts[index]<Global.meeple_max[index]):
@@ -140,6 +141,30 @@ func end_Turn():
 	get_node("HRGrid/Slot2").visible = true
 #cleans the board and returns meeples to players.
 func clean_Board():
+	for i in 9:
+		get_node("DesignGrid/Slot"+str(i+1)).texture_normal = emptySpace
+		get_node("DesignGrid").booleanSlotArray[i] = -1;
+		set_meeple_color("DesignGrid"+"/Slot"+str(i+1), 0)
+		get_node("ImpGrid/Slot"+str(i+1)).texture_normal = emptySpace
+		get_node("ImpGrid").booleanSlotArray[i] = -1;
+		set_meeple_color("ImpGrid"+"/Slot"+str(i+1), 0)
+		get_node("RequirementsGrid/Slot"+str(i+1)).texture_normal = emptySpace
+		get_node("RequirementsGrid").booleanSlotArray[i] = -1;
+		set_meeple_color("RequirementsGrid"+"/Slot"+str(i+1), 0)
+		get_node("TestingGrid/Slot"+str(i+1)).texture_normal = emptySpace
+		get_node("TestingGrid").booleanSlotArray[i] = -1;
+		set_meeple_color("TestingGrid"+"/Slot"+str(i+1), 0)
+		get_node("TrainingGrid/Slot"+str(i+1)).texture_normal = emptySpace
+		get_node("TrainingGrid").booleanSlotArray[i] = -1;
+		set_meeple_color("TrainingGrid"+"/Slot"+str(i+1), 0)
+
+	get_node("HRGrid/Slot1").texture_normal = emptySpace;
+	get_node("HRGrid").booleanSlotArray[0] = -1;
+	set_meeple_color("HRGrid"+"/Slot"+str(1), 0)
+	get_node("HRGrid/Slot2").texture_normal = emptySpace;
+	get_node("HRGrid").booleanSlotArray[1] = -1;
+	set_meeple_color("HRGrid"+"/Slot"+str(2), 0)
+	get_node("ToolGrid/Slot1").texture_normal = emptySpace;
+	get_node("ToolGrid").booleanSlotArray[0] = -1;
+	set_meeple_color("ToolGrid"+"/Slot"+str(1), 0)
 	resetMeepleCount();
-	
-	
