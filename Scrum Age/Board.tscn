@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/gwent board.png" type="Texture" id=1]
 [ext_resource path="res://Board.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/Kingthings-Petrock/Kingthings_Petrock.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/EmptyBox.png" type="Texture" id=5]
 [ext_resource path="res://RequirementsGrid.gd" type="Script" id=6]
+[ext_resource path="res://assets/Kingthings-Petrock/Kingthings_Petrock_light.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://DesignGrid.gd" type="Script" id=8]
 [ext_resource path="res://HRGrid.gd" type="Script" id=9]
 [ext_resource path="res://TestingGrid.gd" type="Script" id=10]
@@ -45,6 +46,10 @@ font_data = ExtResource( 4 )
 size = 60
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=9]
+size = 37
+font_data = ExtResource( 7 )
+
 [node name="Board" type="Node2D"]
 position = Vector2( 0, -1 )
 script = ExtResource( 2 )
@@ -67,10 +72,10 @@ margin_right = 1370.38
 margin_bottom = 759.393
 
 [node name="Testing" type="Label" parent="."]
-margin_left = 604.522
-margin_top = 281.774
-margin_right = 710.522
-margin_bottom = 327.774
+margin_left = 626.771
+margin_top = 379.245
+margin_right = 732.771
+margin_bottom = 425.245
 custom_fonts/font = SubResource( 1 )
 text = "Testing"
 __meta__ = {
@@ -78,10 +83,10 @@ __meta__ = {
 }
 
 [node name="Design" type="Label" parent="."]
-margin_left = 778.462
-margin_top = 117.605
-margin_right = 873.462
-margin_bottom = 163.605
+margin_left = 777.403
+margin_top = 194.946
+margin_right = 872.403
+margin_bottom = 240.946
 custom_fonts/font = SubResource( 2 )
 text = "Design"
 __meta__ = {
@@ -89,10 +94,10 @@ __meta__ = {
 }
 
 [node name="Implementation" type="Label" parent="."]
-margin_left = 1040.23
-margin_top = 118.5
-margin_right = 1267.23
-margin_bottom = 164.5
+margin_left = 1038.11
+margin_top = 199.019
+margin_right = 1265.11
+margin_bottom = 245.019
 custom_fonts/font = SubResource( 3 )
 text = "Implementation"
 __meta__ = {
@@ -100,10 +105,10 @@ __meta__ = {
 }
 
 [node name="Requirements" type="Label" parent="."]
-margin_left = 394.024
-margin_top = 120.201
-margin_right = 593.024
-margin_bottom = 166.201
+margin_left = 392.965
+margin_top = 197.542
+margin_right = 591.965
+margin_bottom = 243.542
 custom_fonts/font = SubResource( 4 )
 text = "Requirements"
 __meta__ = {
@@ -111,10 +116,10 @@ __meta__ = {
 }
 
 [node name="Training" type="Label" parent="."]
-margin_left = 153.073
-margin_top = 123.302
-margin_right = 273.073
-margin_bottom = 169.302
+margin_left = 155.192
+margin_top = 196.405
+margin_right = 275.192
+margin_bottom = 242.405
 custom_fonts/font = SubResource( 5 )
 text = "Training"
 __meta__ = {
@@ -144,10 +149,10 @@ __meta__ = {
 }
 
 [node name="RequirementsGrid" type="GridContainer" parent="."]
-margin_left = 423.08
-margin_top = 9.66177
-margin_right = 614.08
-margin_bottom = 209.662
+margin_left = 424.139
+margin_top = 82.7647
+margin_right = 615.139
+margin_bottom = 282.765
 rect_scale = Vector2( 0.6, 0.6 )
 columns = 3
 script = ExtResource( 6 )
@@ -213,10 +218,10 @@ margin_bottom = 197.0
 texture_normal = ExtResource( 5 )
 
 [node name="TrainingGrid" type="GridContainer" parent="."]
-margin_left = 155.019
-margin_top = 8.7179
-margin_right = 346.019
-margin_bottom = 208.718
+margin_left = 161.376
+margin_top = 80.7614
+margin_right = 352.376
+margin_bottom = 280.762
 rect_scale = Vector2( 0.6, 0.6 )
 columns = 3
 script = ExtResource( 12 )
@@ -282,10 +287,10 @@ margin_bottom = 197.0
 texture_normal = ExtResource( 5 )
 
 [node name="DesignGrid" type="GridContainer" parent="."]
-margin_left = 765.854
-margin_top = 6.42059
-margin_right = 956.854
-margin_bottom = 206.421
+margin_left = 773.27
+margin_top = 81.6425
+margin_right = 964.27
+margin_bottom = 281.643
 rect_scale = Vector2( 0.6, 0.6 )
 columns = 3
 script = ExtResource( 8 )
@@ -351,10 +356,10 @@ margin_bottom = 197.0
 texture_normal = ExtResource( 5 )
 
 [node name="ImpGrid" type="GridContainer" parent="."]
-margin_left = 1062.0
-margin_top = -46.0
-margin_right = 1253.0
-margin_bottom = 154.0
+margin_left = 1059.88
+margin_top = 39.8165
+margin_right = 1250.88
+margin_bottom = 239.816
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 65, 130 )
 columns = 3
@@ -421,10 +426,10 @@ margin_bottom = 197.0
 texture_normal = ExtResource( 5 )
 
 [node name="TestingGrid" type="GridContainer" parent="."]
-margin_left = 574.567
-margin_top = 115.724
-margin_right = 765.567
-margin_bottom = 315.724
+margin_left = 599.994
+margin_top = 211.076
+margin_right = 790.994
+margin_bottom = 411.076
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 65, 130 )
 columns = 3
@@ -551,6 +556,25 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="InfoPanel" type="Panel" parent="."]
+margin_left = -41.0
+margin_right = 1391.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="InfoPanel"]
+margin_left = 42.0
+margin_top = 4.0
+margin_right = 1406.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 9 )
+text = "scrum age"
+align = 1
+valign = 1
+uppercase = true
 
 [connection signal="pressed" from="RequirementsGrid/Slot1" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 1 ]]
 [connection signal="pressed" from="RequirementsGrid/Slot2" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 2 ]]
