@@ -66,6 +66,7 @@ func touch_slot(grid_name, slot):
 				get_node("HRGrid/Slot2").visible = false
 		else:
 			get_node("InfoPanel/Info").text = "You do not have enough Meeples"
+			get_node("Timer").start();
 
 	else:
 		if child.booleanSlotArray[slot-1] == current_player -1:
@@ -84,6 +85,7 @@ func touch_slot(grid_name, slot):
 				get_node("HRGrid/Slot2").visible = true
 		else:
 			get_node("InfoPanel/Info").text = "Another player has meeples here."
+			get_node("Timer").start();
 #called specifically to handle HR since it has slightly different properties to the other grids
 #ERROR CHECK TO MAKE SURE PLAYER CANNOT CLICK HR IF 2 OTHER SLOTS ARE SELECTED
 func touchHR_slot(grid_name,slot):
@@ -106,6 +108,7 @@ func touchHR_slot(grid_name,slot):
 					get_node("EndTurn").show()
 			else:
 				get_node("InfoPanel/Info").text = "You do not have enough meeples."
+				get_node("Timer").start();
 		else:
 			if child.booleanSlotArray[slot-1] == current_player -1:
 				set_meeple_color(grid_name+"/Slot1", 0); #Set the texture to the player's color
@@ -121,6 +124,7 @@ func touchHR_slot(grid_name,slot):
 					get_node("EndTurn").hide()
 			else:
 				get_node("InfoPanel/Info").text = "Another player has meeples here."
+				get_node("Timer").start();
 
 func end_Turn():
 	if(current_player < 5):
@@ -133,8 +137,10 @@ func end_Turn():
 	print("I ended!")
 	turnIndicator+=1;
 	if(turnIndicator == 5):
-		get_node("InfoPanel/Info").text = "Round Over. P1's Turn"
+		
 		clean_Board();
+		get_node("InfoPanel/Info").text = "Round Over."
+		get_node("Timer").start();
 		turnIndicator = 0;
 	get_node("EndTurn").hide()
 	get_node("HRGrid/Slot1").visible = true
@@ -168,3 +174,6 @@ func clean_Board():
 	get_node("ToolGrid").booleanSlotArray[0] = -1;
 	set_meeple_color("ToolGrid"+"/Slot"+str(1), 0)
 	resetMeepleCount();
+
+func _on_Timer_timeout():
+	get_node("InfoPanel/Info").text = "Scrum Age"
