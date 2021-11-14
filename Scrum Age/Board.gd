@@ -125,23 +125,37 @@ func touchHR_slot(grid_name,slot):
 			else:
 				get_node("InfoPanel/Info").text = "Another player has meeples here."
 				get_node("Timer").start();
-
+				
+#Checks to see if the round is over by checking meeple counts
+func round_check():
+	for x in range(Global.num_players):
+		if (Global.meeple_counts[x] != 0):
+			return false
+	return true
+	
 func end_Turn():
 	if(current_player < 5):
 		current_player+=1
-		$PlayerMenu.showTurn(current_player)
 	else:
 		current_player = 1
 		#$PlayerMenu.showTurn(current_player)
 	get_node("InfoPanel/Info").text = "SCRUM AGE"
 	print("I ended!")
 	turnIndicator+=1;
-	if(turnIndicator == 5):
+	if(round_check()):
 		
 		clean_Board();
 		get_node("InfoPanel/Info").text = "Round Over."
 		get_node("Timer").start();
 		turnIndicator = 0;
+		
+		if(Global.first_player < Global.num_players):
+			Global.first_player+=1
+		else:
+			Global.first_player = 1
+		
+		current_player = Global.first_player
+	$PlayerMenu.showTurn(current_player)
 	get_node("EndTurn").hide()
 	get_node("HRGrid/Slot1").visible = true
 	get_node("HRGrid/Slot2").visible = true
