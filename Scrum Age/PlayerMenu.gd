@@ -28,8 +28,10 @@ func _ready():
 func updateMeepleLabels(player):
 	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/MeeplesLabel").text = str(Global.meeple_counts[player-1]) + "/" + str(Global.meeple_max[player-1]);
 
-func showTurn(player):
+func clearFlags():
 	for x in range(1, 6):
 		get_node("Players/HBoxContainer"+str(x)+"/MarginContainer/Player"+str(x)+"/TurnIndicatorP"+str(x)).visible = false
+
+func showTurn(player):
+	clearFlags()
 	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/TurnIndicatorP"+str(player)).visible = true
-	

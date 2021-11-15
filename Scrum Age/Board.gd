@@ -132,29 +132,33 @@ func round_check():
 		if (Global.meeple_counts[x] != 0):
 			return false
 	return true
+
+func newRound():
+	clean_Board();
+	get_node("InfoPanel/Info").text = "Round Over."
+	get_node("Timer").start();
+	turnIndicator = 0;
 	
+	if(Global.first_player < Global.num_players):
+		Global.first_player+=1
+	else:
+		Global.first_player = 1
+	
+	current_player = Global.first_player
+
 func end_Turn():
 	if(current_player < 5):
 		current_player+=1
 	else:
 		current_player = 1
-		#$PlayerMenu.showTurn(current_player)
+
 	get_node("InfoPanel/Info").text = "SCRUM AGE"
 	print("I ended!")
 	turnIndicator+=1;
+	
 	if(round_check()):
+		newRound();
 		
-		clean_Board();
-		get_node("InfoPanel/Info").text = "Round Over."
-		get_node("Timer").start();
-		turnIndicator = 0;
-		
-		if(Global.first_player < Global.num_players):
-			Global.first_player+=1
-		else:
-			Global.first_player = 1
-		
-		current_player = Global.first_player
 	$PlayerMenu.showTurn(current_player)
 	get_node("EndTurn").hide()
 	get_node("HRGrid/Slot1").visible = true
