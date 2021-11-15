@@ -30,7 +30,7 @@ func set_meeple_color(texture_path, player):
 		4: get_node(texture_path).modulate = yellow
 		5: get_node(texture_path).modulate = purple
 func resetMeepleCount():
-	for i in 5:
+	for i in Global.num_players:
 		Global.meeple_counts[i]=Global.meeple_max[i]
 		$PlayerMenu.updateMeepleLabels(i+1);
 	
@@ -147,7 +147,7 @@ func newRound():
 	current_player = Global.first_player
 
 func end_Turn():
-	if(current_player < 5):
+	if(current_player < Global.num_players):
 		current_player+=1
 	else:
 		current_player = 1
