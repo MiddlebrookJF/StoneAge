@@ -135,8 +135,7 @@ func round_check():
 
 func newRound():
 	clean_Board();
-	get_node("InfoPanel/Info").text = "Round Over."
-	get_node("Timer").start();
+
 	turnIndicator = 0;
 	
 	if(Global.first_player < Global.num_players):
@@ -145,6 +144,8 @@ func newRound():
 		Global.first_player = 1
 	
 	current_player = Global.first_player
+	get_node("InfoPanel/Info").text = "Round Over. Player "+str(current_player)+"'s Turn! "
+	get_node("Timer").start();
 
 func end_Turn():
 	if(current_player < Global.num_players):
