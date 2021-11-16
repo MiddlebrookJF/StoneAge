@@ -13,7 +13,6 @@ func _ready():
 #	pass
 
 func _on_Start_pressed():
-	Global.num_players = get_node("VBoxContainer/NumPlayersContainer/VBoxContainer/NumPlayersSpinBox").value
 	Global.goto_scene("res://Board.tscn")
 	Music.play_board_music()
 
@@ -42,6 +41,7 @@ func _on_PlayerFive_text_changed(new_text):
 	Global.player_names[4] = $VBoxContainer/LineEditsContainer/PlayerFive.text
 
 func _on_SpinBox_value_changed(value):
+	Global.num_players = value
 	if value == 2:
 		$VBoxContainer/LineEditsContainer/PlayerThree.set_visible(false)
 		$VBoxContainer/LineEditsContainer/PlayerThree.text = ""

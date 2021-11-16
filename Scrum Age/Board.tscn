@@ -575,6 +575,12 @@ text = "scrum age"
 align = 1
 valign = 1
 uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
 
 [connection signal="pressed" from="RequirementsGrid/Slot1" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 1 ]]
 [connection signal="pressed" from="RequirementsGrid/Slot2" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 2 ]]
@@ -625,3 +631,4 @@ uppercase = true
 [connection signal="pressed" from="HRGrid/Slot2" to="HRGrid" method="_on_Slot_pressed" binds= [ 2 ]]
 [connection signal="pressed" from="ToolGrid/Slot1" to="ToolGrid" method="_on_Slot_pressed" binds= [ 1 ]]
 [connection signal="pressed" from="EndTurn" to="." method="end_Turn"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

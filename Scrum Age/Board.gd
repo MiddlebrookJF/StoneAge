@@ -30,7 +30,7 @@ func set_meeple_color(texture_path, player):
 		4: get_node(texture_path).modulate = yellow
 		5: get_node(texture_path).modulate = purple
 func resetMeepleCount():
-	for i in 5:
+	for i in Global.num_players:
 		Global.meeple_counts[i]=Global.meeple_max[i]
 		$PlayerMenu.updateMeepleLabels(i+1);
 	
@@ -66,6 +66,7 @@ func touch_slot(grid_name, slot):
 				get_node("HRGrid/Slot2").visible = false
 		else:
 			get_node("InfoPanel/Info").text = "You do not have enough Meeples"
+			get_node("Timer").start();
 
 	else:
 		if child.booleanSlotArray[slot-1] == current_player -1:
@@ -84,6 +85,7 @@ func touch_slot(grid_name, slot):
 				get_node("HRGrid/Slot2").visible = true
 		else:
 			get_node("InfoPanel/Info").text = "Another player has meeples here."
+			get_node("Timer").start();
 #called specifically to handle HR since it has slightly different properties to the other grids
 #ERROR CHECK TO MAKE SURE PLAYER CANNOT CLICK HR IF 2 OTHER SLOTS ARE SELECTED
 func touchHR_slot(grid_name,slot):
@@ -106,6 +108,7 @@ func touchHR_slot(grid_name,slot):
 					get_node("EndTurn").show()
 			else:
 				get_node("InfoPanel/Info").text = "You do not have enough meeples."
+				get_node("Timer").start();
 		else:
 			if child.booleanSlotArray[slot-1] == current_player -1:
 				set_meeple_color(grid_name+"/Slot1", 0); #Set the texture to the player's color
@@ -121,21 +124,43 @@ func touchHR_slot(grid_name,slot):
 					get_node("EndTurn").hide()
 			else:
 				get_node("InfoPanel/Info").text = "Another player has meeples here."
+				get_node("Timer").start();
+				
+#Checks to see if the round is over by checking meeple counts
+func round_check():
+	for x in range(Global.num_players):
+		if (Global.meeple_counts[x] != 0):
+			return false
+	return true
+
+func newRound():
+	clean_Board();
+
+	turnIndicator = 0;
+	
+	if(Global.first_player < Global.num_players):
+		Global.first_player+=1
+	else:
+		Global.first_player = 1
+	
+	current_player = Global.first_player
+	get_node("InfoPanel/Info").text = "Round Over. Player "+str(current_player)+"'s Turn! "
+	get_node("Timer").start();
 
 func end_Turn():
-	if(current_player < 5):
+	if(current_player < Global.num_players):
 		current_player+=1
-		$PlayerMenu.showTurn(current_player)
 	else:
 		current_player = 1
-		#$PlayerMenu.showTurn(current_player)
+
 	get_node("InfoPanel/Info").text = "SCRUM AGE"
 	print("I ended!")
 	turnIndicator+=1;
-	if(turnIndicator == 5):
-		get_node("InfoPanel/Info").text = "Round Over. P1's Turn"
-		clean_Board();
-		turnIndicator = 0;
+	
+	if(round_check()):
+		newRound();
+		
+	$PlayerMenu.showTurn(current_player)
 	get_node("EndTurn").hide()
 	get_node("HRGrid/Slot1").visible = true
 	get_node("HRGrid/Slot2").visible = true
@@ -168,3 +193,6 @@ func clean_Board():
 	get_node("ToolGrid").booleanSlotArray[0] = -1;
 	set_meeple_color("ToolGrid"+"/Slot"+str(1), 0)
 	resetMeepleCount();
+
+func _on_Timer_timeout():
+	get_node("InfoPanel/Info").text = "Scrum Age"
