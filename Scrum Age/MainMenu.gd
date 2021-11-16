@@ -13,7 +13,6 @@ func _ready():
 #	pass
 
 func _on_Start_pressed():
-	Global.num_players = get_node("VBoxContainer/NumPlayersContainer/VBoxContainer/NumPlayersSpinBox").value
 	Global.goto_scene("res://Board.tscn")
 	Music.play_board_music()
 
