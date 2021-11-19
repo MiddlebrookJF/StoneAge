@@ -1,7 +1,10 @@
 extends Node2D
 
+# Variables for current player and turn order
 var current_player = 1;		#1-based. eg player1 = 1, player5 = 5
 var turnIndicator = 0
+
+# Variables for meeple color
 const white = Color(1, 1, 1)
 const red = Color(1, 0.262, 0.262)
 const blue = Color(0.608, 0.651, 1)
@@ -9,16 +12,14 @@ const green = Color(0.227, 0.718, 0.377)
 const yellow = Color(0.933, 0.988, 0.212)
 const purple = Color(1, 0.110, 0.898)
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-#	if(Global.meeple_counts[current_player]!=0):
-		get_node("EndTurn").hide()
-#	else:
-#		get_node("EndTurn").show()
-#	pass
-
+# Variables for the slots on a grid
 var emptySpace = load("res://assets/EmptyBox.png")
 var knight_path = load("res://assets/Meeples/knight_head.png")
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	get_node("EndTurn").hide()
+#	pass
 
 #Get colored textures associated with each player, based on player value calling method (NEEDS TO BE UPDATED)
 func set_meeple_color(texture_path, player):
@@ -29,23 +30,28 @@ func set_meeple_color(texture_path, player):
 		3: get_node(texture_path).modulate = green
 		4: get_node(texture_path).modulate = yellow
 		5: get_node(texture_path).modulate = purple
+
+# Resets the meeple count to max
 func resetMeepleCount():
 	for i in Global.num_players:
 		Global.meeple_counts[i]=Global.meeple_max[i]
 		$PlayerMenu.updateMeepleLabels(i+1);
-	
+
+# Adds a meeplee to meeple count
 func addMeeples(index, amount):
 	if(Global.meeple_counts[index]<Global.meeple_max[index]):
 		Global.meeple_counts[index] += amount;
 	else:
 		print("Max meeple count reached, cannot add");
-		
+
+# Subtracts a meeple from meeple count
 func subtractMeeples(index, amount):
 	if(Global.meeple_counts[index]>Global.meeple_min):
 		Global.meeple_counts[index] -= amount;
 	else:
 		print("Min meeple count reached, cannot subtract");
 
+# Touch a slot to place or remove a meeple
 func touch_slot(grid_name, slot):
 	var child = get_node(grid_name)
 		#current_player-1 is used as index <== meeple_counts[] has player 1 at index 0
@@ -86,6 +92,7 @@ func touch_slot(grid_name, slot):
 		else:
 			get_node("InfoPanel/Info").text = "Another player has meeples here."
 			get_node("Timer").start();
+
 #called specifically to handle HR since it has slightly different properties to the other grids
 #ERROR CHECK TO MAKE SURE PLAYER CANNOT CLICK HR IF 2 OTHER SLOTS ARE SELECTED
 func touchHR_slot(grid_name,slot):
@@ -125,7 +132,7 @@ func touchHR_slot(grid_name,slot):
 			else:
 				get_node("InfoPanel/Info").text = "Another player has meeples here."
 				get_node("Timer").start();
-				
+
 #Checks to see if the round is over by checking meeple counts
 func round_check():
 	for x in range(Global.num_players):
@@ -133,6 +140,7 @@ func round_check():
 			return false
 	return true
 
+# Resets turn order and increments the players
 func newRound():
 	clean_Board();
 
@@ -147,6 +155,7 @@ func newRound():
 	get_node("InfoPanel/Info").text = "Round Over. Player "+str(current_player)+"'s Turn! "
 	get_node("Timer").start();
 
+# Ends a turn and changes current player
 func end_Turn():
 	if(current_player < Global.num_players):
 		current_player+=1
@@ -164,6 +173,7 @@ func end_Turn():
 	get_node("EndTurn").hide()
 	get_node("HRGrid/Slot1").visible = true
 	get_node("HRGrid/Slot2").visible = true
+
 #cleans the board and returns meeples to players.
 func clean_Board():
 	for i in 9:
@@ -194,5 +204,6 @@ func clean_Board():
 	set_meeple_color("ToolGrid"+"/Slot"+str(1), 0)
 	resetMeepleCount();
 
+# Resets the header text after timer runs out
 func _on_Timer_timeout():
 	get_node("InfoPanel/Info").text = "Scrum Age"

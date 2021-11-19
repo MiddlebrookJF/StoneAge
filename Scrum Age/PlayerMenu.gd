@@ -1,9 +1,11 @@
 extends MarginContainer
 
+# Variables 
 var nameArray = Global.player_names
 var turnOrder = ["", "", "", "", ""]
 var numPlayers = 5
 
+# Randomizes the players based on current number of players
 func _ready():
 	var random = RandomNumberGenerator.new()
 	random.randomize()
@@ -25,13 +27,16 @@ func _ready():
 		else:
 			get_node("Players/HBoxContainer"+str(i+1)+"/MarginContainer/Player"+str(i+1)).visible = false
 
+# Updates the meeple counts for each player
 func updateMeepleLabels(player):
 	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/MeeplesLabel").text = str(Global.meeple_counts[player-1]) + "/" + str(Global.meeple_max[player-1]);
 
+# Removes the flag next to each player
 func clearFlags():
 	for x in range(1, 6):
 		get_node("Players/HBoxContainer"+str(x)+"/MarginContainer/Player"+str(x)+"/TurnIndicatorP"+str(x)).visible = false
 
+# Places the flag next to the player during their turn
 func showTurn(player):
 	clearFlags()
 	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/TurnIndicatorP"+str(player)).visible = true
