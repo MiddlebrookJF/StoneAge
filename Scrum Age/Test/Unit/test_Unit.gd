@@ -7,12 +7,16 @@ var _player = null;
 var Board = load("res://Board.gd")
 var _board = null;
 var slot = TextureButton.new()
+var panel = Panel.new()
+var info = Label.new()
 
 func before_each():
 #	_main = Main.new()
 	_player = Player.new()
+	_player.name = "PlayerMenu"
 	_board = Board.new()
 	add_child(_board)
+	_board.add_child(_player)
 	_board.name = "Board"
 	self.name = "test"
 
@@ -49,9 +53,14 @@ func test_subtractThree_Meeples_Pass():
 	assert_eq(Global.meeple_counts[0], 0, "Should not be able to take 3 from 0, and therefore stay equal to 0")
 	Global.meeple_counts[0] = 3
 
-#func test_change_player():
-#	_board.end_Turn()
-#	assert_eq(_board.current_player, 2, "Player 2 not ready")
+func test_change_player():
+	panel.name = "InfoPanel"
+	info.name = "Info"
+	_board.add_child(panel)
+	panel.add_child(info)
+	
+	_board.end_Turn()
+	assert_eq(_board.current_player, 2, "Player 2 not ready")
 
 #func test_board_wipe():
 #	_board.clean_Board()
