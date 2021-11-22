@@ -66,10 +66,10 @@ __meta__ = {
 }
 
 [node name="PlayerMenu" parent="." instance=ExtResource( 3 )]
-margin_left = 1055.38
-margin_top = 380.393
-margin_right = 1370.38
-margin_bottom = 759.393
+margin_left = 1055.0
+margin_top = 356.0
+margin_right = 1370.0
+margin_bottom = 811.0
 
 [node name="Testing" type="Label" parent="."]
 margin_left = 626.771

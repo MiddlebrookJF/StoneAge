@@ -10,8 +10,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -347.0
-margin_top = -403.0
+margin_left = -346.159
+margin_top = -432.431
+margin_right = 0.84082
+margin_bottom = -1.4314
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
@@ -24,26 +26,26 @@ __meta__ = {
 [node name="Players" type="VBoxContainer" parent="."]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 327.0
-margin_bottom = 383.0
+margin_right = 326.0
+margin_bottom = 411.0
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="Players"]
-margin_right = 307.0
-margin_bottom = 50.0
+margin_right = 306.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 0, 75 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer1"]
 margin_right = 275.0
-margin_bottom = 50.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 200, 50 )
 
 [node name="Player1" type="NinePatchRect" parent="Players/HBoxContainer1/MarginContainer"]
 margin_right = 275.0
-margin_bottom = 50.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
 [node name="TurnIndicatorP1" type="TextureRect" parent="Players/HBoxContainer1/MarginContainer/Player1"]
-visible = false
 anchor_top = -0.021189
 anchor_bottom = -0.021189
 margin_left = 4.0
@@ -60,9 +62,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 35.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = -167.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -73,9 +75,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 184.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = -70.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "3/3"
 align = 1
@@ -89,10 +91,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -68.5908
-margin_top = -13.7004
+margin_left = -68.591
+margin_top = -27.5
 margin_right = 519.409
-margin_bottom = 559.3
+margin_bottom = 545.5
 rect_scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 5 )
 __meta__ = {
@@ -105,9 +107,9 @@ anchor_top = 0.5
 anchor_right = 0.996254
 anchor_bottom = 0.5
 margin_left = 157.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = -10.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 2
@@ -115,19 +117,105 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TrainingPLabel" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 21.0301
+margin_top = 12.5
+margin_right = -222.97
+margin_bottom = 26.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RequirementPLabel2" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 63.0748
+margin_top = 11.6591
+margin_right = -179.925
+margin_bottom = 25.6591
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DesignPLabel3" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 108.483
+margin_top = 12.5
+margin_right = -132.517
+margin_bottom = 26.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "DP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImplementationPLabel4" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 153.05
+margin_top = 12.5
+margin_right = -87.9495
+margin_bottom = 26.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "IP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TestingPLabel5" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 195.095
+margin_top = 12.5
+margin_right = -45.9047
+margin_bottom = 26.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="Players"]
-margin_top = 54.0
-margin_right = 307.0
-margin_bottom = 104.0
+margin_top = 79.0
+margin_right = 306.0
+margin_bottom = 154.0
+rect_min_size = Vector2( 0, 75 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer2"]
 margin_right = 275.0
-margin_bottom = 50.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 200, 50 )
 
 [node name="Player2" type="NinePatchRect" parent="Players/HBoxContainer2/MarginContainer"]
 margin_right = 275.0
-margin_bottom = 50.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
@@ -146,9 +234,9 @@ __meta__ = {
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 35.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = 108.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -159,9 +247,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 184.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = -70.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "3/3"
 align = 1
@@ -175,10 +263,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -68.5908
-margin_top = -14.3303
+margin_left = -68.591
+margin_top = -27.5
 margin_right = 519.409
-margin_bottom = 558.67
+margin_bottom = 545.5
 rect_scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 5 )
 __meta__ = {
@@ -190,9 +278,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 157.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = -10.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 2
@@ -200,19 +288,105 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TrainingPLabel" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 20.0301
+margin_top = 12.5
+margin_right = -220.97
+margin_bottom = 26.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RequirementPLabel2" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 63.0301
+margin_top = 12.5
+margin_right = -176.97
+margin_bottom = 26.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DesignPLabel3" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 108.03
+margin_top = 12.5
+margin_right = -129.97
+margin_bottom = 26.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "DP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImplementationPLabel4" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 153.03
+margin_top = 12.5
+margin_right = -89.9698
+margin_bottom = 26.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "IP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TestingPLabel5" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 195.03
+margin_top = 12.5
+margin_right = -42.9698
+margin_bottom = 26.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer3" type="HBoxContainer" parent="Players"]
-margin_top = 108.0
-margin_right = 307.0
-margin_bottom = 158.0
+margin_top = 158.0
+margin_right = 306.0
+margin_bottom = 233.0
+rect_min_size = Vector2( 0, 75 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer3"]
 margin_right = 275.0
-margin_bottom = 50.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 200, 50 )
 
 [node name="Player3" type="NinePatchRect" parent="Players/HBoxContainer3/MarginContainer"]
 margin_right = 275.0
-margin_bottom = 50.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
@@ -231,9 +405,9 @@ __meta__ = {
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 35.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = 108.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="MeeplesLabel" type="Label" parent="Players/HBoxContainer3/MarginContainer/Player3"]
@@ -241,9 +415,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 184.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = -70.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "3/3"
 align = 1
@@ -257,10 +431,10 @@ anchor_left = 1.00375
 anchor_top = 0.5
 anchor_right = 1.00375
 anchor_bottom = 0.5
-margin_left = -70.5996
-margin_top = -13.7007
-margin_right = 517.4
-margin_bottom = 559.299
+margin_left = -70.5992
+margin_top = -27.5
+margin_right = 517.401
+margin_bottom = 545.5
 rect_scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 5 )
 __meta__ = {
@@ -272,9 +446,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 157.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = -10.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 2
@@ -282,19 +456,105 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TrainingPLabel" type="Label" parent="Players/HBoxContainer3/MarginContainer/Player3"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 19.7265
+margin_top = 11.0903
+margin_right = -224.273
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RequirementPLabel2" type="Label" parent="Players/HBoxContainer3/MarginContainer/Player3"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 61.7712
+margin_top = 11.0903
+margin_right = -181.229
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DesignPLabel3" type="Label" parent="Players/HBoxContainer3/MarginContainer/Player3"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 107.179
+margin_top = 11.0903
+margin_right = -133.82
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "DP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImplementationPLabel4" type="Label" parent="Players/HBoxContainer3/MarginContainer/Player3"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 151.747
+margin_top = 11.0903
+margin_right = -89.2531
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "IP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TestingPLabel5" type="Label" parent="Players/HBoxContainer3/MarginContainer/Player3"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 193.792
+margin_top = 11.0903
+margin_right = -47.2083
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer4" type="HBoxContainer" parent="Players"]
-margin_top = 162.0
-margin_right = 307.0
-margin_bottom = 212.0
+margin_top = 237.0
+margin_right = 306.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 0, 75 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer4"]
 margin_right = 275.0
-margin_bottom = 50.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 200, 50 )
 
 [node name="Player4" type="NinePatchRect" parent="Players/HBoxContainer4/MarginContainer"]
 margin_right = 275.0
-margin_bottom = 50.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 275, 0 )
 texture = ExtResource( 4 )
 
@@ -313,9 +573,9 @@ __meta__ = {
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 35.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = 108.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -326,9 +586,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 184.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = -70.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "3/3"
 align = 1
@@ -342,10 +602,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -69.2207
-margin_top = -15.5903
+margin_left = -69.221
+margin_top = -27.5
 margin_right = 518.779
-margin_bottom = 557.41
+margin_bottom = 545.5
 rect_scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 5 )
 __meta__ = {
@@ -357,9 +617,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 157.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = -10.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 2
@@ -367,19 +627,105 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TrainingPLabel" type="Label" parent="Players/HBoxContainer4/MarginContainer/Player4"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 19.7265
+margin_top = 11.0903
+margin_right = -224.273
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RequirementPLabel2" type="Label" parent="Players/HBoxContainer4/MarginContainer/Player4"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 61.7712
+margin_top = 11.0903
+margin_right = -181.229
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DesignPLabel3" type="Label" parent="Players/HBoxContainer4/MarginContainer/Player4"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 107.179
+margin_top = 11.0903
+margin_right = -133.82
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "DP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImplementationPLabel4" type="Label" parent="Players/HBoxContainer4/MarginContainer/Player4"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 151.747
+margin_top = 11.0903
+margin_right = -89.2531
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "IP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TestingPLabel5" type="Label" parent="Players/HBoxContainer4/MarginContainer/Player4"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 193.792
+margin_top = 11.0903
+margin_right = -47.2083
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer5" type="HBoxContainer" parent="Players"]
-margin_top = 216.0
-margin_right = 307.0
-margin_bottom = 266.0
+margin_top = 316.0
+margin_right = 306.0
+margin_bottom = 391.0
+rect_min_size = Vector2( 0, 75 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Players/HBoxContainer5"]
 margin_right = 275.0
-margin_bottom = 50.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 200, 50 )
 
 [node name="Player5" type="NinePatchRect" parent="Players/HBoxContainer5/MarginContainer"]
 margin_right = 275.0
-margin_bottom = 50.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 275, 0 )
 rect_pivot_offset = Vector2( -214.692, -234 )
 texture = ExtResource( 4 )
@@ -399,9 +745,9 @@ __meta__ = {
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 35.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = 108.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -412,9 +758,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 184.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = -70.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "3/3"
 align = 1
@@ -428,10 +774,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -69.2207
-margin_top = -13.7007
+margin_left = -69.221
+margin_top = -27.5
 margin_right = 518.779
-margin_bottom = 559.299
+margin_bottom = 545.5
 rect_scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 5 )
 __meta__ = {
@@ -443,12 +789,97 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 157.0
-margin_top = -7.0
+margin_top = -20.5
 margin_right = -10.0
-margin_bottom = 7.0
+margin_bottom = -6.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TrainingPLabel" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 19.7265
+margin_top = 11.0903
+margin_right = -224.273
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RequirementPLabel2" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 61.7712
+margin_top = 11.0903
+margin_right = -181.229
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DesignPLabel3" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 107.179
+margin_top = 11.0903
+margin_right = -133.82
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "DP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImplementationPLabel4" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 151.747
+margin_top = 11.0903
+margin_right = -89.2531
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "IP: 0"
+align = 3
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TestingPLabel5" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
+anchor_left = -0.00374573
+anchor_top = 0.5
+anchor_right = 0.996254
+anchor_bottom = 0.5
+margin_left = 193.792
+margin_top = 11.0903
+margin_right = -47.2083
+margin_bottom = 25.0903
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "TP: 0"
+align = 3
+valign = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
