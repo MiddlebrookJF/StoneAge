@@ -143,7 +143,10 @@ func round_check():
 # Resets turn order and increments the players
 func newRound():
 	clean_Board();
-
+	Global.player_score[1] = 2
+	Global.player_score[0] = 1
+	for i in 4:
+		$PlayerMenu.updateScores(i);
 	turnIndicator = 0;
 	
 	if(Global.first_player < Global.num_players):
