@@ -37,6 +37,8 @@ func updateMeepleLabels(player):
 
 func updateScores(player):
 	get_node("Players/HBoxContainer"+str(player+1)+"/MarginContainer/Player"+str(player+1)+"/ScoreLabel").text = str(Global.player_score[player]);
+func updateTraining(player):
+	get_node("Players/HBoxContainer"+str(player+1)+"/MarginContainer/Player"+str(player+1)+"/TrainVal").text = str(Global.train_scores[player]);
 # Removes the flag next to each player
 func clearFlags():
 	for x in range(1, 6):

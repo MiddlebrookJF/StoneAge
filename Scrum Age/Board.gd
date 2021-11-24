@@ -50,6 +50,32 @@ func subtractMeeples(index, amount):
 		Global.meeple_counts[index] -= amount;
 	else:
 		print("Min meeple count reached, cannot subtract");
+		
+func addPoints(grid_name, player_index):
+	var toolsExist = 0
+	var tools = 0
+	if Global.bTools[player_index] >= 1:
+		toolsExist= 1;
+		tools = Global.bTools
+	else:
+		toolsExist = 0;
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+	var rolledVal = random.randi_range(0, 5)
+	match grid_name:
+		"TrainingGrid":
+			Global.train_scores[player_index] + rolledVal;
+		"RequirementsGrid":
+			Global.req_scores[player_index] + rolledVal;
+		"DesignGrid":
+			Global.design_scores[player_index] + rolledVal;
+		"ImpGrid":
+			Global.imp_scores[player_index] + rolledVal;
+		"TestingGrid":
+			Global.test_scores[player_index] + rolledVal;
+		"ToolGrid":
+			Global.bTools[player_index] + 1;
+	
 
 # Touch a slot to place or remove a meeple
 func touch_slot(grid_name, slot):
@@ -142,9 +168,8 @@ func round_check():
 
 # Resets turn order and increments the players
 func newRound():
+	upkeep();
 	clean_Board();
-	Global.player_score[1] = 2
-	Global.player_score[0] = 1
 	for i in 4:
 		$PlayerMenu.updateScores(i);
 	turnIndicator = 0;
@@ -176,7 +201,28 @@ func end_Turn():
 	get_node("EndTurn").hide()
 	get_node("HRGrid/Slot1").visible = true
 	get_node("HRGrid/Slot2").visible = true
-
+func upkeep():
+	var random = RandomNumberGenerator.new()
+	for i in 9:
+		if $TrainingGrid.booleanSlotArray[i] != -1:
+			var playerID = $TrainingGrid.booleanSlotArray[i]
+			random.randomize()
+			var rolledVal = random.randi_range(1, 6)
+			Global.train_scores[playerID]+= rolledVal+Global.bTools[playerID];
+			$PlayerMenu.updateTraining(playerID);
+		if $RequirementsGrid.booleanSlotArray[i] != -1:
+			pass
+		if $DesignGrid.booleanSlotArray[i] != -1:
+			pass
+		if $ImpGrid.booleanSlotArray[i] != -1:
+			pass
+		if $TestingGrid.booleanSlotArray[i] != -1:
+			pass
+	var tools = $ToolGrid.booleanSlotArray[0]
+	if tools != -1:
+		Global.bTools[tools] +=1;
+		print("I survived")
+		
 #cleans the board and returns meeples to players.
 func clean_Board():
 	for i in 9:
