@@ -211,18 +211,38 @@ func upkeep():
 			Global.train_scores[playerID]+= rolledVal+Global.bTools[playerID];
 			$PlayerMenu.updateTraining(playerID);
 		if $RequirementsGrid.booleanSlotArray[i] != -1:
-			pass
+			var playerID = $RequirementsGrid.booleanSlotArray[i]
+			random.randomize()
+			var rolledVal = random.randi_range(1, 6)
+			Global.req_scores[playerID]+= rolledVal+Global.bTools[playerID];
+			$PlayerMenu.updateReq(playerID);
 		if $DesignGrid.booleanSlotArray[i] != -1:
-			pass
+			var playerID = $DesignGrid.booleanSlotArray[i]
+			random.randomize()
+			var rolledVal = random.randi_range(1, 6)
+			Global.design_scores[playerID]+= rolledVal+Global.bTools[playerID];
+			$PlayerMenu.updateDesign(playerID);
 		if $ImpGrid.booleanSlotArray[i] != -1:
-			pass
+			var playerID = $ImpGrid.booleanSlotArray[i]
+			random.randomize()
+			var rolledVal = random.randi_range(1, 6)
+			Global.imp_scores[playerID]+= rolledVal+Global.bTools[playerID];
+			$PlayerMenu.updateImp(playerID);
 		if $TestingGrid.booleanSlotArray[i] != -1:
-			pass
+			var playerID = $TestingGrid.booleanSlotArray[i]
+			random.randomize()
+			var rolledVal = random.randi_range(1, 6)
+			Global.test_scores[playerID]+= rolledVal+Global.bTools[playerID];
+			$PlayerMenu.updateTest(playerID);
 	var tools = $ToolGrid.booleanSlotArray[0]
 	if tools != -1:
 		Global.bTools[tools] +=1;
-		print("I survived")
-		
+	print("I survived")
+	print(Global.train_scores)
+	print(Global.req_scores)
+	print(Global.design_scores)
+	print(Global.imp_scores)
+	print(Global.test_scores)	
 #cleans the board and returns meeples to players.
 func clean_Board():
 	for i in 9:
