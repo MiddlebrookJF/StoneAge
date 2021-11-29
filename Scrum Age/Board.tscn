@@ -43,7 +43,7 @@ size = 40
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 60
+size = 40
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=9]
@@ -544,13 +544,80 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="EndTurn"]
+[node name="TurnLabel" type="Label" parent="EndTurn"]
 margin_left = 31.9897
 margin_top = 10.7194
 margin_right = 259.99
 margin_bottom = 78.7194
 custom_fonts/font = SubResource( 8 )
 text = "END TURN"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolButton" type="Button" parent="."]
+margin_left = 6.0
+margin_top = 405.385
+margin_right = 213.0
+margin_bottom = 502.385
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ToolButton"]
+margin_left = 11.0
+margin_top = 14.0
+margin_right = 199.0
+margin_bottom = 82.0
+custom_fonts/font = SubResource( 8 )
+text = "USE TOOL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConvertButton" type="Button" parent="."]
+margin_left = 7.0
+margin_top = 680.0
+margin_right = 214.0
+margin_bottom = 761.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ConvertButton"]
+margin_left = 6.31372
+margin_top = 8.3432
+margin_right = 203.314
+margin_bottom = 76.3432
+custom_fonts/font = SubResource( 8 )
+text = "RULES"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RuleButton" type="Button" parent="."]
+margin_left = 7.41422
+margin_top = 508.993
+margin_right = 213.414
+margin_bottom = 624.993
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="RuleButton"]
+margin_left = -2.17157
+margin_top = 10.0416
+margin_right = 206.828
+margin_bottom = 105.042
+custom_fonts/font = SubResource( 8 )
+text = "CONVERT TO 
+STORY POINTS"
 align = 1
 valign = 1
 __meta__ = {
@@ -631,4 +698,7 @@ wait_time = 1.5
 [connection signal="pressed" from="HRGrid/Slot2" to="HRGrid" method="_on_Slot_pressed" binds= [ 2 ]]
 [connection signal="pressed" from="ToolGrid/Slot1" to="ToolGrid" method="_on_Slot_pressed" binds= [ 1 ]]
 [connection signal="pressed" from="EndTurn" to="." method="end_Turn"]
+[connection signal="pressed" from="ToolButton" to="." method="end_Turn"]
+[connection signal="pressed" from="ConvertButton" to="." method="end_Turn"]
+[connection signal="pressed" from="RuleButton" to="." method="end_Turn"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
