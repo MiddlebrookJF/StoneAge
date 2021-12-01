@@ -56,3 +56,5 @@ func clearFlags():
 func showTurn(player):
 	clearFlags()
 	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/TurnIndicatorP"+str(player)).visible = true
+
+
