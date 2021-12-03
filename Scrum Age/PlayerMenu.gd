@@ -11,6 +11,10 @@ func _ready():
 	random.randomize()
 	get_node("Players/HBoxContainer1/MarginContainer/Player1/TurnIndicatorP1").visible = true
 	
+	for i in range(0, 5):
+		if (nameArray[i] == ""):
+			nameArray[i] = "Player " + str(i+1)
+	
 	numPlayers = Global.num_players
 	
 	var first = random.randi_range(0, numPlayers - 1)
