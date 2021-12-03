@@ -233,6 +233,11 @@ func upkeep():
 	var tools = $ToolGrid.booleanSlotArray[0]
 	if tools != -1:
 		Global.bTools[tools] +=1;
+		
+	var HR = $HRGrid.booleanSlotArray[0]
+	if HR != -1:
+		Global.meeple_max[HR] += 1
+		
 	print("I survived")
 	print(Global.train_scores)
 	print(Global.req_scores)
