@@ -752,13 +752,16 @@ margin_bottom = 276.209
 rect_scale = Vector2( 1.05321, 1.89 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "GENERAL RULES
-
-Text test to write the text of texting texters who need to text their
-texting texters to text the other texters who text texting texters with
-texting text that texts out texts when texted to texters who text
-texting texters while texting textile producing texters on textured
-texting devices using haptic feedback to translate kinetic force
-into text "
+WELCOME TO SCRUM AGE! In this
+ game, you will play as the leader of
+ a team of 'medieval' software
+ engineers who must complete the
+ steps of the Software life cycle in
+ order to progress the  game. For
+each cycle you complete, you earn 
+Story Points. Whoever obtains the
+most Story Points by Round 10 wins
+the game!"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
