@@ -4,10 +4,18 @@ var current_scene = null
 
 var player_names = ["", "", "", "", ""]
 var meeple_counts = [3, 3, 3, 3, 3]
+var player_score = [0,0,0,0,0]
+var train_scores = [0,0,0,0,0]
+var req_scores = [0,0,0,0,0]
+var design_scores = [0,0,0,0,0]
+var imp_scores = [0,0,0,0,0]
+var test_scores = [0,0,0,0,0]
+var bTools = [0,0,0,0,0]
 var meeple_min = 0;
 var meeple_max = [3, 3, 3, 3, 3]
 var num_players = 2
 var first_player = 1
+var current_player = 1
 
 func _ready():
 	var root = get_tree().get_root()
