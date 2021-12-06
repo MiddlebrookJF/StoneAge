@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/gwent board.png" type="Texture" id=1]
 [ext_resource path="res://Board.gd" type="Script" id=2]
@@ -55,12 +55,6 @@ font_data = ExtResource( 7 )
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.137255, 0.129412, 0.129412, 1 )
 anti_aliasing_size = 5
-
-[sub_resource type="DynamicFontData" id=11]
-font_path = "res://assets/Bentham/Bentham-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=12]
-font_data = SubResource( 11 )
 
 [node name="Board" type="Node2D"]
 position = Vector2( 0, -1 )
@@ -697,53 +691,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NinePatchRect" type="NinePatchRect" parent="RulesPopup"]
-margin_left = -224.106
-margin_top = 547.182
-margin_right = -184.106
-margin_bottom = 587.182
-rect_scale = Vector2( 0.711811, 1.13316 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PointsButton" type="Button" parent="RulesPopup/NinePatchRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -34.0251
-margin_top = 2.59546
-margin_right = -19.0251
-margin_bottom = 2.59546
-custom_fonts/font = SubResource( 12 )
-text = "Points"
-
-[node name="ScrumplesButton" type="Button" parent="RulesPopup/NinePatchRect"]
-margin_left = 29.48
-margin_top = 2.16574
-margin_right = 111.48
-margin_bottom = 42.1657
-custom_fonts/font = SubResource( 12 )
-text = "Scrumples"
-
-[node name="TurnsButton" type="Button" parent="RulesPopup/NinePatchRect"]
-margin_left = 119.0
-margin_top = 2.5784
-margin_right = 171.0
-margin_bottom = 42.5784
-custom_fonts/font = SubResource( 12 )
-text = "Turns"
-
-[node name="ToolsButton" type="Button" parent="RulesPopup/NinePatchRect"]
-margin_left = 178.762
-margin_top = 3.86768
-margin_right = 225.762
-margin_bottom = 43.8677
-custom_fonts/font = SubResource( 12 )
-text = "Tools"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="DisplayLabel" type="Label" parent="RulesPopup"]
 margin_left = -219.804
 margin_top = 177.209
@@ -821,7 +768,3 @@ __meta__ = {
 [connection signal="pressed" from="ConvertButton" to="." method="end_Turn"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="RulesPopup/TextureRect/CloseButton" to="RulesPopup" method="close"]
-[connection signal="pressed" from="RulesPopup/NinePatchRect/PointsButton" to="RulesPopup" method="show_PointsRules"]
-[connection signal="pressed" from="RulesPopup/NinePatchRect/ScrumplesButton" to="RulesPopup" method="show_ScrumpleRules"]
-[connection signal="pressed" from="RulesPopup/NinePatchRect/TurnsButton" to="RulesPopup" method="show_TurnsRules"]
-[connection signal="pressed" from="RulesPopup/NinePatchRect/ToolsButton" to="RulesPopup" method="show_ToolsRules"]
