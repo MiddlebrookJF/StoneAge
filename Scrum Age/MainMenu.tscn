@@ -231,7 +231,7 @@ margin_bottom = 620.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Version 0.3 The critically acclaimed MMORPG Final Fantasy XIV with a
+text = "Version 1.0 The critically acclaimed MMORPG Final Fantasy XIV with a
 free trial until level 60 including the Heavensward Expansion"
 align = 1
 

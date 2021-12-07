@@ -50,31 +50,13 @@ func subtractMeeples(index, amount):
 		Global.meeple_counts[index] -= amount;
 	else:
 		print("Min meeple count reached, cannot subtract");
-		
-func addPoints(grid_name, player_index):
-	var toolsExist = 0
-	var tools = 0
-	if Global.bTools[player_index] >= 1:
-		toolsExist= 1;
-		tools = Global.bTools
+func CheckCost(child):
+	if Global.train_scores[Global.current_player-1] >= child.REQ[0] && Global.req_scores[Global.current_player-1] >= child.REQ[1] && Global.design_scores[Global.current_player-1] >= child.REQ[2] && Global.imp_scores[Global.current_player-1] >= child.REQ[3]:
+		return true;
 	else:
-		toolsExist = 0;
-	var random = RandomNumberGenerator.new()
-	random.randomize()
-	var rolledVal = random.randi_range(0, 5)
-	match grid_name:
-		"TrainingGrid":
-			Global.train_scores[player_index] + rolledVal;
-		"RequirementsGrid":
-			Global.req_scores[player_index] + rolledVal;
-		"DesignGrid":
-			Global.design_scores[player_index] + rolledVal;
-		"ImpGrid":
-			Global.imp_scores[player_index] + rolledVal;
-		"TestingGrid":
-			Global.test_scores[player_index] + rolledVal;
-		"ToolGrid":
-			Global.bTools[player_index] + 1;
+		get_node("InfoPanel/Info").text = "You do not have enough points "
+		get_node("Timer").start();
+		return false;
 	
 
 # Touch a slot to place or remove a meeple
@@ -83,6 +65,16 @@ func touch_slot(grid_name, slot):
 		#current_player-1 is used as index <== meeple_counts[] has player 1 at index 0
 	if child.booleanSlotArray[slot-1] == -1:
 		if (Global.meeple_counts[Global.current_player-1] > 0):
+			if CheckCost(child) == false:
+				return;
+			Global.train_scores[Global.current_player-1] -= child.REQ[0]
+			$PlayerMenu.updateTraining(Global.current_player-1);
+			Global.req_scores[Global.current_player-1] -= child.REQ[1]
+			$PlayerMenu.updateReq(Global.current_player-1);
+			Global.design_scores[Global.current_player-1] -= child.REQ[2]
+			$PlayerMenu.updateDesign(Global.current_player-1);
+			Global.imp_scores[Global.current_player-1] -= child.REQ[3]
+			$PlayerMenu.updateImp(Global.current_player-1);
 			set_meeple_color(grid_name+"/Slot"+str(slot), Global.current_player); #Set the texture to the player's color
 			child.get_node("Slot"+str(slot)).texture_normal = knight_path #get knight icon
 			child.booleanSlotArray[slot-1] = Global.current_player-1;		#show that the slot is now taken
@@ -98,6 +90,14 @@ func touch_slot(grid_name, slot):
 
 	else:
 		if child.booleanSlotArray[slot-1] == Global.current_player -1:
+			Global.train_scores[Global.current_player-1] += child.REQ[0]
+			$PlayerMenu.updateTraining(Global.current_player-1);
+			Global.req_scores[Global.current_player-1] += child.REQ[1]
+			$PlayerMenu.updateReq(Global.current_player-1);
+			Global.design_scores[Global.current_player-1] += child.REQ[2]
+			$PlayerMenu.updateDesign(Global.current_player-1);
+			Global.imp_scores[Global.current_player-1] += child.REQ[3]
+			$PlayerMenu.updateImp(Global.current_player-1);
 			child.get_node("Slot"+str(slot)).texture_normal = emptySpace;	#remove knight texture
 			set_meeple_color(grid_name+"/Slot"+str(slot), 0);
 			child.booleanSlotArray[slot-1] = -1;
@@ -202,31 +202,31 @@ func upkeep():
 			var playerID = $TrainingGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.train_scores[playerID]+= rolledVal+Global.bTools[playerID];
+			Global.train_scores[playerID]+= (rolledVal+Global.bTools[playerID])*4;
 			$PlayerMenu.updateTraining(playerID);
 		if $RequirementsGrid.booleanSlotArray[i] != -1:
 			var playerID = $RequirementsGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.req_scores[playerID]+= rolledVal+Global.bTools[playerID];
+			Global.req_scores[playerID]+= (rolledVal+Global.bTools[playerID])*3;
 			$PlayerMenu.updateReq(playerID);
 		if $DesignGrid.booleanSlotArray[i] != -1:
 			var playerID = $DesignGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.design_scores[playerID]+= rolledVal+Global.bTools[playerID];
+			Global.design_scores[playerID]+= (rolledVal+Global.bTools[playerID])*3;
 			$PlayerMenu.updateDesign(playerID);
 		if $ImpGrid.booleanSlotArray[i] != -1:
 			var playerID = $ImpGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.imp_scores[playerID]+= rolledVal+Global.bTools[playerID];
+			Global.imp_scores[playerID]+= (rolledVal+Global.bTools[playerID])*2;
 			$PlayerMenu.updateImp(playerID);
 		if $TestingGrid.booleanSlotArray[i] != -1:
 			var playerID = $TestingGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.test_scores[playerID]+= rolledVal+Global.bTools[playerID];
+			Global.test_scores[playerID]+= (rolledVal+Global.bTools[playerID]);
 			$PlayerMenu.updateTest(playerID);
 	var tools = $ToolGrid.booleanSlotArray[0]
 	if tools != -1:
@@ -274,3 +274,9 @@ func _on_Timer_timeout():
 	get_node("InfoPanel/Info").text = "Scrum Age"
 
 
+func ConvertStoryPoints():
+	while Global.test_scores[Global.current_player-1] >= 10:
+		Global.test_scores[Global.current_player-1]-=10
+		$PlayerMenu.updateTest();
+		Global.player_score[Global.current_player-1]+=1;
+		$PlayerMenu.updateScores();
