@@ -92,7 +92,6 @@ func touch_slot(grid_name, slot):
 			$PlayerMenu.updateMeepleLabels(Global.current_player);
 			if(Global.meeple_counts[Global.current_player-1]==0):
 				get_node("EndTurn").show()
-			var hr = get_node("HRGrid")
 		else:
 			get_node("InfoPanel/Info").text = "You do not have enough Meeples"
 			get_node("Timer").start();
@@ -195,8 +194,7 @@ func end_Turn():
 		
 	$PlayerMenu.showTurn(Global.current_player)
 	get_node("EndTurn").hide()
-	get_node("HRGrid/Slot1").visible = true
-	get_node("HRGrid/Slot2").visible = true
+
 func upkeep():
 	var random = RandomNumberGenerator.new()
 	for i in 9:
@@ -233,12 +231,14 @@ func upkeep():
 	var tools = $ToolGrid.booleanSlotArray[0]
 	if tools != -1:
 		Global.bTools[tools] +=1;
+		$PlayerMenu.showTool(tools)
 	print("I survived")
 	print(Global.train_scores)
 	print(Global.req_scores)
 	print(Global.design_scores)
 	print(Global.imp_scores)
 	print(Global.test_scores)	
+
 #cleans the board and returns meeples to players.
 func clean_Board():
 	for i in 9:

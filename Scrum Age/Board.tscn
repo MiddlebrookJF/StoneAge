@@ -708,6 +708,7 @@ __meta__ = {
 }
 
 [node name="PointsButton" type="Button" parent="RulesPopup/NinePatchRect"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -34.0251
@@ -718,6 +719,7 @@ custom_fonts/font = SubResource( 12 )
 text = "Points"
 
 [node name="ScrumplesButton" type="Button" parent="RulesPopup/NinePatchRect"]
+visible = false
 margin_left = 29.48
 margin_top = 2.16574
 margin_right = 111.48
@@ -726,6 +728,7 @@ custom_fonts/font = SubResource( 12 )
 text = "Scrumples"
 
 [node name="TurnsButton" type="Button" parent="RulesPopup/NinePatchRect"]
+visible = false
 margin_left = 119.0
 margin_top = 2.5784
 margin_right = 171.0
@@ -734,6 +737,7 @@ custom_fonts/font = SubResource( 12 )
 text = "Turns"
 
 [node name="ToolsButton" type="Button" parent="RulesPopup/NinePatchRect"]
+visible = false
 margin_left = 178.762
 margin_top = 3.86768
 margin_right = 225.762

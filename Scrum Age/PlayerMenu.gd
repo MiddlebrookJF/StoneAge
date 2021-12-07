@@ -57,4 +57,8 @@ func showTurn(player):
 	clearFlags()
 	get_node("Players/HBoxContainer"+str(player)+"/MarginContainer/Player"+str(player)+"/TurnIndicatorP"+str(player)).visible = true
 
-
+# Shows the tool icon when player receives a tool
+func showTool(player):
+	if (Global.bTools[player] != -1):
+		get_node("Players/HBoxContainer"+str(player+1)+"/MarginContainer/Player"+str(player+1)+"/ToolsIcon"+str(player+1)).visible = true
+		print(Global.bTools)
