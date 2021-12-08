@@ -18,7 +18,7 @@ var knight_path = load("res://assets/Meeples/knight_head.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("EndTurn").hide()
+	pass
 
 #Get colored textures associated with each player, based on player value calling method (NEEDS TO BE UPDATED)
 func set_meeple_color(texture_path, player):
@@ -81,8 +81,6 @@ func touch_slot(grid_name, slot):
 			subtractMeeples(Global.current_player-1, 1);
 			print(Global.meeple_counts) 			#debug
 			$PlayerMenu.updateMeepleLabels(Global.current_player);
-			if(Global.meeple_counts[Global.current_player-1]==0):
-				get_node("EndTurn").show()
 		else:
 			get_node("InfoPanel/Info").text = "You do not have enough Meeples"
 			get_node("Timer").start();
@@ -104,8 +102,6 @@ func touch_slot(grid_name, slot):
 			print(child.booleanSlotArray);
 			print(Global.meeple_counts);
 			$PlayerMenu.updateMeepleLabels(Global.current_player);
-			if(Global.meeple_counts[Global.current_player-1]!=0):
-				get_node("EndTurn").hide()
 		else:
 			get_node("InfoPanel/Info").text = "Another player has meeples here."
 			get_node("Timer").start();
@@ -138,8 +134,6 @@ func touchHR_slot(grid_name,slot):
 				subtractMeeples(Global.current_player-1, 2);
 				print(Global.meeple_counts) 			#debug
 				$PlayerMenu.updateMeepleLabels(Global.current_player);
-				if(Global.meeple_counts[Global.current_player-1]==0):
-					get_node("EndTurn").show()
 			else:
 				get_node("InfoPanel/Info").text = "You do not have enough meeples."
 				get_node("Timer").start();
@@ -161,18 +155,9 @@ func touchHR_slot(grid_name,slot):
 				addMeeples(Global.current_player-1, 2);
 				print(Global.meeple_counts);
 				$PlayerMenu.updateMeepleLabels(Global.current_player);
-				if(Global.meeple_counts[Global.current_player-1]!=0):
-					get_node("EndTurn").hide()
 			else:
 				get_node("InfoPanel/Info").text = "Another player has meeples here."
 				get_node("Timer").start();
-
-#Checks to see if the round is over by checking meeple counts
-func round_check():
-	for x in range(Global.num_players):
-		if (Global.meeple_counts[x] != 0):
-			return false
-	return true
 
 # Resets turn order and increments the players
 func newRound():
@@ -224,14 +209,14 @@ func end_Turn():
 		Global.current_player = 1
 
 	get_node("InfoPanel/Info").text = "SCRUM AGE"
-	print("I ended!")
 	turnIndicator+=1;
 	
-	if(round_check()):
-		newRound();
+	if(Global.current_player == Global.first_player):
+		newRound()
+	elif(Global.current_player - 1 == Global.num_players && Global.first_player == 1):
+		newRound()
 		
 	$PlayerMenu.showTurn(Global.current_player)
-	get_node("EndTurn").hide()
 
 func upkeep():
 	var random = RandomNumberGenerator.new()
