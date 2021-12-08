@@ -17,6 +17,7 @@ var num_players = 2
 var first_player = 1
 var current_player = 1
 var round_counter = 0;
+var tool_bonus=[0,0,0,0,0]
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
@@ -49,7 +50,7 @@ func ResetToDefault():
 	first_player = 1
 	current_player = 1
 	round_counter = 0;
-
+	tool_bonus=[0,0,0,0,0]
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene
 	current_scene.free()

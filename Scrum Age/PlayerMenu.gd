@@ -62,3 +62,7 @@ func showTool(player):
 	if (Global.bTools[player] != -1):
 		get_node("Players/HBoxContainer"+str(player+1)+"/MarginContainer/Player"+str(player+1)+"/ToolsIcon"+str(player+1)).visible = true
 		print(Global.bTools)
+func hideTool(player):
+	if (Global.bTools[player] != -1):
+		get_node("Players/HBoxContainer"+str(player+1)+"/MarginContainer/Player"+str(player+1)+"/ToolsIcon"+str(player+1)).visible = false
+		print(Global.bTools)

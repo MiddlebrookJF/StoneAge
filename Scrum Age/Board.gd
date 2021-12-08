@@ -182,7 +182,7 @@ func newRound():
 	for i in 4:
 		$PlayerMenu.updateScores(i);
 	turnIndicator = 0;
-	if(Global.round_counter >= 2):
+	if(Global.round_counter >= 14):
 		endGame();
 	if(Global.first_player < Global.num_players):
 		Global.first_player+=1
@@ -249,35 +249,35 @@ func upkeep():
 			var playerID = $TrainingGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.train_scores[playerID]+= (rolledVal+Global.bTools[playerID])*4;
+			Global.train_scores[playerID]+= (rolledVal+Global.tool_bonus[playerID])*4;
 			$PlayerMenu.updateTraining(playerID);
 		if $RequirementsGrid.booleanSlotArray[i] != -1:
 			var playerID = $RequirementsGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.req_scores[playerID]+= (rolledVal+Global.bTools[playerID])*3;
+			Global.req_scores[playerID]+= (rolledVal+Global.tool_bonus[playerID])*3;
 			$PlayerMenu.updateReq(playerID);
 		if $DesignGrid.booleanSlotArray[i] != -1:
 			var playerID = $DesignGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.design_scores[playerID]+= (rolledVal+Global.bTools[playerID])*3;
+			Global.design_scores[playerID]+= (rolledVal+Global.tool_bonus[playerID])*3;
 			$PlayerMenu.updateDesign(playerID);
 		if $ImpGrid.booleanSlotArray[i] != -1:
 			var playerID = $ImpGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.imp_scores[playerID]+= (rolledVal+Global.bTools[playerID])*2;
+			Global.imp_scores[playerID]+= (rolledVal+Global.tool_bonus[playerID])*2;
 			$PlayerMenu.updateImp(playerID);
 		if $TestingGrid.booleanSlotArray[i] != -1:
 			var playerID = $TestingGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.test_scores[playerID]+= (rolledVal+Global.bTools[playerID]);
+			Global.test_scores[playerID]+= (rolledVal+Global.tool_bonus[playerID]);
 			$PlayerMenu.updateTest(playerID);
 	var tools = $ToolGrid.booleanSlotArray[0]
 	if tools != -1:
-		Global.bTools[tools] +=1;
+		Global.bTools[tools] =1;
 		$PlayerMenu.showTool(tools)
 	var HR = $HRGrid.booleanSlotArray[0]
 	if HR != -1:
@@ -334,7 +334,10 @@ func ConvertStoryPoints():
 
 
 func use_Tool():
-	pass 
+	if Global.bTools[Global.current_player-1] == 1:
+		Global.tool_bonus[Global.current_player-1] += 10
+		Global.bTools[Global.current_player-1] = 0
+		$PlayerMenu.hideTool(Global.current_player-1)
 
 func _on_GameOverButton_pressed():
 	Global.ResetToDefault()
