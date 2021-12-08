@@ -123,12 +123,12 @@ anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
 anchor_bottom = 0.5
-margin_left = 21.0301
+margin_left = 17.0301
 margin_top = 12.5
-margin_right = -222.97
+margin_right = -226.97
 margin_bottom = 26.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TP:"
+text = "TrP:"
 align = 3
 valign = 3
 __meta__ = {
@@ -140,9 +140,9 @@ anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
 anchor_bottom = 0.5
-margin_left = 63.0748
+margin_left = 62.0748
 margin_top = 11.6591
-margin_right = -179.925
+margin_right = -180.925
 margin_bottom = 25.6591
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "RP:"
@@ -157,9 +157,9 @@ anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
 anchor_bottom = 0.5
-margin_left = 108.483
+margin_left = 105.483
 margin_top = 12.5
-margin_right = -132.517
+margin_right = -135.517
 margin_bottom = 26.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "DP:"
@@ -191,12 +191,12 @@ anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
 anchor_bottom = 0.5
-margin_left = 195.095
-margin_top = 12.5
-margin_right = -45.9047
-margin_bottom = 26.5
+margin_left = 198.095
+margin_top = 13.5
+margin_right = -42.9047
+margin_bottom = 27.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TP:"
+text = "TeP:"
 align = 3
 valign = 3
 __meta__ = {
@@ -204,10 +204,10 @@ __meta__ = {
 }
 
 [node name="TrainVal" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
-margin_left = 41.1775
-margin_top = 50.9879
-margin_right = 70.1775
-margin_bottom = 79.9879
+margin_left = 40.7002
+margin_top = 49.9879
+margin_right = 69.7002
+margin_bottom = 78.9879
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -215,10 +215,10 @@ __meta__ = {
 }
 
 [node name="ReqVal" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
-margin_left = 85.0181
-margin_top = 49.9272
-margin_right = 114.018
-margin_bottom = 78.9272
+margin_left = 85.1772
+margin_top = 49.0863
+margin_right = 114.177
+margin_bottom = 78.0863
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -226,10 +226,10 @@ __meta__ = {
 }
 
 [node name="DesignVal" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
-margin_left = 134.162
-margin_top = 50.9879
-margin_right = 163.162
-margin_bottom = 79.9879
+margin_left = 134.526
+margin_top = 50.3061
+margin_right = 163.526
+margin_bottom = 79.3061
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -237,10 +237,10 @@ __meta__ = {
 }
 
 [node name="ImpVal" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
-margin_left = 173.76
-margin_top = 50.9879
-margin_right = 202.76
-margin_bottom = 79.9879
+margin_left = 175.76
+margin_top = 49.9879
+margin_right = 204.76
+margin_bottom = 78.9879
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -248,10 +248,10 @@ __meta__ = {
 }
 
 [node name="TestVal" type="Label" parent="Players/HBoxContainer1/MarginContainer/Player1"]
-margin_left = 215.126
-margin_top = 49.9272
-margin_right = 244.126
-margin_bottom = 78.9272
+margin_left = 230.376
+margin_top = 50.9273
+margin_right = 259.376
+margin_bottom = 79.9273
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -361,12 +361,12 @@ anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
 anchor_bottom = 0.5
-margin_left = 20.0301
+margin_left = 18.0301
 margin_top = 12.5
-margin_right = -220.97
+margin_right = -222.97
 margin_bottom = 26.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TP: "
+text = "TrP: "
 align = 3
 valign = 3
 __meta__ = {
@@ -434,7 +434,7 @@ margin_top = 12.5
 margin_right = -42.9698
 margin_bottom = 26.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TP: "
+text = "TeP: "
 align = 3
 valign = 3
 __meta__ = {
@@ -442,10 +442,10 @@ __meta__ = {
 }
 
 [node name="TrainVal" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
-margin_left = 41.1775
-margin_top = 50.9879
-margin_right = 70.1775
-margin_bottom = 79.9879
+margin_left = 43.3819
+margin_top = 50.147
+margin_right = 72.3819
+margin_bottom = 79.147
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -453,9 +453,9 @@ __meta__ = {
 }
 
 [node name="ReqVal" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
-margin_left = 85.0181
+margin_left = 88.0181
 margin_top = 49.9272
-margin_right = 114.018
+margin_right = 117.018
 margin_bottom = 78.9272
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
@@ -486,10 +486,10 @@ __meta__ = {
 }
 
 [node name="TestVal" type="Label" parent="Players/HBoxContainer2/MarginContainer/Player2"]
-margin_left = 215.126
-margin_top = 49.9272
-margin_right = 244.126
-margin_bottom = 78.9272
+margin_left = 222.694
+margin_top = 49.7681
+margin_right = 251.694
+margin_bottom = 78.7681
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -596,12 +596,12 @@ anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
 anchor_bottom = 0.5
-margin_left = 19.7265
-margin_top = 11.0903
-margin_right = -224.273
-margin_bottom = 25.0903
+margin_left = 13.8856
+margin_top = 11.2494
+margin_right = -230.114
+margin_bottom = 25.2494
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TP: "
+text = "TrP: "
 align = 3
 valign = 3
 __meta__ = {
@@ -669,7 +669,7 @@ margin_top = 11.0903
 margin_right = -47.2083
 margin_bottom = 25.0903
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TP: "
+text = "TeP: "
 align = 3
 valign = 3
 __meta__ = {
@@ -677,10 +677,10 @@ __meta__ = {
 }
 
 [node name="TrainVal" type="Label" parent="Players/HBoxContainer3/MarginContainer/Player3"]
-margin_left = 41.1775
-margin_top = 50.9879
-margin_right = 70.1775
-margin_bottom = 79.9879
+margin_left = 39.541
+margin_top = 49.3061
+margin_right = 68.541
+margin_bottom = 78.3061
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -721,10 +721,10 @@ __meta__ = {
 }
 
 [node name="TestVal" type="Label" parent="Players/HBoxContainer3/MarginContainer/Player3"]
-margin_left = 215.126
-margin_top = 49.9272
-margin_right = 244.126
-margin_bottom = 78.9272
+margin_left = 223.0
+margin_top = 50.0
+margin_right = 248.0
+margin_bottom = 79.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -839,7 +839,7 @@ margin_top = 11.0903
 margin_right = -224.273
 margin_bottom = 25.0903
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TP: "
+text = "TrP: "
 align = 3
 valign = 3
 __meta__ = {
@@ -907,7 +907,7 @@ margin_top = 11.0903
 margin_right = -47.2083
 margin_bottom = 25.0903
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TP: "
+text = "TeP: "
 align = 3
 valign = 3
 __meta__ = {
@@ -915,10 +915,10 @@ __meta__ = {
 }
 
 [node name="TrainVal" type="Label" parent="Players/HBoxContainer4/MarginContainer/Player4"]
-margin_left = 41.1775
-margin_top = 50.9879
-margin_right = 70.1775
-margin_bottom = 79.9879
+margin_left = 44.1775
+margin_top = 48.9879
+margin_right = 73.1775
+margin_bottom = 77.9879
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -938,9 +938,9 @@ __meta__ = {
 
 [node name="DesignVal" type="Label" parent="Players/HBoxContainer4/MarginContainer/Player4"]
 margin_left = 134.162
-margin_top = 50.9879
+margin_top = 49.9879
 margin_right = 163.162
-margin_bottom = 79.9879
+margin_bottom = 78.9879
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -959,10 +959,10 @@ __meta__ = {
 }
 
 [node name="TestVal" type="Label" parent="Players/HBoxContainer4/MarginContainer/Player4"]
-margin_left = 215.126
-margin_top = 49.9272
-margin_right = 244.126
-margin_bottom = 78.9272
+margin_left = 220.126
+margin_top = 48.9272
+margin_right = 249.126
+margin_bottom = 77.9272
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -1073,12 +1073,12 @@ anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
 anchor_bottom = 0.5
-margin_left = 19.7265
-margin_top = 11.0903
-margin_right = -224.273
-margin_bottom = 25.0903
+margin_left = 18.8857
+margin_top = 11.9312
+margin_right = -225.114
+margin_bottom = 25.9312
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TP: "
+text = "TrP: "
 align = 3
 valign = 3
 __meta__ = {
@@ -1124,10 +1124,10 @@ anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
 anchor_bottom = 0.5
-margin_left = 151.747
-margin_top = 11.0903
-margin_right = -89.2531
-margin_bottom = 25.0903
+margin_left = 149.747
+margin_top = 12.0903
+margin_right = -91.2531
+margin_bottom = 26.0903
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "IP: "
 align = 3
@@ -1141,12 +1141,12 @@ anchor_left = -0.00374573
 anchor_top = 0.5
 anchor_right = 0.996254
 anchor_bottom = 0.5
-margin_left = 193.792
+margin_left = 189.792
 margin_top = 11.0903
-margin_right = -47.2083
+margin_right = -51.2083
 margin_bottom = 25.0903
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "TP: "
+text = "TeP: "
 align = 3
 valign = 3
 __meta__ = {
@@ -1154,9 +1154,9 @@ __meta__ = {
 }
 
 [node name="TrainVal" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
-margin_left = 41.6775
+margin_left = 43.6775
 margin_top = 50.4879
-margin_right = 70.6775
+margin_right = 72.6775
 margin_bottom = 79.4879
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
@@ -1176,9 +1176,9 @@ __meta__ = {
 }
 
 [node name="DesignVal" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
-margin_left = 131.162
+margin_left = 132.162
 margin_top = 50.4879
-margin_right = 160.162
+margin_right = 161.162
 margin_bottom = 79.4879
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
@@ -1187,10 +1187,14 @@ __meta__ = {
 }
 
 [node name="ImpVal" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
-margin_left = 172.26
-margin_top = 51.4879
-margin_right = 201.26
-margin_bottom = 80.4879
+anchor_left = 0.00305758
+anchor_top = -0.0112118
+anchor_right = 0.00305758
+anchor_bottom = -0.0112118
+margin_left = 169.26
+margin_top = 50.4879
+margin_right = 198.26
+margin_bottom = 79.4879
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
@@ -1198,10 +1202,10 @@ __meta__ = {
 }
 
 [node name="TestVal" type="Label" parent="Players/HBoxContainer5/MarginContainer/Player5"]
-margin_left = 215.126
-margin_top = 49.9272
-margin_right = 244.126
-margin_bottom = 78.9272
+margin_left = 220.126
+margin_top = 49.1317
+margin_right = 249.126
+margin_bottom = 78.1317
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {

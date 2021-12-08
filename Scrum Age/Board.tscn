@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://assets/gwent board.png" type="Texture" id=1]
 [ext_resource path="res://Board.gd" type="Script" id=2]
@@ -18,26 +18,38 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 40
-font_data = ExtResource( 4 )
+size = 22
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -49,22 +61,76 @@ size = 40
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=9]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=11]
 size = 37
 font_data = ExtResource( 7 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.137255, 0.129412, 0.129412, 1 )
 anti_aliasing_size = 5
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://assets/Bentham/Bentham-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+font_data = SubResource( 13 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 48
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 36
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 36
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 72
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 45
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
 
 [node name="Board" type="Node2D"]
 position = Vector2( 0, -1 )
 script = ExtResource( 2 )
 
 [node name="Background" type="TextureRect" parent="."]
-margin_left = 3.0
-margin_top = -4.0
-margin_right = 1343.0
-margin_bottom = 799.0
+margin_left = 3.84094
+margin_top = -5.68176
+margin_right = 1343.84
+margin_bottom = 797.318
 rect_scale = Vector2( 1.017, 0.965 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -88,24 +154,69 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Cost" type="Label" parent="Testing"]
+margin_left = 92.5093
+margin_top = -140.891
+margin_right = 212.509
+margin_bottom = 31.1091
+custom_fonts/font = SubResource( 2 )
+text = "TrP = 20
+RP= 20
+DP = 15
+IP = 10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Design" type="Label" parent="."]
 margin_left = 777.403
 margin_top = 194.946
 margin_right = 872.403
 margin_bottom = 240.946
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Design"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Cost" type="Label" parent="Design"]
+margin_left = 85.6366
+margin_top = -121.112
+margin_right = 218.637
+margin_bottom = -54.1124
+custom_fonts/font = SubResource( 2 )
+text = "TrP = 15
+RP = 10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Implementation" type="Label" parent="."]
-margin_left = 1038.11
-margin_top = 199.019
-margin_right = 1265.11
-margin_bottom = 245.019
-custom_fonts/font = SubResource( 3 )
+margin_left = 1039.0
+margin_top = 200.801
+margin_right = 1266.0
+margin_bottom = 246.801
+custom_fonts/font = SubResource( 4 )
 text = "Implementation"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Implementation"]
+margin_left = 133.307
+margin_top = -113.289
+margin_right = 266.307
+margin_bottom = -11.2887
+custom_fonts/font = SubResource( 2 )
+text = "TrP = 20
+RP= 15
+DP = 10"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -115,19 +226,45 @@ margin_left = 392.965
 margin_top = 197.542
 margin_right = 591.965
 margin_bottom = 243.542
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Requirements"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Cost" type="Label" parent="Requirements"]
+margin_left = 120.169
+margin_top = -112.988
+margin_right = 253.169
+margin_bottom = -77.9884
+custom_fonts/font = SubResource( 2 )
+text = "TrP = 10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Training" type="Label" parent="."]
-margin_left = 155.192
+margin_left = 159.954
 margin_top = 196.405
-margin_right = 275.192
+margin_right = 279.954
 margin_bottom = 242.405
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Training"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Training"]
+margin_left = -5.11182
+margin_top = 38.0315
+margin_right = 127.888
+margin_bottom = 73.0315
+custom_fonts/font = SubResource( 2 )
+text = "FREE"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -137,7 +274,7 @@ margin_left = 833.427
 margin_top = 406.653
 margin_right = 906.427
 margin_bottom = 452.653
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Tools"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -148,11 +285,19 @@ margin_left = 431.417
 margin_top = 412.156
 margin_right = 473.417
 margin_bottom = 458.156
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "HR"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="HR"]
+margin_left = -19.5445
+margin_top = 48.0181
+margin_right = 74.4555
+margin_bottom = 84.0181
+custom_fonts/font = SubResource( 9 )
+text = "TrP = 20"
 
 [node name="RequirementsGrid" type="GridContainer" parent="."]
 margin_left = 424.139
@@ -224,10 +369,10 @@ margin_bottom = 197.0
 texture_normal = ExtResource( 5 )
 
 [node name="TrainingGrid" type="GridContainer" parent="."]
-margin_left = 161.376
-margin_top = 80.7614
-margin_right = 352.376
-margin_bottom = 280.762
+margin_left = 161.0
+margin_top = 81.0
+margin_right = 356.0
+margin_bottom = 281.0
 rect_scale = Vector2( 0.6, 0.6 )
 columns = 3
 script = ExtResource( 12 )
@@ -555,7 +700,7 @@ margin_left = 31.9897
 margin_top = 10.7194
 margin_right = 259.99
 margin_bottom = 78.7194
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 text = "END TURN"
 align = 1
 valign = 1
@@ -565,9 +710,9 @@ __meta__ = {
 
 [node name="ToolButton" type="Button" parent="."]
 margin_left = 6.0
-margin_top = 405.385
+margin_top = 404.494
 margin_right = 213.0
-margin_bottom = 502.385
+margin_bottom = 501.494
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -577,7 +722,7 @@ margin_left = 11.0
 margin_top = 14.0
 margin_right = 199.0
 margin_bottom = 82.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 text = "USE TOOL"
 align = 1
 valign = 1
@@ -599,7 +744,7 @@ margin_left = 6.31372
 margin_top = 8.3432
 margin_right = 203.314
 margin_bottom = 76.3432
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 text = "RULES"
 align = 1
 valign = 1
@@ -621,7 +766,7 @@ margin_left = -2.17157
 margin_top = 10.0416
 margin_right = 206.828
 margin_bottom = 105.042
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 text = "CONVERT TO 
 STORY POINTS"
 align = 1
@@ -643,7 +788,7 @@ margin_left = 42.0
 margin_top = 4.0
 margin_right = 1406.0
 margin_bottom = 46.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 11 )
 text = "scrum age"
 align = 1
 valign = 1
@@ -683,7 +828,7 @@ margin_top = 678.692
 margin_right = 319.481
 margin_bottom = 698.692
 rect_scale = Vector2( 1.42804, 2.71692 )
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 12 )
 shortcut_in_tooltip = false
 keep_pressed_outside = true
 text = "Close"
@@ -709,7 +854,7 @@ margin_left = -34.0251
 margin_top = 2.59546
 margin_right = -19.0251
 margin_bottom = 2.59546
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 14 )
 text = "Points"
 
 [node name="ScrumplesButton" type="Button" parent="RulesPopup/NinePatchRect"]
@@ -718,7 +863,7 @@ margin_left = 29.48
 margin_top = 2.16574
 margin_right = 111.48
 margin_bottom = 42.1657
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 14 )
 text = "Scrumples"
 
 [node name="TurnsButton" type="Button" parent="RulesPopup/NinePatchRect"]
@@ -727,7 +872,7 @@ margin_left = 119.0
 margin_top = 2.5784
 margin_right = 171.0
 margin_bottom = 42.5784
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 14 )
 text = "Turns"
 
 [node name="ToolsButton" type="Button" parent="RulesPopup/NinePatchRect"]
@@ -736,7 +881,7 @@ margin_left = 178.762
 margin_top = 3.86768
 margin_right = 225.762
 margin_bottom = 43.8677
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 14 )
 text = "Tools"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -758,12 +903,124 @@ WELCOME TO SCRUM AGE! In this
  order to progress the  game. For
 each cycle you complete, you earn 
 Story Points. Whoever obtains the
-most Story Points by Round 10 wins
+most Story Points by Round 15 wins
 the game!"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CostLabel" type="Label" parent="."]
+margin_left = 3.15912
+margin_top = 618.309
+margin_right = 218.159
+margin_bottom = 673.309
+custom_fonts/font = SubResource( 15 )
+text = "Cost: 10 TeP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RoundPanel" type="Panel" parent="."]
+margin_left = 1059.0
+margin_top = 300.0
+margin_right = 1382.0
+margin_bottom = 369.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="RoundPanel"]
+margin_right = 305.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 16 )
+text = "ROUND"
+align = 1
+valign = 1
+
+[node name="RoundNum" type="Label" parent="RoundPanel/Label"]
+margin_left = 117.327
+margin_top = 32.3273
+margin_right = 186.327
+margin_bottom = 73.3273
+custom_fonts/font = SubResource( 17 )
+text = "1"
+align = 1
+valign = 1
+
+[node name="GameOver" type="Popup" parent="."]
+visible = true
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="GameOver"]
+margin_right = 1363.0
+margin_bottom = 766.0
+texture = ExtResource( 14 )
+expand = true
+
+[node name="Panel" type="Panel" parent="GameOver/TextureRect"]
+margin_left = 321.0
+margin_top = 0.218201
+margin_right = 1033.0
+margin_bottom = 768.218
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gameoverlabel" type="Label" parent="GameOver/TextureRect/Panel"]
+margin_top = 1.0
+margin_right = 708.0
+margin_bottom = 147.0
+custom_fonts/font = SubResource( 18 )
+text = "GAME OVER!"
+align = 1
+valign = 1
+
+[node name="WinnerLabel" type="Label" parent="GameOver/TextureRect/Panel"]
+margin_left = 55.6365
+margin_top = 165.618
+margin_right = 643.636
+margin_bottom = 309.618
+custom_fonts/font = SubResource( 19 )
+text = "0"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="GameOver/TextureRect/Panel"]
+visible = false
+margin_left = 49.9476
+margin_top = 318.218
+margin_right = 236.948
+margin_bottom = 373.218
+custom_fonts/font = SubResource( 20 )
+text = "Final Stats"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerMenu" parent="GameOver/TextureRect/Panel/Label3" instance=ExtResource( 3 )]
+visible = false
+margin_left = 1055.0
+margin_top = 356.0
+margin_right = 1370.0
+margin_bottom = 811.0
+
+[node name="Button" type="Button" parent="GameOver/TextureRect/Panel"]
+margin_left = 159.419
+margin_top = 459.123
+margin_right = 570.419
+margin_bottom = 626.123
+custom_fonts/font = SubResource( 21 )
+text = "Quit To Main Menu and Play Again!"
 
 [connection signal="pressed" from="RequirementsGrid/Slot1" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 1 ]]
 [connection signal="pressed" from="RequirementsGrid/Slot2" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 2 ]]
@@ -814,8 +1071,13 @@ __meta__ = {
 [connection signal="pressed" from="HRGrid/Slot2" to="HRGrid" method="_on_Slot_pressed" binds= [ 2 ]]
 [connection signal="pressed" from="ToolGrid/Slot1" to="ToolGrid" method="_on_Slot_pressed" binds= [ 1 ]]
 [connection signal="pressed" from="EndTurn" to="." method="end_Turn"]
-[connection signal="pressed" from="ToolButton" to="." method="end_Turn"]
+[connection signal="pressed" from="ToolButton" to="." method="use_Tool"]
 [connection signal="button_down" from="RulesButton" to="RulesPopup" method="show_Rules"]
-[connection signal="pressed" from="ConvertButton" to="." method="end_Turn"]
+[connection signal="pressed" from="ConvertButton" to="." method="ConvertStoryPoints"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="RulesPopup/TextureRect/CloseButton" to="RulesPopup" method="close"]
+[connection signal="pressed" from="RulesPopup/NinePatchRect/PointsButton" to="RulesPopup" method="show_PointsRules"]
+[connection signal="pressed" from="RulesPopup/NinePatchRect/ScrumplesButton" to="RulesPopup" method="show_ScrumpleRules"]
+[connection signal="pressed" from="RulesPopup/NinePatchRect/TurnsButton" to="RulesPopup" method="show_TurnsRules"]
+[connection signal="pressed" from="RulesPopup/NinePatchRect/ToolsButton" to="RulesPopup" method="show_ToolsRules"]
+[connection signal="pressed" from="GameOver/TextureRect/Panel/Button" to="." method="_on_GameOverButton_pressed"]

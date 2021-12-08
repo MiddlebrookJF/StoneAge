@@ -16,7 +16,8 @@ var meeple_max = [3, 3, 3, 3, 3]
 var num_players = 2
 var first_player = 1
 var current_player = 1
-
+var round_counter = 0;
+var tool_bonus=[0,0,0,0,0]
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
@@ -33,7 +34,23 @@ func goto_scene(path):
 
 	call_deferred("_deferred_goto_scene", path)
 
-
+func ResetToDefault():
+	player_names = ["", "", "", "", ""]
+	meeple_counts = [3, 3, 3, 3, 3]
+	player_score = [0,0,0,0,0]
+	train_scores = [0,0,0,0,0]
+	req_scores = [0,0,0,0,0]
+	design_scores = [0,0,0,0,0]
+	imp_scores = [0,0,0,0,0]
+	test_scores = [0,0,0,0,0]
+	bTools = [0,0,0,0,0]
+	meeple_min = 0;
+	meeple_max = [3, 3, 3, 3, 3]
+	num_players = 2
+	first_player = 1
+	current_player = 1
+	round_counter = 0;
+	tool_bonus=[0,0,0,0,0]
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene
 	current_scene.free()
