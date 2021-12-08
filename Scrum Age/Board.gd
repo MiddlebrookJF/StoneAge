@@ -18,6 +18,12 @@ var knight_path = load("res://assets/Meeples/knight_head.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#Global.train_scores[0] = 100
+	#Global.req_scores[0] = 100
+	#Global.design_scores[0] = 100
+	#Global.imp_scores[0] = 100
+	#Global.test_scores[0] = 100
+	#Global.num_rounds = 3
 	pass
 
 #Get colored textures associated with each player, based on player value calling method (NEEDS TO BE UPDATED)
@@ -166,7 +172,7 @@ func newRound():
 	for i in 4:
 		$PlayerMenu.updateScores(i);
 	turnIndicator = 0;
-	if(Global.round_counter >= 14):
+	if(Global.round_counter >= Global.num_rounds - 1):
 		endGame();
 	if(Global.first_player < Global.num_players):
 		Global.first_player+=1
@@ -225,13 +231,13 @@ func upkeep():
 			var playerID = $TrainingGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.train_scores[playerID]+= (rolledVal+Global.tool_bonus[playerID])*4;
+			Global.train_scores[playerID]+= (rolledVal+Global.tool_bonus[playerID])*2;
 			$PlayerMenu.updateTraining(playerID);
 		if $RequirementsGrid.booleanSlotArray[i] != -1:
 			var playerID = $RequirementsGrid.booleanSlotArray[i]
 			random.randomize()
 			var rolledVal = random.randi_range(1, 6)
-			Global.req_scores[playerID]+= (rolledVal+Global.tool_bonus[playerID])*3;
+			Global.req_scores[playerID]+= (rolledVal+Global.tool_bonus[playerID])*2;
 			$PlayerMenu.updateReq(playerID);
 		if $DesignGrid.booleanSlotArray[i] != -1:
 			var playerID = $DesignGrid.booleanSlotArray[i]

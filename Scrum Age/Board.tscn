@@ -951,7 +951,6 @@ align = 1
 valign = 1
 
 [node name="GameOver" type="Popup" parent="."]
-visible = true
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {

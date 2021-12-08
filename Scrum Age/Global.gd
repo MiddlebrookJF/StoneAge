@@ -17,6 +17,7 @@ var num_players = 2
 var first_player = 1
 var current_player = 1
 var round_counter = 0;
+var num_rounds = 15;
 var tool_bonus=[0,0,0,0,0]
 func _ready():
 	var root = get_tree().get_root()
