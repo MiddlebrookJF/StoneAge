@@ -691,6 +691,57 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NinePatchRect" type="NinePatchRect" parent="RulesPopup"]
+margin_left = -224.106
+margin_top = 547.182
+margin_right = -184.106
+margin_bottom = 587.182
+rect_scale = Vector2( 0.711811, 1.13316 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PointsButton" type="Button" parent="RulesPopup/NinePatchRect"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -34.0251
+margin_top = 2.59546
+margin_right = -19.0251
+margin_bottom = 2.59546
+custom_fonts/font = SubResource( 12 )
+text = "Points"
+
+[node name="ScrumplesButton" type="Button" parent="RulesPopup/NinePatchRect"]
+visible = false
+margin_left = 29.48
+margin_top = 2.16574
+margin_right = 111.48
+margin_bottom = 42.1657
+custom_fonts/font = SubResource( 12 )
+text = "Scrumples"
+
+[node name="TurnsButton" type="Button" parent="RulesPopup/NinePatchRect"]
+visible = false
+margin_left = 119.0
+margin_top = 2.5784
+margin_right = 171.0
+margin_bottom = 42.5784
+custom_fonts/font = SubResource( 12 )
+text = "Turns"
+
+[node name="ToolsButton" type="Button" parent="RulesPopup/NinePatchRect"]
+visible = false
+margin_left = 178.762
+margin_top = 3.86768
+margin_right = 225.762
+margin_bottom = 43.8677
+custom_fonts/font = SubResource( 12 )
+text = "Tools"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="DisplayLabel" type="Label" parent="RulesPopup"]
 margin_left = -219.804
 margin_top = 177.209

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://PlayerMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/flag2.png" type="Texture" id=2]
+[ext_resource path="res://assets/tool.jpg" type="Texture" id=3]
 [ext_resource path="res://assets/label_HP_bg.png" type="Texture" id=4]
 [ext_resource path="res://assets/Meeples/Knight-1/1_head_.png" type="Texture" id=5]
 
@@ -257,6 +258,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ToolsIcon1" type="TextureRect" parent="Players/HBoxContainer1/MarginContainer/Player1"]
+visible = false
+margin_left = 234.595
+margin_top = 46.021
+margin_right = 534.595
+margin_bottom = 338.021
+rect_scale = Vector2( 0.075, 0.075 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="Players"]
 margin_top = 79.0
 margin_right = 306.0
@@ -483,6 +496,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ToolsIcon2" type="TextureRect" parent="Players/HBoxContainer2/MarginContainer/Player2"]
+visible = false
+margin_left = 234.595
+margin_top = 46.021
+margin_right = 534.595
+margin_bottom = 338.021
+rect_scale = Vector2( 0.075, 0.075 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer3" type="HBoxContainer" parent="Players"]
 margin_top = 158.0
 margin_right = 306.0
@@ -702,6 +727,18 @@ margin_right = 244.126
 margin_bottom = 78.9272
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolsIcon3" type="TextureRect" parent="Players/HBoxContainer3/MarginContainer/Player3"]
+visible = false
+margin_left = 234.595
+margin_top = 46.021
+margin_right = 534.595
+margin_bottom = 338.021
+rect_scale = Vector2( 0.075, 0.075 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -932,6 +969,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ToolsIcon4" type="TextureRect" parent="Players/HBoxContainer4/MarginContainer/Player4"]
+visible = false
+margin_left = 234.595
+margin_top = 46.021
+margin_right = 534.595
+margin_bottom = 338.021
+rect_scale = Vector2( 0.075, 0.075 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer5" type="HBoxContainer" parent="Players"]
 margin_top = 316.0
 margin_right = 306.0
@@ -1155,6 +1204,18 @@ margin_right = 244.126
 margin_bottom = 78.9272
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolsIcon5" type="TextureRect" parent="Players/HBoxContainer5/MarginContainer/Player5"]
+visible = false
+margin_left = 234.595
+margin_top = 46.021
+margin_right = 534.595
+margin_bottom = 338.021
+rect_scale = Vector2( 0.075, 0.075 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
