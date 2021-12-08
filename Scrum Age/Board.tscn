@@ -60,40 +60,36 @@ font_data = ExtResource( 4 )
 size = 40
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=21]
+[sub_resource type="DynamicFont" id=9]
 size = 32
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=10]
 size = 40
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=11]
 size = 37
 font_data = ExtResource( 7 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.137255, 0.129412, 0.129412, 1 )
 anti_aliasing_size = 5
 
-[sub_resource type="DynamicFontData" id=12]
+[sub_resource type="DynamicFontData" id=13]
 font_path = "res://assets/Bentham/Bentham-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=13]
-font_data = SubResource( 12 )
-
 [sub_resource type="DynamicFont" id=14]
+font_data = SubResource( 13 )
+
+[sub_resource type="DynamicFont" id=15]
 size = 48
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=15]
-size = 36
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=16]
@@ -101,22 +97,26 @@ size = 36
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=17]
+size = 36
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=18]
 size = 64
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=19]
 size = 72
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=20]
 size = 45
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=21]
 size = 30
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -296,7 +296,7 @@ margin_left = -19.5445
 margin_top = 48.0181
 margin_right = 74.4555
 margin_bottom = 84.0181
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 9 )
 text = "TrP = 20"
 
 [node name="RequirementsGrid" type="GridContainer" parent="."]
@@ -700,7 +700,7 @@ margin_left = 31.9897
 margin_top = 10.7194
 margin_right = 259.99
 margin_bottom = 78.7194
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "END TURN"
 align = 1
 valign = 1
@@ -722,7 +722,7 @@ margin_left = 11.0
 margin_top = 14.0
 margin_right = 199.0
 margin_bottom = 82.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "USE TOOL"
 align = 1
 valign = 1
@@ -744,7 +744,7 @@ margin_left = 6.31372
 margin_top = 8.3432
 margin_right = 203.314
 margin_bottom = 76.3432
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "RULES"
 align = 1
 valign = 1
@@ -766,7 +766,7 @@ margin_left = -2.17157
 margin_top = 10.0416
 margin_right = 206.828
 margin_bottom = 105.042
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "CONVERT TO 
 STORY POINTS"
 align = 1
@@ -788,7 +788,7 @@ margin_left = 42.0
 margin_top = 4.0
 margin_right = 1406.0
 margin_bottom = 46.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "scrum age"
 align = 1
 valign = 1
@@ -828,7 +828,7 @@ margin_top = 678.692
 margin_right = 319.481
 margin_bottom = 698.692
 rect_scale = Vector2( 1.42804, 2.71692 )
-custom_styles/normal = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
 shortcut_in_tooltip = false
 keep_pressed_outside = true
 text = "Close"
@@ -854,7 +854,7 @@ margin_left = -34.0251
 margin_top = 2.59546
 margin_right = -19.0251
 margin_bottom = 2.59546
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 text = "Points"
 
 [node name="ScrumplesButton" type="Button" parent="RulesPopup/NinePatchRect"]
@@ -863,7 +863,7 @@ margin_left = 29.48
 margin_top = 2.16574
 margin_right = 111.48
 margin_bottom = 42.1657
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 text = "Scrumples"
 
 [node name="TurnsButton" type="Button" parent="RulesPopup/NinePatchRect"]
@@ -872,7 +872,7 @@ margin_left = 119.0
 margin_top = 2.5784
 margin_right = 171.0
 margin_bottom = 42.5784
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 text = "Turns"
 
 [node name="ToolsButton" type="Button" parent="RulesPopup/NinePatchRect"]
@@ -881,7 +881,7 @@ margin_left = 178.762
 margin_top = 3.86768
 margin_right = 225.762
 margin_bottom = 43.8677
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 text = "Tools"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -915,7 +915,7 @@ margin_left = 3.15912
 margin_top = 618.309
 margin_right = 218.159
 margin_bottom = 673.309
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 text = "Cost: 10 TeP"
 align = 1
 valign = 1
@@ -935,7 +935,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="RoundPanel"]
 margin_right = 305.0
 margin_bottom = 41.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
 text = "ROUND"
 align = 1
 valign = 1
@@ -945,12 +945,13 @@ margin_left = 117.327
 margin_top = 32.3273
 margin_right = 186.327
 margin_bottom = 73.3273
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
 text = "1"
 align = 1
 valign = 1
 
 [node name="GameOver" type="Popup" parent="."]
+visible = true
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -976,7 +977,7 @@ __meta__ = {
 margin_top = 1.0
 margin_right = 708.0
 margin_bottom = 147.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
 text = "GAME OVER!"
 align = 1
 valign = 1
@@ -986,7 +987,7 @@ margin_left = 55.6365
 margin_top = 165.618
 margin_right = 643.636
 margin_bottom = 309.618
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 19 )
 text = "0"
 align = 1
 valign = 1
@@ -998,7 +999,7 @@ margin_left = 49.9476
 margin_top = 318.218
 margin_right = 236.948
 margin_bottom = 373.218
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Final Stats"
 align = 1
 valign = 1
@@ -1014,11 +1015,11 @@ margin_right = 1370.0
 margin_bottom = 811.0
 
 [node name="Button" type="Button" parent="GameOver/TextureRect/Panel"]
-margin_left = 301.0
-margin_top = 478.0
-margin_right = 712.0
-margin_bottom = 645.0
-custom_fonts/font = SubResource( 20 )
+margin_left = 159.419
+margin_top = 459.123
+margin_right = 570.419
+margin_bottom = 626.123
+custom_fonts/font = SubResource( 21 )
 text = "Quit To Main Menu and Play Again!"
 
 [connection signal="pressed" from="RequirementsGrid/Slot1" to="RequirementsGrid" method="_on_Slot_pressed" binds= [ 1 ]]

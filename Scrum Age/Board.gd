@@ -19,7 +19,6 @@ var knight_path = load("res://assets/Meeples/knight_head.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("EndTurn").hide()
-#	pass
 
 #Get colored textures associated with each player, based on player value calling method (NEEDS TO BE UPDATED)
 func set_meeple_color(texture_path, player):
@@ -201,6 +200,7 @@ func newRound():
 func endGame():
 	calculateWinner();
 	$GameOver.show();
+	
 func calculateWinner():
 	var winner = Global.player_score[0]
 	var winnerpos = 0;
@@ -214,17 +214,8 @@ func calculateWinner():
 		getWinnerColor(winnerpos);		
 
 func getWinnerColor(pos):
-	match pos:
-		0:
-			$GameOver/TextureRect/Panel/WinnerLabel.text = "Red Team Wins! Congratulations!"
-		1:
-			$GameOver/TextureRect/Panel/WinnerLabel.text = "Blue Team Wins! Congratulations!"
-		2:
-			$GameOver/TextureRect/Panel/WinnerLabel.text = "Green Team Wins! Congratulations!"
-		3:
-			$GameOver/TextureRect/Panel/WinnerLabel.text = "Yellow Team Wins! Congratulations!"
-		4:
-			$GameOver/TextureRect/Panel/WinnerLabel.text = "Purple Team Wins! Congratulations!"
+	$GameOver/TextureRect/Panel/WinnerLabel.text = Global.player_names[pos] + " Wins! Congratulations!"
+
 # Ends a turn and changes current player
 func end_Turn():
 	if(Global.current_player < Global.num_players):
