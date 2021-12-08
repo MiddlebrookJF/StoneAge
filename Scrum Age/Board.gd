@@ -118,6 +118,16 @@ func touchHR_slot(grid_name,slot):
 	#current_player-1 is used as index <== meeple_counts[] has player 1 at index 0
 		if child.booleanSlotArray[slot-1] == -1:
 			if (Global.meeple_counts[Global.current_player-1] > 0):
+				if CheckCost(child) == false:
+					return;
+				Global.train_scores[Global.current_player-1] -= child.REQ[0]
+				$PlayerMenu.updateTraining(Global.current_player-1);
+				Global.req_scores[Global.current_player-1] -= child.REQ[1]
+				$PlayerMenu.updateReq(Global.current_player-1);
+				Global.design_scores[Global.current_player-1] -= child.REQ[2]
+				$PlayerMenu.updateDesign(Global.current_player-1);
+				Global.imp_scores[Global.current_player-1] -= child.REQ[3]
+				$PlayerMenu.updateImp(Global.current_player-1);
 				set_meeple_color(grid_name+"/Slot1", Global.current_player); #Set the texture to the player's color
 				set_meeple_color(grid_name+"/Slot2", Global.current_player); 
 				child.get_node("Slot1").texture_normal = knight_path #get knight icon
@@ -136,6 +146,13 @@ func touchHR_slot(grid_name,slot):
 				get_node("Timer").start();
 		else:
 			if child.booleanSlotArray[slot-1] == Global.current_player -1:
+				Global.train_scores[Global.current_player-1] += child.REQ[0]
+				$PlayerMenu.updateTraining(Global.current_player-1);
+				Global.req_scores[Global.current_player-1] += child.REQ[1]
+				$PlayerMenu.updateReq(Global.current_player-1);
+				Global.design_scores[Global.current_player-1] += child.REQ[2]
+				$PlayerMenu.updateDesign(Global.current_player-1);
+				Global.imp_scores[Global.current_player-1] += child.REQ[3]
 				set_meeple_color(grid_name+"/Slot1", 0); #Set the texture to the player's color
 				set_meeple_color(grid_name+"/Slot2", 0); 
 				child.get_node("Slot1").texture_normal = emptySpace #get knight icon
@@ -165,19 +182,49 @@ func newRound():
 	for i in 4:
 		$PlayerMenu.updateScores(i);
 	turnIndicator = 0;
-	
+	if(Global.round_counter >= 2):
+		endGame();
 	if(Global.first_player < Global.num_players):
 		Global.first_player+=1
 	else:
 		Global.first_player = 1
 	
 	Global.current_player = Global.first_player
-	
+
 	# Problem, randomizer in PlayerMenu prevents this text from displaying the player names accurately
 	# get_node("InfoPanel/Info").text = "Round Over. Player "+str(Global.player_names[Global.current_player-1])+"'s Turn! "
 	get_node("InfoPanel/Info").text = "Round Over. Next Player's Turn! "
+	Global.round_counter+=1
+	$RoundPanel/Label/RoundNum.text = str(Global.round_counter+1)
 	get_node("Timer").start();
+	
+func endGame():
+	calculateWinner();
+	$GameOver.show();
+func calculateWinner():
+	var winner = Global.player_score[0]
+	var winnerpos = 0;
+	for i in Global.player_score.size():
+		if(Global.player_score[i]>winner):
+			winner = Global.player_score[i]
+			winnerpos = i
+	if winner == 0:
+		$GameOver/TextureRect/Panel/WinnerLabel.text = "It's a tie!"
+	else:
+		getWinnerColor(winnerpos);		
 
+func getWinnerColor(pos):
+	match pos:
+		0:
+			$GameOver/TextureRect/Panel/WinnerLabel.text = "Red Team Wins! Congratulations!"
+		1:
+			$GameOver/TextureRect/Panel/WinnerLabel.text = "Blue Team Wins! Congratulations!"
+		2:
+			$GameOver/TextureRect/Panel/WinnerLabel.text = "Green Team Wins! Congratulations!"
+		3:
+			$GameOver/TextureRect/Panel/WinnerLabel.text = "Yellow Team Wins! Congratulations!"
+		4:
+			$GameOver/TextureRect/Panel/WinnerLabel.text = "Purple Team Wins! Congratulations!"
 # Ends a turn and changes current player
 func end_Turn():
 	if(Global.current_player < Global.num_players):
@@ -232,6 +279,10 @@ func upkeep():
 	if tools != -1:
 		Global.bTools[tools] +=1;
 		$PlayerMenu.showTool(tools)
+	var HR = $HRGrid.booleanSlotArray[0]
+	if HR != -1:
+		Global.meeple_max[HR] += 1
+		
 	print("I survived")
 	print(Global.train_scores)
 	print(Global.req_scores)
@@ -277,6 +328,15 @@ func _on_Timer_timeout():
 func ConvertStoryPoints():
 	while Global.test_scores[Global.current_player-1] >= 10:
 		Global.test_scores[Global.current_player-1]-=10
-		$PlayerMenu.updateTest();
+		$PlayerMenu.updateTest(Global.current_player-1);
 		Global.player_score[Global.current_player-1]+=1;
-		$PlayerMenu.updateScores();
+		$PlayerMenu.updateScores(Global.current_player-1);
+
+
+func use_Tool():
+	pass 
+
+func _on_GameOverButton_pressed():
+	Global.ResetToDefault()
+	Global.goto_scene("res://Main.tscn")
+	Music.play_menu_music();
