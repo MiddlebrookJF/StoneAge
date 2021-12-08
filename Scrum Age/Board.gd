@@ -277,3 +277,5 @@ func clean_Board():
 # Resets the header text after timer runs out
 func _on_Timer_timeout():
 	get_node("InfoPanel/Info").text = "Scrum Age"
+
+
